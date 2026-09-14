@@ -1,4 +1,19 @@
 window.addEventListener('DOMContentLoaded',()=>{
+  const whyPlatinumFix=document.createElement('style');
+  whyPlatinumFix.textContent=`
+    .value-section::after{display:block!important}
+    .value-card{justify-content:flex-start!important}
+    .value-card>span{margin-bottom:28px!important}
+    .value-card .card-fa{flex:0 0 auto}
+    .value-card h3{align-self:auto}
+    .value-card p{margin-top:14px}
+    @media(max-width:650px){
+      .value-card>span{margin-bottom:14px!important}
+      .value-card p{margin-top:12px}
+    }
+  `;
+  document.head.appendChild(whyPlatinumFix);
+
   requestAnimationFrame(()=>document.body.classList.add('loaded'));
 
   const nav=document.querySelector('.nav');
