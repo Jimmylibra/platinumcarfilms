@@ -182,8 +182,19 @@ function MaterialStory() {
 
         <div className="ppf-cards" aria-label="PPF material features">
           {FEATURES.map((f, i) => (
-            <article className={`ppf-card ${i === active ? 'is-active' : ''}`} key={f.title} ref={(el) => { cardRefs.current[i] = el }}>
-              <button type="button" className="ppf-card-trigger" aria-pressed={i === active} onClick={() => selectFeature(i)}>
+            <article
+              className={`ppf-card ${i === active ? 'is-active' : ''}`}
+              key={f.title}
+              ref={(el) => { cardRefs.current[i] = el }}
+              onClick={() => selectFeature(i)}
+            >
+              {/* The button covers only the header for a sane accessible
+                  name (just the feature title, not the full advantage/
+                  benefit paragraphs read out as one giant button label).
+                  The onClick above on the whole card is what makes the
+                  copy-grid area clickable too, without changing the
+                  button's semantics. */}
+              <button type="button" className="ppf-card-trigger" aria-pressed={i === active} onClick={(e) => { e.stopPropagation(); selectFeature(i) }}>
                 <span className="ppf-card-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
                 <span className="ppf-card-inner">
                   <span className="ppf-icon" aria-hidden="true"><i className={`fa-solid ${f.icon}`} /></span>

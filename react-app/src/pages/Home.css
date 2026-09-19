@@ -85,7 +85,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .ppf-progress-bar { display: block; height: 100%; background: var(--accent); transition: width .35s ease; }
 .ppf-active-title { font-size: 24px; font-weight: 700; margin: 18px 0 0; color: #fff; }
 .ppf-cards { display: grid; gap: 16px; }
-.ppf-card { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); transition: border-color .3s, background .3s; }
+.ppf-card { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); transition: border-color .3s, background .3s; cursor: pointer; }
 .ppf-card.is-active { border-color: rgba(255,105,27,.35); background: #17130f; }
 .ppf-card-trigger { width: 100%; text-align: left; background: none; border: 0; color: inherit; padding: 20px 22px; display: block; cursor: pointer; font-family: inherit; }
 .ppf-card-index { font-size: 11px; color: #7a7a82; letter-spacing: .08em; }
