@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useInteractions } from '../replica/InteractionContext'
+import useBoundedParallax from '../hooks/useBoundedParallax'
 import './About.css'
 
 // Real content extracted from react-app/public/content/about-us.json's own
 // source AST -- not invented. AB05 ("Built on World-Class Materials") has
-// no body text in the source itself (only the heading); shown as-is rather
-// than inventing supplier copy, per the plan's rule against filling
-// missing source sections.
+// no body text in the source itself (only the heading); per plan 16E its
+// dev-facing "source doesn't supply this" note is removed from the public
+// UI and the heading is merged into AB06 below instead of standing alone.
 const STATS = ['10+ Years Manufacturing', '24/7 Customer Support', 'OEM Custom Branding', '10+ Global Shipping']
 
 const SUPPLY = [
@@ -44,47 +45,59 @@ const AUDIENCE = [
 
 export default function About() {
   const { openQuote } = useInteractions()
+  const qualityImageRef = useBoundedParallax()
 
   return (
     <article className="about-page">
-      {/* AB01 */}
-      <section className="ab-title section-shell">
-        <p className="breadcrumb">About Us</p>
-        <h1>About Us</h1>
-      </section>
-
-      {/* AB02 */}
-      <section className="ab-section">
-        <div className="section-shell ab-intro">
-          <div>
-            <h2>We Are a Team Passionate About Car Protection</h2>
-            <p>PlatinumPPF (Platinum Car Films) specialises in the supply and sale of high-tech automotive films — polyurethane PPF, athermal, tinting, and other protective solutions for professional installers, distributors, and OEM buyers.</p>
-            <div className="ab-stat-grid">
-              {STATS.map((s) => <div key={s} className="ab-stat">{s}</div>)}
-            </div>
+      {/* AB01 + AB02 merged opening. Corrected per the owner's screenshot
+          review: neutral black/charcoal surfaces (not the steel/copper
+          palette), one clear headline (H1), the company heading kept but
+          visually subordinate, a constrained-width intro paragraph, an
+          intentional 2x2 fact grid instead of a wrapping pill row, and a
+          minimally framed product image instead of a boxed-card look.
+          Static for now -- no entrance motion until the layout itself is
+          verified. */}
+      <section className="ab-hero">
+        <div className="container ab-hero-grid">
+          <div className="ab-hero-copy">
+            <nav className="ab-breadcrumb" aria-label="Breadcrumb">
+              <Link to="/">Home</Link>
+              <span aria-hidden="true"> / </span>
+              <span aria-current="page">About Us</span>
+            </nav>
+            <h1>About Us</h1>
+            <p className="ab-subhead">We Are a Team Passionate About Car Protection</p>
+            <p className="ab-lead">PlatinumPPF (Platinum Car Films) specialises in the supply and sale of high-tech automotive films — polyurethane PPF, athermal, tinting, and other protective solutions for professional installers, distributors, and OEM buyers.</p>
+            <ul className="ab-stat-grid">
+              {STATS.map((s) => <li key={s}>{s}</li>)}
+            </ul>
           </div>
-          <div className="ab-media">
-            <img src="/assets/original/b92a52a790ac-31.webp" alt="Stack of Platinum product boxes" loading="lazy" />
+          <div className="ab-hero-media">
+            <img src="/assets/original/b92a52a790ac-31.webp" alt="Stack of Platinum product boxes" loading="eager" />
           </div>
         </div>
       </section>
 
-      {/* AB03 */}
-      <section className="ab-section ab-alt">
-        <div className="section-shell ab-reading">
+      {/* AB03: one coherent left-aligned column, aligned to the same text
+          rail as the opening, instead of a heading/body split across a
+          wide gap. Callouts are quiet supporting text, not badges. */}
+      <section className="ab-approach">
+        <div className="container ab-approach-body">
           <h2>Reliability, Aesthetics, and a Professional Approach</h2>
-          <p>Our approach is attention to detail — from selecting the best raw materials to consulting and supporting clients at every stage. Whether you are a professional installer or a first-time distributor, we support your business with reliable supply and technical guidance.</p>
-          <p>Regardless of whether you need protection from rock chips, ultraviolet radiation, or interior overheating, we have a solution for any task and climatic condition.</p>
-          <div className="ab-callouts">
-            <span>10 Years Car Film Maker</span>
-            <span>1-Stop One-Stop Service</span>
+          <div>
+            <p>Our approach is attention to detail — from selecting the best raw materials to consulting and supporting clients at every stage. Whether you are a professional installer or a first-time distributor, we support your business with reliable supply and technical guidance.</p>
+            <p>Regardless of whether you need protection from rock chips, ultraviolet radiation, or interior overheating, we have a solution for any task and climatic condition.</p>
+            <div className="ab-callouts">
+              <span>10 Years Car Film Maker</span>
+              <span>1-Stop One-Stop Service</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* AB04 */}
-      <section className="ab-section">
-        <div className="section-shell">
+      <section className="ab-supply">
+        <div className="container">
           <h2>What We Supply</h2>
           <div className="ab-supply-grid">
             {SUPPLY.map(([title, body]) => (
@@ -97,22 +110,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* AB05 */}
-      <section className="ab-section ab-alt">
-        <div className="section-shell ab-reading">
-          <h2>Built on World-Class Materials</h2>
-          <p className="ab-note">Lubrizol and Covestro TPU inputs are named directly in our quality-control process below (section 03) — the source page does not include separate supplier-names copy for this section beyond that.</p>
-        </div>
-      </section>
-
-      {/* AB06 */}
-      <section className="ab-section">
-        <div className="section-shell ab-quality">
-          <div className="ab-quality-media">
-            <img src="/assets/original/28808e794687-53.webp" alt="Production equipment" loading="lazy" />
-            <p className="ab-media-caption">Equipment shown in supplied gallery.</p>
+      {/* AB06, with AB05's heading folded in as an eyebrow above it rather
+          than standing alone with a dev-facing "source doesn't cover this"
+          note (removed from the public UI per plan 16E/16F F01/F07). */}
+      <section className="ab-quality">
+        <div className="container ab-quality-grid">
+          <div className="ab-quality-media-frame" ref={qualityImageRef}>
+            <img src="/assets/original/fb69ba3e9a98-DSC06299_1_6_11zon-scaled.webp" alt="Production equipment used for quality control" loading="lazy" />
           </div>
           <div>
+            <span className="ab-eyebrow">Built on World-Class Materials</span>
             <h2>How We Consistently Control Quality</h2>
             <p>We are fully committed to maintaining high product quality for each client by implementing thorough control measures throughout production, packaging, and on-time delivery.</p>
             <div className="ab-quality-rail">
@@ -128,20 +135,23 @@ export default function About() {
       </section>
 
       {/* AB07 */}
-      <section className="ab-section ab-alt">
-        <div className="section-shell">
+      <section className="ab-benefits">
+        <div className="container">
           <h2>With Us You Get</h2>
-          <div className="ab-benefit-grid">
+          <div className="ab-benefit-rows">
             {BENEFITS.map(([title, body]) => (
-              <div key={title}><h3>{title}</h3><p>{body}</p></div>
+              <div className="ab-benefit-row" key={title}>
+                <span className="ab-benefit-marker" aria-hidden="true" />
+                <div><h3>{title}</h3><p>{body}</p></div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* AB08 */}
-      <section className="ab-section">
-        <div className="section-shell">
+      <section className="ab-audience">
+        <div className="container">
           <h2>Who We Work With</h2>
           <p className="ab-intro-line">We serve professional buyers who need a reliable supply partner. Whether you are placing a first sample order or building a long-term supply relationship, every account gets the same factory-direct pricing and support.</p>
           <div className="ab-audience-list">
@@ -155,14 +165,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* AB09 */}
+      {/* AB09 -- full orange closing band, a deliberate ending rather than
+          another charcoal strip. */}
       <section className="ab-cta">
-        <div className="section-shell">
+        <div className="container ab-cta-inner">
           <h2>Start a Conversation</h2>
           <p>We welcome enquiries from buyers, distributors, installers, and OEM partners globally. Tell us what you need and we will match you to the right product, specification, and pricing.</p>
           <div className="ab-cta-actions">
-            <button type="button" className="button" onClick={openQuote}>Get a Quote</button>
-            <Link className="text-link" to="/contact-us">Contact Us</Link>
+            <button type="button" className="ab-btn-primary" onClick={openQuote}>Get a Quote</button>
+            <Link className="ab-btn-secondary" to="/contact-us">Contact Us</Link>
           </div>
         </div>
       </section>

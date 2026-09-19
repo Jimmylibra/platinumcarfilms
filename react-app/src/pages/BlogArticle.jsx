@@ -2,27 +2,18 @@ import PageHeader from '../components/PageHeader'
 import article from './design-data/blog-article.json'
 import './BlogArticle.css'
 
-interface ArticleSection { heading: string; paragraphs: string[]; list: string[] }
-interface ArticleData {
-  title: string
-  introParagraphs: string[]
-  introList: string[]
-  sections: ArticleSection[]
-  faqs: [string, string][]
-}
-
 // Real content extracted from the article's own source AST in
 // content/blog__how-long-does-paint-protection-film-last.json -- not
 // invented. The source title ("How long does paint protection film last")
 // doesn't match its actual body (a DIY installation how-to guide) -- a
 // known title/body mismatch logged in docs/CONTENT-DECISION-LOG.md,
 // preserved as-is rather than silently retitled.
-const data = article as ArticleData
+const data = article
 
 export default function BlogArticle() {
   return (
     <>
-      <PageHeader title={data.title} />
+      <PageHeader breadcrumb={[['Home', '/'], ['Blog', '/blog'], [data.title]]} title={data.title} />
       <article className="blog-article section-shell">
         <img
           src="/assets/original/0569f11089cb-42-1024x1024.webp"

@@ -4,11 +4,10 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { InteractionContext } from '../replica/InteractionContext'
 import { QuoteDialog, Lightbox, FloatingActions } from '../replica/Overlays'
-import type { GalleryImage } from '../replica/types'
 
 export default function Layout() {
   const [quoteOpen, setQuoteOpen] = useState(false)
-  const [gallery, setGallery] = useState<{ images: GalleryImage[]; initial: string } | null>(null)
+  const [gallery, setGallery] = useState(null)
 
   return (
     <InteractionContext.Provider

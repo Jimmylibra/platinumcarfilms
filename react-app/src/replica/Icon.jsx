@@ -1,4 +1,4 @@
-export default function Icon({ name, size = 22 }: { name: 'menu' | 'close' | 'left' | 'right' | 'up' | 'chat' | 'search'; size?: number }) {
+export default function Icon({ name, size = 22 }) {
   const paths = {
     menu: 'M4 6h16M4 12h16M4 18h16',
     close: 'm6 6 12 12M6 18 18 6',

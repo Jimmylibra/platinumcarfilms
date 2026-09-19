@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useInteractions } from '../replica/InteractionContext'
+import Reveal from '../components/Reveal'
 import { PRODUCTS } from './products-data'
 import { PRODUCT_IMAGES } from './product-images'
 import data190 from './design-data/products/190-micron-ppf.json'
@@ -11,35 +12,23 @@ import dataWindowTint from './design-data/products/window-tint-film-for-cars-pla
 import dataColor from './design-data/products/color-ppf-for-car.json'
 import './ProductPage.css'
 
-interface ProductContent {
-  slug: string
-  intro: { h1: string; lead: string; promises: string[] }
-  problem: { title: string; stats: [string, string][]; paragraphs: string[] }
-  solution: { title: string; body: string[] }
-  features: { title: string; rows: string[][]; note: string }
-  audience: { title: string; cards: [string, string][] }
-  comparison: { title: string; rows: [string, string][] }
-  faq: { title: string; intro: string; items: [string, string][] }
-  cta: { title: string; intro: string; actions: [string, string][] }
-}
-
 // Real content extracted from each product's own source AST in
 // content/<slug>.json (see tools scratch extraction, reproducible), not
 // invented. Some products' source genuinely lacks a comparison section
 // (headlight, satin, gloss-black) -- that section is omitted rather than
 // filled with placeholder text, per the plan's "missing source sections
 // are not permission to invent replacements."
-const DATA: Record<string, ProductContent> = {
-  '190-micron-ppf': data190 as unknown as ProductContent,
-  'headlight-paint-protection-film': dataHeadlight as unknown as ProductContent,
-  'matte-paint-protection-film': dataMatte as unknown as ProductContent,
-  'satin-paint-protection-film': dataSatin as unknown as ProductContent,
-  'gloss-black-paint-protection-film-190-microns': dataGlossBlack as unknown as ProductContent,
-  'window-tint-film-for-cars-platinum-car-films': dataWindowTint as unknown as ProductContent,
-  'color-ppf-for-car': dataColor as unknown as ProductContent,
+const DATA = {
+  '190-micron-ppf': data190,
+  'headlight-paint-protection-film': dataHeadlight,
+  'matte-paint-protection-film': dataMatte,
+  'satin-paint-protection-film': dataSatin,
+  'gloss-black-paint-protection-film-190-microns': dataGlossBlack,
+  'window-tint-film-for-cars-platinum-car-films': dataWindowTint,
+  'color-ppf-for-car': dataColor,
 }
 
-export default function ProductPageGeneric({ slug }: { slug: string }) {
+export default function ProductPageGeneric({ slug }) {
   const { openQuote } = useInteractions()
   const data = DATA[slug]
   const meta = PRODUCTS.find((p) => p.slug === slug)
@@ -65,8 +54,10 @@ export default function ProductPageGeneric({ slug }: { slug: string }) {
             <Link className="text-link" to="/gallery">View Gallery</Link>
           </div>
         </div>
-        <div className="pp-intro-media">
-          <img src={images?.hero ?? meta.image} alt={meta.title} loading="eager" />
+        <div className="pp-intro-media-wrap">
+          <div className="pp-intro-media">
+            <img src={images?.hero ?? meta.image} alt={meta.title} loading="eager" />
+          </div>
         </div>
       </section>
 
@@ -85,7 +76,7 @@ export default function ProductPageGeneric({ slug }: { slug: string }) {
       </section>
 
       <section className="pp-section">
-        <div className={`section-shell ${images?.solution ? 'pp-solution' : ''}`}>
+        <Reveal className={`section-shell ${images?.solution ? 'pp-solution' : ''}`}>
           <div>
             <h2>{data.solution.title}</h2>
             {data.solution.body.map((p, i) => <p key={i}>{p}</p>)}
@@ -95,7 +86,7 @@ export default function ProductPageGeneric({ slug }: { slug: string }) {
               <img src={images.solution} alt={`${meta.title} detail`} loading="lazy" />
             </div>
           )}
-        </div>
+        </Reveal>
       </section>
 
       <section className="pp-section pp-alt">
@@ -116,7 +107,7 @@ export default function ProductPageGeneric({ slug }: { slug: string }) {
       </section>
 
       <section className="pp-section">
-        <div className="section-shell">
+        <Reveal className="section-shell">
           <h2>{data.audience.title}</h2>
           <div className="pp-audience-grid">
             {data.audience.cards.map(([title, body]) => (
@@ -127,7 +118,7 @@ export default function ProductPageGeneric({ slug }: { slug: string }) {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {data.comparison.rows.length > 0 && (

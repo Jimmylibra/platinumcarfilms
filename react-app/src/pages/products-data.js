@@ -1,16 +1,9 @@
-export interface ProductEntry {
-  slug: string
-  title: string
-  description: string
-  image: string
-}
-
 // Sourced from react-app/public/content/index.json (route/title/description/
 // image fields), not invented. Descriptions include unconfirmed claims
 // (e.g. "10-year warranty") preserved verbatim from the original site per
 // the working rule against silently correcting business content -- these
 // are tracked in docs/CONTENT-DECISION-LOG.md pending client confirmation.
-export const PRODUCTS: ProductEntry[] = [
+export const PRODUCTS = [
   {
     slug: '210-paint-protection-film',
     title: '210 Paint Protection Film',

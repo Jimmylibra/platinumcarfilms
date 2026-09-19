@@ -2,9 +2,13 @@
 
 Prepared 19 September 2026. This is an implementation handoff for the existing repository, not a request to start a new project.
 
+Latest direction: section 16E overrides earlier conservative visual rules with stronger surface contrast, consistent alignment, bounded parallax, and a curated gallery experience. Read it and section 16F (concrete CSS/component contract and page-opening fixes) before implementing.
+
 This is the consolidated implementation plan. Sections 16A and 16B establish the shared system. Section 16C is the authoritative route-by-route and section-by-section schedule, with exact inspected image assignments, backgrounds, desktop/mobile compositions, and the complete 136-image gallery order. Section 16D specifies section animation triggers, timing, easing, interaction states and reduced-motion behavior. Section 17 contains the current Claude prompt. Separate visual documents are supporting references; this plan is the main handoff.
 
 Desktop and mobile page specifications are included in section 16A; a separate reference copy is available in [the visual brief](PAGE-DESIGN-SPECIFICATION.md). The user's later font choice is Nunito throughout the React UI, overriding Manrope in the approved mock. Preserve the logo artwork.
+
+> **Stack update (2026-09-20):** the project was converted from React + TypeScript to plain React + JavaScript/JSX at the owner's request (see `docs/IMPLEMENTATION-STATUS.md` for the conversion record). References below to TypeScript, `.tsx`/`.ts` files, `tsc -b`, or `tsconfig` describe the stack as it existed when this plan was written and executed; the equivalent files now live under `.jsx`/`.js` and the build no longer runs a type-check step.
 
 ## 1. Goal and current decisions
 
@@ -2015,10 +2019,348 @@ The explicit finite badge/cue loops and mobile simplification above resolve the 
 
 **Animation acceptance:** check fresh entry, Back restoration, rapid navigation/unmount, menu Escape, FAQ open and close, gallery next/previous/load failure, invalid quote fields, offscreen/hidden-tab carousel, reduced-motion enabled at load and toggled mid-session. Capture desktop and 390px mobile open states; record actual results. Passing a screenshot alone does not verify timing, focus or cancellation. The default site must remain readable if observers or animations do not initialize.
 
+## 16E. Visual revision after the full-site review: color, composition, alignment, and gallery
+
+Updated 20 September 2026 following the owner's screenshots and request for a more expressive website. This section supersedes conflicting visual restrictions in 16A through 16D, especially the plain Gallery opening, near-identical background sequence, no-parallax rule, and uniformly restrained marketing-page motion. Content preservation, Nunito, JSX, static forms, source integrity, accessibility, and reduced motion still apply. This is planned work, not a record of completed redesign.
+
+### Review evidence and limits
+
+Review provenance: DEGRADED, single-context assessment because no sub-agent tool is exposed. Design inspection was performed before the source detector. All 25 inventory routes were captured at 1440px and 390px; full-page captures and route observations are in `output/visual-audit/`. Contact sheets were inspected for every route's opening and early section sequence. This is a composition review, not an exhaustive interaction or word-for-word content audit. Later sections require implementation-time full-size review.
+
+Observed issues:
+
+- Home already has meaningful vehicle imagery and orange emphasis. Inner pages lose that character and look like document layouts with product posters attached.
+- About alternates a full-width content rail with centered narrow reading blocks. The text can be left-aligned internally yet appear arbitrarily centered because its container moves. AB05 exposes source-analysis notes to visitors. The current quality image also differs from the equipment image specified in the earlier plan.
+- All eight product pages have much the same dark-strip rhythm, dense introductions, and small tables. Images often contain marketing text, so shrinking posters makes important visual information illegible.
+- Gallery opens directly into 24 equal tiles with a count, without an editorial introduction, image hierarchy, or explanation. Posters are cropped to uniform frames even when they contain lettering. Production photographs are buried later in the collection.
+- Blog/category/author pages repeat the generic Blog heading. Blog and policy/Terms surfaces expose drafting or source notes that belong in project documentation.
+- Contact has a confirmed 420px-wide details column overflowing a 390px viewport. This is a layout defect, not a color problem.
+- The reveal component starts at opacity zero and waits for 30% intersection. A section remained hidden during one automated reduced-motion traversal; a targeted revisit revealed it. Reduced-motion CSS shortens transitions but does not itself force hidden content visible. Replace this fragile trigger before adding more animation.
+- The source detector reported a Home width transition and legacy renderer/font warnings. Legacy warnings are not proof of active runtime failures. The render sweep found no completed-but-broken images; it did not exercise all deferred gallery loads.
+
+The earlier brief was too conservative for the owner's current direction. Do not merely increase every shadow or add random gradients: change the hierarchy of surfaces, image scale, composition, and movement deliberately.
+
+### Visual direction and palette
+
+Keep the dark automotive identity and orange Platinum branding. Introduce a genuinely visible steel surface and a warm copper surface, plus selected full orange section bands. The website remains dark overall. No wholesale font or logo change.
+
+| Token/role | Proposed value | Use |
+| --- | --- | --- |
+| Deep canvas | `#090B0F` | Main page background and cinematic image surround |
+| Steel section | `#18212B` | Substantial alternate sections, catalog framing, reading panels |
+| Raised steel | `#24313E` | Cards, controls, table headers where separation is needed |
+| Copper section | `#321C14` | Warm explanatory sections and finish storytelling |
+| Brand orange | `#FF691B` | Actions, rules, section numbers, occasional full-width CTA band |
+| Warm heading accent | `#FFAC7A` | Selected words and labels against dark surfaces |
+| Primary text | `#F7F5F2` | Headings and primary body |
+| Secondary text | `#C3CAD2` | Supporting paragraphs, not disabled-looking content |
+| Orange-band text | `#101318` | Text and icons over full orange backgrounds |
+| Structural divider | `#42505E` | Significant panel/row boundaries, evaluated against actual background |
+
+These replace the nearly indistinguishable main/alternate surface values for redesigned pages. Check actual contrast pairs: normal text at least 4.5:1, large text 3:1, essential UI boundaries/focus indicators 3:1 against adjacent colors. Do not assume an orange or muted token is valid on every surface. White small text on brand orange is not the default; use dark text.
+
+Aim for perceptible chapter changes on marketing pages: deep photo-led opening, steel explanation, deep imagery, copper detail, deep technical content, orange closing band. Do not apply this sequence blindly to policies or copy it identically to every route.
+
+Use a localized gradient over hero imagery for readable text. A static broad copper-to-deep wash is allowed in one major introduction per page. Keep paragraphs off busy imagery. No animated noise, particles, fake lens flares, or constant background movement.
+
+### Formatting and alignment contract
+
+1. Main desktop content uses a single 1224px maximum rail. At 1440px it has approximately 108px outer space. One container owns horizontal padding; nested section-shell elements must not add another unexplained inset.
+2. Left-align breadcrumbs, H1, section headings, paragraphs, captions, FAQ questions, form labels, and technical content by default. Align a section heading with its own content, not independently with the viewport.
+3. A centered container and centered text are different. Reading columns may be narrower, but on About/product pages anchor them to the main rail or a deliberate grid column. Do not alternate arbitrary centered 800px text blocks with full-rail sections.
+4. Only a short closing invitation or intentionally symmetric visual interlude may center its text. Centered supporting copy is at most about 45 characters wide and a few lines. Mobile defaults back to left alignment unless a documented composition requires centering.
+5. Nunito body is 17 to 18px desktop, 16px mobile, line-height around 1.65. Supporting body should not routinely fall to 13px. Use 60 to 70 characters for long paragraphs. Headings get fluid sizes, balanced wrapping where useful, and no hardcoded desktop line breaks that damage mobile.
+6. Use consistent spacing increments: 8, 12, 16, 24, 32, 48, 64, 96px. Heading-to-lead normally 16 to 24px; lead-to-content 32 to 48px. Align paired columns at their content starts unless the design explicitly centers a compact hero.
+7. Remove visible developer commentary, source references, section codes, and drafting explanations from the public UI. Keep them in the decision log. AB05 must not explain what the source page failed to supply. Preserve the real heading and only source-supported public content, merging its heading into the adjacent material/quality grouping if needed rather than leaving a large empty band.
+8. Unapproved policy language is a content-release blocker, not a reason to publish internal notes as finished terms. Preserve archival text in project records. Do not invent legally binding replacements.
+9. Use a common left text edge on mobile, 20px gutters at 390px and 16px at 320px. Add `min-width: 0` to grid/flex children where appropriate. Fix the Contact track sizing rather than concealing overflow.
+
+### Gallery: make this the flagship page
+
+Purpose: visitors should understand what the collection contains, experience the range visually, and then browse every image easily. Curated storytelling is added above the full archive; the original 136-image order and thumbnail/full-image pairs remain intact in that archive. Featured images may repeat there intentionally. Do not replace the archive with a small curated selection.
+
+Suggested public labels below are new neutral navigation/editorial copy, not new product claims. Keep technical/product claims unchanged pending confirmation. Do not call the gallery "our completed projects" or the production photos "our factory" without verification.
+
+| Section | Desktop composition | Mobile composition | Image/background | Animation and interaction |
+| --- | --- | --- | --- | --- |
+| GE01 Opening: Gallery | 70 to 80svh editorial opening, capped around 860px and allowed to grow with text. Left: small "THE COLLECTION" label, Gallery H1, short lead. Right: one tall film/application image and a smaller offset production image; overlap only in the image area. Actions: "Explore highlights" and "Browse all 136 images". | Natural-height opening; left-aligned title, lead, actions, then a 4:3 main photo. Secondary image omitted only if decorative; same content appears below. No text overlay on phone photography. | Deep canvas with localized copper wash. Candidate existing material application asset `eea44f2b1a11-sli1.webp`, secondary G043 production photograph; inspect full-size before final crop. Posters must not become cropped backgrounds. | Title/lead/actions enter in one short sequence; image planes have different bounded scroll translations, at most 32px desktop. No entrance waiting screen. Phone uses static composition. |
+| GE02 Collection navigation | Full-width steel band with anchors: Product imagery, Color and finish, Production imagery, Full collection. Short text: "Explore product artwork, color presentations, and production imagery." | Two-column link grid with 44px targets; no tiny horizontal chip carousel. | Steel band, orange rule, white labels. | Underline/focus state. If sticky on wide screens, stays below header; regular document flow on mobile. |
+| GE03 Product imagery | 5/7 split: explanatory heading and brief neutral lead on left, asymmetrical three-image presentation on right. One large contained image, two supporting smaller images. | Heading, lead, main image, two smaller images in a readable grid; posters can open full-size. | G010 film-roll artwork, G015 packaging stack, G031 car/film illustration. Use original full-image versions, not cropped thumbnails. Steel main surface with neutral backing plates that suit source white backgrounds. | One grouped reveal; hover on true image buttons shows View image and subtle border, no fake 3D tilt. Clicking opens correct full-resolution item in global viewer. |
+| GE04 Color and finish | Large selected color presentation with title/description beside it and five thumbnail controls beneath. Controls choose complete supplied images; they do not recolor one car. | Static heading and image followed by wrapping controls; no pinning or forced horizontal page scroll. | G034 through G038 as candidate color presentations. Copper surface. Labels use visually supported color descriptions or source labels; do not imply stock availability. | 220ms opacity transition on explicit selection. No autoplay. Keyboard buttons show selected state. Section heading: "Explore color and finish". Lead: "Browse color presentations from the supplied collection." |
+| GE05 Production imagery | Full-bleed photographic interlude using G043 or G121, then two-column editorial sequence: one tall image plus two supporting equipment images. Heading "A closer look at production imagery" with neutral description. | Normal-flow image, heading/lead, then supporting images. No text over a busy machine photograph. | G043/G121 worker and production images, G054 equipment, G064 production space. Use a dark overlay only for short desktop text; never label machine function or ownership beyond evidence. | One parallax photo translating at most 40px in a clipped frame. No fixed background. Supporting text reveals once without scroll pinning. |
+| GE06 Full collection | Clear heading and explanatory line, loaded/total count, complete ordered archive. Four columns desktop, three tablet. Preserve aspect ratios within frames so promotional text remains visible. | Two columns at 390px; one at 320px where text-heavy posters need more space. Count stays visible near Load more. | Deep canvas, raised neutral frames. All G001-G136 preserved. Do not shuffle items to make a prettier grid. | First 24 thumbnails then batches of 24. Newly added items get at most a short grouped fade. No parallax on each tile. Viewer supports arrows, keyboard, touch controls, image position, retry, and focus/scroll restoration. |
+| GE07 Closing | Orange band with dark heading "Find the right film for your requirements", short factual action copy, Products and Contact links. | Left-aligned text and full-width actions stacked. | Orange background; dark text and dark primary button with light label, clearly distinguished secondary link. | Brief once-only entrance or static if close to footer; no repeating attention pulse. |
+
+GE01 lead candidate: "Explore Platinum product imagery, color presentations, and production photos in one collection." Treat this as explanatory UI copy, not a claim of image provenance or completed customer work.
+
+Desktop sketch:
+
+```text
+HEADER
+GALLERY / lead / two actions     [application image]
+                                  [production inset]
+STEEL CHAPTER NAVIGATION BAND
+Product imagery / explanation    [large image][two smaller]
+COPPER COLOR SECTION: copy       [selected color image]
+                                  [selection controls]
+FULL-BLEED PRODUCTION PHOTO, BOUNDED PARALLAX
+Production explanation          [equipment][production]
+FULL COLLECTION / count
+[G001] [G002] [G003] [G004] ... all entries via Load more
+ORANGE CONTACT BAND
+FOOTER
+```
+
+Mobile sketch:
+
+```text
+HEADER
+Gallery / short lead / actions
+Application photo, static
+Chapter links, two-column grid
+Product heading / lead / featured imagery
+Color heading / selected image / wrapping controls
+Production photo / heading / explanation / supporting images
+Full collection / count / two-column ordered archive
+Load more
+Orange contact section / footer
+```
+
+Do not build fake project filters, customer testimonials, a before/after comparison without matched source photos, or an animated factory tour that implies verified facilities. Classification based on visible content is acceptable only after inspection. Featured selection is explicitly curated; archive order stays original.
+
+Orientation: inspect G105-G120 and G129-G136 at full size and correct only confirmed sideways photographs through derived assets, preserving originals and recording rotations. Do not guess a single rotation for all of them.
+
+### About: correct the screenshot's issues section by section
+
+| Existing section | New treatment |
+| --- | --- |
+| AB01 + AB02 title/introduction | Compose as one deliberate opening on deep-to-copper background. Keep About Us as H1, original company heading beneath. Text 7 columns, product-box artwork 5 columns on its own neutral plate. Both align to main rail. Source statistics form a clean orange-accented row, not four anonymous gray pill cards. Do not emphasize unconfirmed numbers as new giant claims. |
+| AB03 approach | Steel section with a left title column and right body column, both top-aligned. Orange vertical rule identifies the explanation. On mobile, title then body. Remove the arbitrary centered 800px container. |
+| AB04 supply | Six offerings retain source order, with stronger headings, clear product links, consistent 24px internal spacing. Film categories can use relevant source imagery; operational services remain text-led. No unrelated repeated stock car icons. |
+| AB05 materials | Short integrated materials block aligned to the same rail, warm copper backing, source-supported names only. Remove source-analysis italic text from UI. Keep any unsupported relationship/certification claim in the review log. |
+| AB06 quality | Use the specified actual G054 equipment photo after full-size inspection, not promotional car artwork as a substitute for equipment. Large image beside numbered explanations; one slow bounded image parallax on desktop. Mobile remains static with readable explanation order. |
+| AB07 benefits | Steel background, two-column editorial benefit rows with orange markers and larger readable supporting type; avoid six tiny uniform boxes. |
+| AB08 audience | Deep background, clear label/body alignment, consistent column grid; optional restrained link feedback only for actual navigation. |
+| AB09 closing | Full orange band, dark copy, clear actions. This creates a deliberate ending instead of another nearly identical charcoal strip. |
+
+### All other routes: apply the stronger direction selectively
+
+| Route/group | Required changes |
+| --- | --- |
+| Home | Retain original wording and hero composition; strengthen section backgrounds and lower-page hierarchy. Existing banners already provide color. Add only one additional bounded photographic parallax moment if it improves a specific section. Do not rework the entire approved hero or add more sliders. |
+| Product directory | Copper-accented compact introduction, steel catalog area, larger image presence, aligned names/summaries, clear hover/focus. Preserve all eight cards. Do not crop posters to make identical photographic banners. |
+| 210 and 190 | Stronger split hero with a deliberate neutral product-art stage and a copper light wash behind the stage. Source problem/solution blocks become distinct steel/image-led chapters. Preserve product-specific values and pending claims. |
+| Headlight | Use source close-up as a large feature moment in the solution section; dark steel surrounding text, one bounded desktop image translation. No animated beam/light performance simulation. |
+| Matte and Satin | Use actual finish imagery at larger scale. Neutral surfaces protect finish perception; warm headings and steel explanation sections provide contrast. No glossy filters or interchangeable images between finishes. |
+| Gloss black | Brighter steel frame separates dark paint from dark canvas. Preserve image appearance; no invented reflections or simulated coating effect. |
+| Color PPF | Let real color imagery dominate one substantial copper-backed section. Optional user-controlled source image selection only where distinct existing assets support it. Avoid a fake configurator. |
+| Window tint | Give the actual tint diagram a readable dedicated frame. No parallax on technical charts. Allow source photography to move subtly in one separate hero/solution image. |
+| Warranty | Steel contents/coverage framing, strong orange heading rules, readable duration table, uniform left alignment. Keep exclusions equally prominent. No cinematic background behind conditions. |
+| Contact | Fix 420px overflow; 40/60 split desktop, one column mobile. Warm introductory backdrop, pronounced steel form panel, clearer field borders, consistent labels. Remove duplicate side gutters. No parallax behind form controls. |
+| Blog/category/author | Correct contextual headings. Feature the actual single article with a larger image and clear editorial composition. Remove public source-count/developer notes. Distinct steel listing region, deep page header. No invented articles. |
+| Article | Left-aligned title and reading column relationship, comfortable text size, stronger H2 spacing. Image gets a deliberate wide introduction. Body remains still, not animated line by line. |
+| Shipping/Privacy/Refund/Terms | Unify title/body rails and contents styling. Remove public internal drafting commentary through a tracked content review; do not invent replacement policies. Increase readability and table contrast, keep backgrounds calm. |
+| Cart/Checkout/Account/404 | Consistent title and message alignment rather than unrelated centered body under left-aligned heading. Useful navigation, modest steel panel, no decorative animation. |
+| Search | Preserve query context; visible field and result separators; single left-aligned results rail. Empty states use the same rail. No gallery-style effects. |
+
+### Motion engineering and limits
+
+Use native scrolling. On desktop, parallax means translating imagery inside a clipping frame based on that section's viewport progress, not moving the whole page. Start with a maximum 32 to 40px travel and 1.05 to 1.10 image overscan only where cropping is safe. Poster artwork and diagrams never receive parallax crops.
+
+Implement one shared motion hook/controller. Passive scroll listener schedules at most one requestAnimationFrame, updates only visible sections, and cleans up listeners/observers on navigation. Avoid React state updates on every scroll pixel. Stop work when the tab is hidden. Prefer CSS transforms and opacity. No new smooth-scroll engine, WebGL dependency, or dual slider packages.
+
+At widths at or below 1000px, use static image placement initially. Reduced motion always removes parallax, scale entrances, and autoplay and exposes all content immediately, including preference changes while open. Preserve navigation and image controls without animation.
+
+Fix Reveal before adding effects: visible is the safe default; arm only eligible below-fold content after observer setup succeeds. Trigger at first meaningful intersection, not a percentage of a potentially very tall section. Hash targets, focused sections, restored history content, and reduced-motion content cannot remain hidden. Animated changes must not cause layout shifts.
+
+Gallery gets two principal scroll moments: opening image planes and production panorama. About gets one quality-image moment. Product pages get at most one relevant photographic moment each. Hover details support navigation; they do not replace the larger composition. Avoid animating every panel, paragraph, and image simultaneously.
+
+### Implementation sequence and acceptance
+
+1. Fix layout foundations first: Contact overflow, reveal visibility, public developer notes, archive headings, text rail inconsistencies. Preserve original facts and archive notes outside the UI.
+2. Implement shared palette and typography/spacing tokens. Apply first to About as the representative correction for the owner's screenshots. Inspect desktop/mobile before propagating.
+3. Build Gallery GE01-GE07 as the flagship. Inspect the selected original assets at full size, record assignments, and wire every featured image to the correct viewer item. Keep the complete archive.
+4. Apply route-specific treatments above, using existing 16C source-section schedules to avoid content loss. Every original section remains accounted for.
+5. Verify all 25 routes again at desktop/mobile. Test gallery controls, color selection, anchors, Load more, final batch, image failures, history restoration, reduced motion, narrow screens, and keyboard focus.
+6. Measure actual text/control contrast, check alignment and backgrounds in full-size screenshots, and profile scroll behavior on a representative mobile device/emulation. Report findings; do not invent frame-rate claims.
+
+Done means visible section hierarchy, consistent alignment, readable source artwork, purposeful motion, and complete functionality. A background gradient alone does not satisfy this revision. No production deployment or business-claim approval is implied.
+
+Questions skipped: the owner has explicitly requested stronger color contrast, parallax, gallery storytelling, and formatting corrections. Continue within that direction; log only unresolved factual/client decisions.
+
+
+## 16F. Concrete CSS and component contract for Claude
+
+The owner requests planning only in this session. This section specifies future implementation; no application CSS or components have been changed by this review. Read 16E and this section before older visual instructions. Use this contract to implement an expressive dark automotive site, not a uniformly plain black document.
+
+### F01. Replace detached page-title blocks
+
+The screenshots show three versions of the same weak opening: a small breadcrumb, an isolated title, and either an empty gap or a grid immediately underneath. Do not fix this by simply centering the title or making the black header taller. Build a coherent introduction containing context, title, lead, relevant actions, and a purposeful visual/background.
+
+Breadcrumbs are navigational context, not a duplicate eyebrow. About should use Home / About Us, not a standalone About Us label followed by About Us again. Render an accessible breadcrumb nav with a list, linked ancestors, and `aria-current="page"` on the current item. Separators are decorative. Use 14px text and 16 to 24px separation from the title. On narrow screens, long product breadcrumbs can show Home / Products with the full current title in the H1 rather than repeating it in a cramped navigation row.
+
+| Page type | Opening composition | Desktop scale | Mobile scale |
+| --- | --- | --- | --- |
+| About | One combined intro: breadcrumb, About Us H1, original company heading/body on left; product-box artwork and source facts integrated on right/below. No separate empty title section. | 7/5 columns, minimum around 520px only when content fits; 64px top/bottom padding inside header offset. Copper/steel atmosphere behind right-side artwork. | Natural height; 32px top, 40px bottom. Title/body/actions before image. No artificial empty space between H1 and company content. |
+| Products | Breadcrumb, original Product H1 and existing lead occupy left 7 columns; right 5 show an editorial pair of actual product images, contained. Below, a clear divider introduces the full catalog. | Around 340 to 420px depending on content, 48px padding. Background: diagonal static steel/copper composition. Catalog starts 48px below introduction content, not touching lead text. | Title/lead then one contained editorial visual if it adds value; 32px gaps, no fixed height. Full catalog starts after 32px. |
+| Gallery | GE01 from 16E: large Gallery title, meaningful collection lead, Explore highlights / Browse all actions, layered application/production imagery. Loaded count belongs to the archive, not hero description. | 70 to 80svh capped around 860px, able to grow; original photographs only; visible next-section cue. | Natural-height title, lead, actions and main photo. No secondary decorative overlap. |
+| Product detail | Breadcrumb and H1 directly integrated with original lead, actions, and product-art stage. Do not prepend another generic title banner. | 5/7 or 6/6 grid; product name 44 to 60px with space for long wrapping. | 32 to 38px heading, lead and actions, then contained product visual. Never shrink type to preserve three lines. |
+| Contact | Breadcrumb, heading, short lead, warm background treatment leading into contact/form split. | Compact 220 to 300px opening or integrated with form composition; no unnecessary hero photo. | 32px vertical intro spacing; contact/form follows naturally. |
+| Warranty | Breadcrumb/title/lead on a steel gradient field with orange rule, followed by contents/coverage. | Compact editorial header, approximately 240 to 320px as content needs. | Natural height; no blank placeholder graphic. |
+| Blog/archives | Contextual heading and lead beside actual featured article imagery where appropriate. Archive context must distinguish category/author from general Blog. | Editorial introduction, max 420px target; no empty right column if no suitable image. | Title/lead/image stack. |
+| Article/policies/utilities | Compact reading header aligned with the body column. Background atmosphere stays low-key, not a tall promotional hero. | 32 to 48px top/bottom spacing, auto height. | 24 to 32px, auto height. |
+
+There must be exactly one main H1 per page. Keep established public wording unless change is neutral UI labeling or explicitly approved. Preserve original company heading as subordinate content rather than deleting it to simplify the About opening.
+
+### F02. CSS organization
+
+Implement in existing plain CSS and JSX. Suggested organization: shared tokens/base, layout utilities, component styles, page-specific compositions, and motion helpers. Adapt existing files where practical; do not require a new CSS framework or duplicate the application.
+
+Use scoped selectors such as `.page-intro__title`, `.gallery-story__media`, and `.form-field__error`. Avoid broad page overrides such as `.section p` that accidentally restyle cards/forms. Do not use `!important` as the main layout strategy. Backgrounds live on full-width outer sections; alignment and gutters live on one inner container.
+
+Suggested foundations, to be verified against actual markup:
+
+```css
+:root {
+  --canvas: #090b0f;
+  --surface-steel: #18212b;
+  --surface-raised: #24313e;
+  --surface-copper: #321c14;
+  --brand: #ff691b;
+  --brand-soft: #ffac7a;
+  --text-primary: #f7f5f2;
+  --text-secondary: #c3cad2;
+  --text-on-brand: #101318;
+  --container-max: 76.5rem;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --radius-control: .5rem;
+  --radius-panel: 1rem;
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+}
+.container {
+  width: min(var(--container-max), calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+.section-block { padding-block: clamp(3rem, 6vw, 6rem); }
+.layout-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.layout-split > * { min-width: 0; }
+.reading-copy { max-width: 66ch; }
+@media (max-width: 1000px) {
+  .layout-split { grid-template-columns: minmax(0, 1fr); }
+}
+```
+
+These are a starting contract, not code to paste on top of conflicting old declarations. Reconcile existing variables/selectors and remove superseded rules in the edited components. Keep `box-sizing: border-box`. Use logical spacing properties where practical. The header's actual height must drive page offsets and anchor `scroll-margin-top`; do not stack multiple guessed top paddings.
+
+### F03. Background recipes, not plain alternating fills
+
+Use a small family of backgrounds with recognizable purpose. Each major marketing page should have an image-led or atmospheric opening, at least one clearly different explanatory surface, and a deliberate closing treatment. A photograph or gradient is decorative support; actual content determines section height.
+
+**Recipe A: atmospheric copper/steel opening.** Large diffuse static orange light behind artwork, cooler steel on the opposite side, dark text-safe region. Place the light based on image location, not always at the exact center. Example:
+
+```css
+.surface-atmosphere {
+  background:
+    radial-gradient(ellipse at 88% 25%, rgb(255 105 27 / .20), transparent 48%),
+    radial-gradient(ellipse at 8% 95%, rgb(65 95 120 / .25), transparent 52%),
+    linear-gradient(115deg, #090b0f 12%, #18212b 67%, #321c14);
+}
+```
+
+Use on About opening, Products opening, and selected product stages. Vary layout and image placement, not random gradient colors. Avoid bright orange behind small orange text.
+
+**Recipe B: film-inspired diagonal plane.** One broad low-opacity diagonal shape behind a product image, suggesting a film sheet. Implement with a pseudo-element containing a static gradient, clipped to the image stage, with `pointer-events:none` and no semantic content. It never crosses paragraph text. Do not create moving abstract shapes across the entire page.
+
+**Recipe C: steel editorial chapter.** Base `#18212b` with a subtle directional tonal gradient, strong top divider or short orange rule, and a large section number only when it aids real sequencing. Use for feature explanations, About approach, product benefits, and collection navigation. The difference from the main canvas must be perceptible at normal brightness.
+
+**Recipe D: warm finish showcase.** Copper `#321c14` to deep canvas static gradient, actual color/finish imagery taking most visual space, white text in a clean region. Use for Gallery color section and appropriate Color PPF content. Do not tint the actual finish photo.
+
+**Recipe E: photographic panorama.** A real source photograph spans full width. Short text uses a localized dark overlay or an adjacent solid text panel. Only photographic pixels move in bounded parallax; captions and controls stay still. Use for Gallery production chapter and selected About/product moments. No text-bearing poster stretched into a photo backdrop.
+
+**Recipe F: brand closing band.** Orange `#ff691b`, dark heading/body, dark primary button, outlined dark secondary button. Optional broad static diagonal shade at very low opacity. Keep text concise and left-aligned unless explicitly composed as a short centered invitation. This should feel like a clear ending, not another charcoal card.
+
+**Recipe G: quiet reading surface.** Deep canvas with a subtle steel header gradient and stronger contents/table panels. Use for article, warranty conditions, policies, search, and utility states. These pages do not need constant photographic backgrounds to look designed.
+
+Do not tile patterns behind paragraphs, put gradients on every small card, add blur to every element, or use animated texture loops. Text/controls retain required contrast at every point in the background. Test real crops and gradient positions, not just token swatches.
+
+### F04. Headings, paragraphs, and bullet lists
+
+Nunito remains the only UI family. H1 generally `clamp(2.125rem, 4.3vw, 4rem)`, line-height 1.08 to 1.15, weight 800. Gallery may reach 80px on wide desktop where its short title supports it. H2 generally 30 to 44px desktop and 26 to 30px mobile, line-height 1.2. H3 20 to 24px, weight 700 or 800. Do not make ordinary card titles all caps.
+
+Eyebrows are optional meaningful context, 12 to 14px, weight 700, modest tracking. Never repeat the H1 verbatim above it. Section identifiers used only by developers do not appear on the site.
+
+Paragraphs: 17 to 18px desktop, 16px mobile, line-height 1.65 to 1.75. Maximum width approximately 66ch; hero leads approximately 48 to 56ch. Default left-aligned, no full justification. Use 16px between related paragraphs. Keep annotations at 14px minimum unless truly incidental. Do not use gray so faint that normal explanations look disabled.
+
+Lists: semantic `ul`/`ol`; marker gutter about 1.25em; 8 to 12px between items. Body text aligns consistently after wrapped markers. Orange `::marker` is allowed on dark surfaces, but not white/yellow bullet decoration on every line. Use ordered steps only for a real sequence. Checkmark icons imply affirmative benefits; do not add them to unverified certifications or exclusions. Keep source meaning and full list items, not arbitrary truncation.
+
+Do not force equal text heights with clipping. Cards may align their action row at the bottom using flex layout while titles and copy wrap naturally. Avoid manual `<br>` tags for desktop aesthetics. Use `text-wrap: balance` for short headings where supported and safe wrapping for long URLs/contact details.
+
+### F05. Buttons and links
+
+Three action styles are sufficient:
+
+- Primary: orange fill, dark label, 48px minimum height, 18 to 24px horizontal padding, 8px radius, 16px/700 Nunito. Hover lightens slightly and moves at most 1px on fine pointers. Active returns to baseline. Keep label readable when wrapping.
+- Secondary: transparent or steel fill, visible border, light label on dark surfaces. Same dimensions and weight. On orange sections use dark border/label. Do not use a faint ghost action that disappears into the background.
+- Text link: descriptive wording, visible underline or directional arrow, distinct hover/focus. Do not represent navigation with a button unless it triggers an action.
+
+Group actions with 12 to 16px gaps; align to the text rail. On mobile, stack long actions at full width; short paired actions may stay side by side only if both remain comfortable. Icon-only buttons need 44px targets and accessible names. Decorative arrow icons must not be announced twice.
+
+Use 160 to 200ms named-property transitions. Focus has a visible 3px ring with offset; use a dark ring on orange/light areas where an orange ring disappears. Disabled controls must be clearly disabled semantically and visually. Do not introduce a fake pending/success state for static forms.
+
+### F06. Inputs, forms, and validation
+
+Form panel: raised steel surface with subtle directional gradient, 24 to 32px desktop padding and 20px mobile, 16px corner radius, visible boundary. Avoid glass transparency that makes field readability depend on the background image.
+
+Labels: always visible above fields, 15 to 16px weight 700, 8px label/control gap. Mark required fields with text or a explained symbol. Group fields with 20 to 24px spacing. Desktop may pair name/company and email/WhatsApp; mobile uses one column. Preserve the agreed field contract.
+
+Inputs: minimum 50px height, 14px horizontal padding, 8px radius, near-deep fill distinct from panel, 1px visible neutral border, 16px Nunito. Placeholder is an example, not the label. Use appropriate autocomplete/inputMode/types. Textarea minimum 140px, vertically resizable. No fixed widths or minimum widths exceeding the track.
+
+States: hover brightens border; focus gets a strong brand border plus visible outer ring; invalid gets a readable error message linked with `aria-describedby` and `aria-invalid`. Error color must be checked on the actual field background and never be the only signal. Help/error text uses 14px, 6 to 8px top gap. Preserve entered values on failure.
+
+On submit, focus the first invalid field or accessible error summary. Valid static preview feedback explicitly says nothing was sent. Do not call it an email successfully delivered. No local storage of personal data. Quote dialog uses the same form styling; product context appears near its title without adding a required field.
+
+### F07. Sections, images, cards, tables, and accordions
+
+Section anatomy: full-width background wrapper, one container, coherent title/lead group, content grid, optional action. Do not create a separate oversized header-only band for each section. Desktop padding 80 to 104px for major narrative chapters, 48 to 64px for related supporting chapters; mobile 40 to 56px. Respect visual relationships rather than applying 100px everywhere.
+
+Images: real photographs may use cover with inspected focal point; posters, packaging diagrams, tint charts, and logos use contain. The current product/gallery screenshots visibly clip embedded lettering: correct the media component rather than removing that source information. A designed neutral backing stage can fill unused space around a portrait poster.
+
+Product cards: image plus consistent body padding, 16px radius, visible border, title 20 to 22px, description 16px. Whole main link clickable, focus visible, no nested actions. Hover raises at most 3px and strengthens the border; image zoom only for crop-safe photographs. Posters never zoom into unreadability. Do not add glowing orange box shadows to every card.
+
+Technical tables: prominent readable header on raised steel, body text minimum 15 to 16px, 14 to 18px cell padding, clear row boundaries. Numeric columns align consistently. On mobile preserve semantics and provide deliberate internal horizontal scroll with a hint only when needed. Do not hide columns to make the page fit.
+
+FAQs: 20 to 24px row padding desktop, 16 to 20px mobile, question text 18 to 20px, plus/minus aligned at the far edge, answer max 66ch. Hover subtly changes row surface. Focus outline covers the actual button. Open/close reliably, preserve multiple-open behavior chosen in the plan, and keep answers readable without animation.
+
+### F08. How the new page openings connect to the rest
+
+About: atmospheric combined opening > steel approach > deep supply layout > short copper materials grouping > photographic/equipment quality feature > steel benefits > deep audiences > orange contact band. Shared alignment remains constant even while backgrounds change.
+
+Products: atmospheric editorial opening > steel catalog with contained source artwork > appropriate existing closing content. A page introduction should tell visitors what they can explore, not consume a screen before showing a product.
+
+Gallery: atmosphere/application hero > steel chapter navigation > designed product-art grouping > copper interactive color presentation > production panorama > deep complete collection > orange contact band. Do not put "24 of 136 photos" in place of an introductory explanation; keep it next to the archive.
+
+Product detail: integrated hero > distinct steel source problem/solution chapter > a large relevant image moment > readable technical content > page-specific audience/comparison sections > FAQs > orange closing. Preserve original section order when necessary for meaning and account for every source section.
+
+### F09. Claude's execution and evidence requirements
+
+Treat this as a planned implementation, not permission to guess missing business facts. Make changes in JSX/plain CSS using the existing project. Inspect actual current state, then implement one shared system rather than layering conflicting rules over old styles.
+
+First repair the existing bugs and content leakage, then implement About and Gallery as the two reference pages. Apply the accepted component rules to all remaining routes. Capture each reference page at 1440px and 390px, inspect at full size, and check 320/768/1024px behavior. Verify contrast, aligned rails, no cropped artwork text, focus states, failed images, form errors, and reduced motion. Test scroll effects rather than judging them from still screenshots.
+
+Keep all original content and unresolved claims accounted for in the decision log. The full gallery archive must remain reachable. Report exact sections finished and actual checks. A general statement such as "added premium styling" is not evidence of completion.
+
+
 ## 17. Copy-paste prompt for Claude
 
 ```text
 Please implement the rest of the Platinum Car Films static React website in this repository.
+
+Prioritize the latest sections 16E and 16F: visual revision, full CSS/component contract, and integrated page-opening designs. It supersedes earlier plain-gallery and no-parallax restrictions. Fix alignment, public developer notes, Contact overflow, and reveal visibility first; then build the stronger About composition and Gallery GE01-GE07, and apply the remaining page-specific treatments. Keep Nunito, JSX, source content, and the full 136-image archive.
 
 Read docs/WEBSITE-IMPLEMENTATION-PLAN.md as the consolidated implementation and visual brief, including authoritative sections 16C and 16D. Apply the section-specific animation triggers, durations, easing, hover/focus/touch and reduced-motion rules in 16D. Implement every numbered section for each route, using its exact A/G image assignments, backgrounds, desktop/mobile compositions and interactions. Only the homepage gets an immersive photographic hero; inner pages follow the compact openings in 16C. Use docs/design/IMAGE-ASSIGNMENTS.md and docs/design/GALLERY-ASSIGNMENTS.json as supporting assignment records, not the unselected PAGE-ASSETS candidates. Reconcile every source paragraph, table, FAQ and CTA to a section. Fix the reproduced issues in docs/IMPLEMENTATION-REVIEW.md. Use Nunito throughout the React UI, not Manrope or Nunito Sans; keep the logo artwork unchanged. Follow any applicable repository instructions. Inspect the actual current state before editing and preserve unrelated work.
 

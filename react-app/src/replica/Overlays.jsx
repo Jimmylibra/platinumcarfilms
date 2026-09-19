@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import type { ReactNode } from 'react'
-import type { GalleryImage } from './types'
 import StaticForm from './StaticForm'
 import Icon from './Icon'
 
-function Dialog({ label, close, children, className = '' }: { label: string; close: () => void; children: ReactNode; className?: string }) {
-  const ref = useRef<HTMLDialogElement>(null)
+function Dialog({ label, close, children, className = '' }) {
+  const ref = useRef(null)
   useEffect(() => {
     const dialog = ref.current
-    const previous = document.activeElement as HTMLElement | null
+    const previous = document.activeElement
     const overflow = document.body.style.overflow
     dialog?.showModal()
     document.body.style.overflow = 'hidden'
@@ -17,15 +15,15 @@ function Dialog({ label, close, children, className = '' }: { label: string; clo
   return <dialog ref={ref} aria-label={label} className={`replica-dialog ${className}`} onCancel={event => { event.preventDefault(); close() }} onClick={event => { if (event.target === event.currentTarget) { const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) close() } }}><button className="replica-dialog-close" aria-label="Close dialog" onClick={close}><Icon name="close" /></button>{children}</dialog>
 }
 
-export function QuoteDialog({ close }: { close: () => void }) {
+export function QuoteDialog({ close }) {
   return <Dialog label="Request a quote" close={close}><h2>Request a Quote</h2><p>Tell us what you need. Find the right film for your business.</p><StaticForm kind="inquiry" /></Dialog>
 }
 
-export function Lightbox({ images, initial, close }: { images: GalleryImage[]; initial: string; close: () => void }) {
+export function Lightbox({ images, initial, close }) {
   const [index, setIndex] = useState(Math.max(0, images.findIndex(image => image.src === initial)))
-  const move = (step: number) => setIndex(current => (current + step + images.length) % images.length)
+  const move = (step) => setIndex(current => (current + step + images.length) % images.length)
   useEffect(() => {
-    const keydown = (event: KeyboardEvent) => {
+    const keydown = (event) => {
       if (event.key === 'ArrowRight') setIndex(current => (current + 1) % images.length)
       if (event.key === 'ArrowLeft') setIndex(current => (current + images.length - 1) % images.length)
     }

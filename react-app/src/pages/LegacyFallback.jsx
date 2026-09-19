@@ -3,7 +3,7 @@ import PageHeader from '../components/PageHeader'
 import { useInteractions } from '../replica/InteractionContext'
 import './PolicyPage.css'
 
-export default function LegacyFallback({ title }: { title: string }) {
+export default function LegacyFallback({ title }) {
   const { openQuote } = useInteractions()
   return (
     <>

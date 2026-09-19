@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useInteractions } from '../replica/InteractionContext'
+import Reveal from '../components/Reveal'
 import './ProductPage.css'
 
 // Real content extracted from react-app/public/content/210-paint-protection-film.json
@@ -58,8 +59,10 @@ export default function Product210() {
             <Link className="text-link" to="/gallery">View Installation Gallery</Link>
           </div>
         </div>
-        <div className="pp-intro-media">
-          <img src="/assets/original/5a41b9f14f0b-Platinum-210-Paint-Protection-Film-Professional-Grade-Defense-for-Your-Vehicle.png" alt="Platinum 210 paint protection film product poster" loading="eager" />
+        <div className="pp-intro-media-wrap">
+          <div className="pp-intro-media">
+            <img src="/assets/original/5a41b9f14f0b-Platinum-210-Paint-Protection-Film-Professional-Grade-Defense-for-Your-Vehicle.png" alt="Platinum 210 paint protection film product poster" loading="eager" />
+          </div>
         </div>
       </section>
 
@@ -79,7 +82,7 @@ export default function Product210() {
 
       {/* P03 */}
       <section className="pp-section">
-        <div className="section-shell pp-solution">
+        <Reveal className="section-shell pp-solution">
           <div>
             <h2>Why Platinum 210 Paint Protection Film Is the Professional Solution</h2>
             <p>Because paint damage directly impacts resale value, Platinum 210 creates an invisible barrier that absorbs impact energy before it reaches clearcoat. Our 210-mil polyurethane formula features self-healing technology&mdash;minor scratches vanish automatically within 24-48 hours via heat exposure. Unlike ceramic coatings, PPF provides physical impact defense; unlike competitor films, Platinum maintains crystal clarity for 10 years without yellowing or hazing.</p>
@@ -87,7 +90,7 @@ export default function Product210() {
           <div className="pp-solution-media">
             <img src="/assets/original/39e055f61004-69.webp" alt="Car, film rolls and close-up composite" loading="lazy" />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* P04 */}
@@ -108,7 +111,7 @@ export default function Product210() {
 
       {/* P05 */}
       <section className="pp-section">
-        <div className="section-shell">
+        <Reveal className="section-shell">
           <h2>Who Benefits Most from Platinum 210?</h2>
           <div className="pp-audience-grid">
             {AUDIENCE.map(([title, body]) => (
@@ -119,7 +122,7 @@ export default function Product210() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* P06 */}

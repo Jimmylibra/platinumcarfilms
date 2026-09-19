@@ -1,6 +1,10 @@
 /* Tokens match react-app/public/mock/index.html (the approved dark
    homepage mock) exactly, per docs/WEBSITE-IMPLEMENTATION-PLAN.md section 4.
-   --bg2 is the mock's alternating-section surface, --panel its card surface. */
+   --bg2 is the mock's alternating-section surface, --panel its card surface.
+   These stay in place for pages not yet migrated to the 16E/16F palette
+   below (Home, Products directory, product detail, Warranty, Contact,
+   Blog/Article, policies) -- both token sets are valid at once during the
+   incremental rollout section 16F itself describes. */
 :root {
   --bg: #0a0a0c;
   --bg2: #111114;
@@ -11,6 +15,24 @@
   --accent: #ff691b;
   --accent-light: #ff9b64;
   --line: rgba(255, 255, 255, 0.14);
+
+  /* 16E/16F expressive palette -- used by pages migrated to the new
+     design system (About, Gallery so far). See plan section 16F "F02". */
+  --canvas: #090b0f;
+  --surface-steel: #18212b;
+  --surface-raised: #24313e;
+  --surface-copper: #321c14;
+  --brand: #ff691b;
+  --brand-soft: #ffac7a;
+  --text-primary: #f7f5f2;
+  --text-secondary: #c3cad2;
+  --text-on-brand: #101318;
+  --divider: #42505e;
+  --container-max: 76.5rem;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --radius-control: .5rem;
+  --radius-panel: 1rem;
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
 }
 
 * {
@@ -64,4 +86,116 @@ img {
 
 .accent {
   color: var(--accent);
+}
+
+/* Shared layout primitives for the 16F design contract ("F02"). `.container`
+   is the one box that owns horizontal padding/max-width for pages on the
+   new system -- backgrounds live on the full-width section wrapper around
+   it, per "Backgrounds live on full-width outer sections; alignment and
+   gutters live on one inner container." */
+.container {
+  width: min(var(--container-max), calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+.section-block {
+  padding-block: clamp(3rem, 6vw, 6rem);
+}
+.layout-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.layout-split > * {
+  min-width: 0;
+}
+.reading-copy {
+  max-width: 66ch;
+}
+@media (max-width: 1000px) {
+  .layout-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Motion A ("editorial reveal") -- see components/Reveal.jsx.
+   `.reveal-el` alone is ALWAYS fully visible: CSS never unilaterally hides
+   content. Only `.reveal-el.pending` (added by Reveal.jsx, and only for
+   elements it confirmed were below the fold at mount) starts hidden, so a
+   failed observer, disabled JS, a hash-linked target, restored scroll
+   history, or reduced motion can never leave real content invisible --
+   there is no CSS state that depends on JS succeeding. */
+.reveal-el.pending {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.reveal-el.pending.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 380ms ease, transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Shared 16F design-system utilities, used by every page migrated to the
+   new expressive palette (About, Gallery so far). */
+.ab-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--brand-soft);
+  margin: 0 0 10px;
+}
+.ab-btn-primary {
+  background: var(--text-on-brand);
+  color: #fff;
+  border: 2px solid var(--text-on-brand);
+  padding: 16px 28px;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: inherit;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform .16s ease, background .16s ease;
+}
+.ab-btn-primary:hover {
+  transform: translateY(-2px);
+  background: #24303c;
+}
+.ab-btn-secondary {
+  background: transparent;
+  color: var(--text-on-brand);
+  border: 2px solid var(--text-on-brand);
+  padding: 16px 28px;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--radius-control);
+  transition: background .16s ease;
+  display: inline-block;
+}
+.ab-btn-secondary:hover {
+  background: rgba(16, 19, 24, .1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ab-btn-primary:hover {
+    transform: none;
+  }
+}
+
+/* Site-wide reduced-motion guarantee: every entrance/hover/stagger
+   animation added anywhere in the app collapses to its resting state
+   instantly. Individual components don't need to remember this
+   themselves -- content stays visible, nothing is left animating in or
+   parked at opacity:0. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

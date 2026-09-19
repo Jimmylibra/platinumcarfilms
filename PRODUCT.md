@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-React + TypeScript + Vite, continuing `react-app/`. Confirmed by the user: first replace WordPress with a static React site.
+React + JavaScript (JSX) + Vite, continuing `react-app/`. Confirmed by the user: first replace WordPress with a static React site. Converted from TypeScript to plain JSX on 2026-09-20 at the owner's request (see `docs/IMPLEMENTATION-STATUS.md`); earlier documents in this repo describing a TypeScript stack reflect that earlier phase.
 
 ## Product Purpose
 

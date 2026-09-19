@@ -1,16 +1,17 @@
 import PageHeader from '../components/PageHeader'
 import './PolicyPage.css'
 
-function slugify(text: string) {
+function slugify(text) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 }
 
-export default function PolicyPage({ title, html, note }: { title: string; html: string; note?: string }) {
+export default function PolicyPage({ title, html, note }) {
+  const breadcrumb = [['Home', '/'], [title]]
   // Give each h2 a stable id and build a matching contents list from the
   // same pass, so the anchors always match what's actually in the body
   // (per plan 16C L02: "Plain anchor list matching headings below").
-  const headings: { id: string; text: string }[] = []
-  const htmlWithIds = html.replace(/<h2>(.*?)<\/h2>/g, (_match, inner: string) => {
+  const headings = []
+  const htmlWithIds = html.replace(/<h2>(.*?)<\/h2>/g, (_match, inner) => {
     const text = inner.replace(/<[^>]+>/g, '').trim()
     const id = slugify(text)
     headings.push({ id, text })
@@ -19,7 +20,7 @@ export default function PolicyPage({ title, html, note }: { title: string; html:
 
   return (
     <>
-      <PageHeader title={title} />
+      <PageHeader breadcrumb={breadcrumb} title={title} />
       <article className="policy-page section-shell">
         {note && <p className="policy-note">{note}</p>}
         {headings.length > 3 && (

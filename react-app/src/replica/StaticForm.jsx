@@ -2,7 +2,7 @@ import { useId, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Icon from './Icon'
 
-export default function StaticForm({ kind }: { kind: 'inquiry' | 'newsletter' | 'search' }) {
+export default function StaticForm({ kind }) {
   const id = useId()
   const [message, setMessage] = useState('')
   const navigate = useNavigate()

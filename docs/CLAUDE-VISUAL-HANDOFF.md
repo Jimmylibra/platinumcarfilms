@@ -2,6 +2,8 @@
 
 > Updated authority: [WEBSITE-IMPLEMENTATION-PLAN.md](WEBSITE-IMPLEMENTATION-PLAN.md), sections **16C and 16D**, now specifies every route/section, exact inspected image assignments, backgrounds, desktop/mobile layouts and animation choreography. This earlier brief is supporting context; use the main plan and its section 17 prompt for implementation.
 
+> **Stack update (2026-09-20):** the project was converted from React + TypeScript to React + JavaScript/JSX (see `docs/IMPLEMENTATION-STATUS.md`). References to TypeScript below describe the stack at the time this handoff was written.
+
 ## Start here
 
 This is the entry point for implementing the remaining website. Read these complementary documents, in order:

@@ -59,7 +59,7 @@ const LIMITATIONS = [
   ['No consequential or indirect damages', 'Platinum Car Films is not liable for indirect, incidental, or consequential damages including loss of use, depreciation in vehicle value, or costs incurred by the claimant.'],
   ['Governing jurisdiction', 'This warranty is governed by the applicable laws of the jurisdiction in which the product was purchased and installed. Disputes shall first be referred to Platinum Car Films for resolution.'],
 ]
-const FAQS: [string, string][] = [
+const FAQS = [
   ['What does the Platinum Car Films PPF warranty cover?', 'Manufacturing defects including yellowing beyond the accepted rate (less than 2% annually is acceptable), bubbling or cracking from material failure, and adhesive failure under normal conditions. It does not cover physical damage, improper installation, or chemical misuse.'],
   ['How long is the warranty on Platinum 210 PPF?', 'The Platinum PPF products carry a 2-10-year manufacturer warranty from the date of professional installation — the longest in the Platinum Car Films range, reflecting product thickness and formulation.'],
   ['Does the warranty cover yellowing?', 'Every membrane / PPF is prone to yellowing caused by UV degradation, however yellowing at up to 2% annually is internally accepted as a normal phenomenon. Platinum Car Films covers yellowing beyond that rate.'],
@@ -84,6 +84,7 @@ export default function Warranty() {
   return (
     <>
       <PageHeader
+        breadcrumb={[['Home', '/'], ['Warranty']]}
         title="Platinum Car Films PPF Warranty"
         intro="We stand behind every roll of paint protection film we manufacture. This policy explains exactly what is covered, for how long, under what conditions, and how to make a claim."
       />

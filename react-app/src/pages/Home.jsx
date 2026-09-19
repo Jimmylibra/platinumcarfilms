@@ -85,10 +85,10 @@ function StatsStrip() {
 }
 
 function BannerSlider() {
-  const trackRef = useRef<HTMLDivElement>(null)
+  const trackRef = useRef(null)
   const [active, setActive] = useState(0)
 
-  const go = (index: number) => {
+  const go = (index) => {
     const track = trackRef.current
     if (!track) return
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -125,7 +125,7 @@ function BannerSlider() {
 
 function MaterialStory() {
   const [active, setActive] = useState(0)
-  const cardRefs = useRef<(HTMLElement | null)[]>([])
+  const cardRefs = useRef([])
   const suppressUntil = useRef(0)
 
   useEffect(() => {
@@ -134,7 +134,7 @@ function MaterialStory() {
       (entries) => {
         if (Date.now() < suppressUntil.current) return
         entries.forEach((entry) => {
-          const index = cardRefs.current.indexOf(entry.target as HTMLElement)
+          const index = cardRefs.current.indexOf(entry.target)
           if (index === -1) return
           ratios[index] = entry.isIntersecting ? entry.intersectionRatio : 0
         })
@@ -149,7 +149,7 @@ function MaterialStory() {
     return () => observer.disconnect()
   }, [])
 
-  const selectFeature = (index: number) => {
+  const selectFeature = (index) => {
     setActive(index)
     suppressUntil.current = Date.now() + 700
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -217,12 +217,12 @@ function MaterialStory() {
 }
 
 function Faq() {
-  const listRef = useRef<HTMLDivElement>(null)
+  const listRef = useRef(null)
   useEffect(() => {
     const items = Array.from(listRef.current?.querySelectorAll('.faq-item') ?? [])
-    const handler = (event: Event) => {
-      const item = event.currentTarget as HTMLDetailsElement
-      if (item.open) items.forEach((other) => { if (other !== item) (other as HTMLDetailsElement).open = false })
+    const handler = (event) => {
+      const item = event.currentTarget
+      if (item.open) items.forEach((other) => { if (other !== item) other.open = false })
     }
     items.forEach((item) => item.addEventListener('toggle', handler))
     return () => items.forEach((item) => item.removeEventListener('toggle', handler))

@@ -5,20 +5,19 @@ import SiteHeader from './SiteHeader'
 import { FloatingActions, Lightbox, QuoteDialog } from './Overlays'
 import { InteractionContext } from './InteractionContext'
 import { MissingPage, SearchResults } from './UtilityPages'
-import type { ContentNode, GalleryImage, PageData, PageEntry, SharedData } from './types'
 import './replica.css'
 
-const cache = new Map<string, PageData>()
-function galleryImages(node: ContentNode): GalleryImage[] {
+const cache = new Map()
+function galleryImages(node) {
   if (typeof node === 'string') return []
   if (node.kind === 'gallery-item' && node.fullImage) return [{ src: node.fullImage, thumbnail: node.thumbnail, alt: node.title || 'Platinum Car Films gallery' }]
   return node.children.flatMap(galleryImages)
 }
 
-function PageStyles({ page, shared }: { page: PageData | null; shared: SharedData }) {
+function PageStyles({ page, shared }) {
   useEffect(() => {
     const urls = [...new Set([...shared.styles, ...(page?.styles || [])])]
-    const elements: HTMLLinkElement[] = []
+    const elements = []
     const marker = document.querySelector('style[data-react-adaptation], link[data-react-adaptation]') || document.head.querySelector('style, link[rel="stylesheet"]')
     for (const href of urls) {
       const link = document.createElement('link')
@@ -33,13 +32,13 @@ function PageStyles({ page, shared }: { page: PageData | null; shared: SharedDat
 
 export default function ReplicaApp() {
   const location = useLocation()
-  const [entries, setEntries] = useState<PageEntry[]>([])
-  const [shared, setShared] = useState<SharedData | null>(null)
-  const [page, setPage] = useState<PageData | null>(null)
+  const [entries, setEntries] = useState([])
+  const [shared, setShared] = useState(null)
+  const [page, setPage] = useState(null)
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
   const [quoteOpen, setQuoteOpen] = useState(false)
-  const [lightbox, setLightbox] = useState<GalleryImage | null>(null)
+  const [lightbox, setLightbox] = useState(null)
   const route = location.pathname === '/' ? '/' : `/${location.pathname.split('/').filter(Boolean).join('/')}/`
   const search = new URLSearchParams(location.search).has('s')
   const entry = entries.find(item => item.route === route)
@@ -49,7 +48,7 @@ export default function ReplicaApp() {
     Promise.all(['/content/index.json', '/content/shared.json'].map(url => fetch(url, { signal: controller.signal }).then(response => {
       if (!response.ok) throw new Error('Content unavailable')
       return response.json()
-    }))).then(([index, sharedContent]) => { setEntries(index as PageEntry[]); setShared(sharedContent as SharedData) }).catch(error => { if (error.name !== 'AbortError') { setError(true); setLoading(false) } })
+    }))).then(([index, sharedContent]) => { setEntries(index); setShared(sharedContent) }).catch(error => { if (error.name !== 'AbortError') { setError(true); setLoading(false) } })
     return () => controller.abort()
   }, [])
 
@@ -65,7 +64,7 @@ export default function ReplicaApp() {
     setLoading(true); setError(false); setPage(null)
     fetch(entry.file, { signal: controller.signal }).then(response => {
       if (!response.ok) throw new Error('Page unavailable')
-      return response.json() as Promise<PageData>
+      return response.json()
     }).then(data => { cache.set(entry.file, data); setPage(data); setLoading(false) }).catch(error => {
       if (error.name !== 'AbortError') { setError(true); setLoading(false) }
     })

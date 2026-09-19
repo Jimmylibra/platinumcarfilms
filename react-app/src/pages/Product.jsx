@@ -7,6 +7,7 @@ export default function Product() {
   return (
     <>
       <PageHeader
+        breadcrumb={[['Home', '/'], ['Product']]}
         title="Product"
         intro="Eight paint protection film and window tint products for installers, distributors, and OEM buyers."
       />
@@ -14,8 +15,13 @@ export default function Product() {
         {PRODUCTS.map((p) => (
           <Link className="product-card" to={`/${p.slug}`} key={p.slug}>
             <div className="product-card-image"><img src={p.image} alt={p.title} loading="lazy" /></div>
-            <h3>{p.title}</h3>
-            <p>{p.description}</p>
+            <div className="product-card-body">
+              <div>
+                <h3>{p.title}</h3>
+                <p>{p.description}</p>
+              </div>
+              <i className="fa-solid fa-arrow-right product-card-arrow" aria-hidden="true" />
+            </div>
           </Link>
         ))}
       </div>

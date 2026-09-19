@@ -5,11 +5,11 @@ import Icon from './Icon'
 
 const links = [['/', 'Home'], ['/about-us/', 'About Us'], ['/product/', 'Product'], ['/gallery/', 'Gallery'], ['/warranty/', 'Warranty'], ['/blog/', 'Blog'], ['/contact-us/', 'Contact Us']]
 
-export default function SiteHeader({ logo }: { logo: string }) {
+export default function SiteHeader({ logo }) {
   const [open, setOpen] = useState(false)
   const { openQuote } = useInteractions()
   useEffect(() => {
-    const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') setOpen(false) }
+    const escape = (event) => { if (event.key === 'Escape') setOpen(false) }
     document.addEventListener('keydown', escape)
     return () => document.removeEventListener('keydown', escape)
   }, [])

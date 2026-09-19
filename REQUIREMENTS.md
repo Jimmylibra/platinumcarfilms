@@ -8,7 +8,7 @@ Reference website: https://platinumcarfilms.com/
 
 Recreate the public Platinum Car Films website as a static React application, preserving the core appearance, content, imagery, page structure, and navigation. The user has confirmed that a close starting point is sufficient; pixel-perfect reproduction is not required. Later improvements will be made component by component.
 
-Current implementation: React + TypeScript + Vite in `react-app/`. Reuse downloaded public CSS, images, and fonts where practical. Archive original JavaScript for reference; replace WordPress-dependent interactions with frontend components rather than running WordPress plugins.
+Current implementation: React + JavaScript (JSX) + Vite in `react-app/` (converted from TypeScript on 2026-09-20 at the owner's request; see `docs/IMPLEMENTATION-STATUS.md`). Reuse downloaded public CSS, images, and fonts where practical. Archive original JavaScript for reference; replace WordPress-dependent interactions with frontend components rather than running WordPress plugins.
 
 This phase has no backend. Inquiry and newsletter forms are preview interfaces that validate locally and clearly state that nothing was sent or subscribed. Menus, accordions, quote dialogs, image viewers, banner controls, and search operate locally.
 
@@ -144,7 +144,7 @@ Reference capture may preserve problematic text for comparison. Publishing corre
 
 | ID | Requirement |
 | --- | --- |
-| TECH-01 | Use the existing React + TypeScript + Vite project; keep components replaceable for later design work. |
+| TECH-01 | Use the existing React + JavaScript (JSX) + Vite project (converted from TypeScript 2026-09-20); keep components replaceable for later design work. |
 | TECH-02 | No CMS/admin in this phase. Document how developers edit content and components. |
 | TECH-03 | Store approved assets in controlled project/hosting storage, preserve source mapping, and include image dimensions/responsive variants. Do not depend permanently on the original site's media URLs. |
 | TECH-04 | Preserve descriptive titles, descriptions, canonical paths, relevant structured data, sitemap coverage, and internal links. Keep previews out of search indexing. |
@@ -189,7 +189,7 @@ Payments, login/accounts, databases, CMS administration, CRM integrations, autom
 | Decision | Current position |
 | --- | --- |
 | Recreation fidelity | Core appearance retained; pixel-perfect matching not required |
-| Stack | React + TypeScript + Vite confirmed |
+| Stack | React + JavaScript (JSX) + Vite confirmed (TypeScript removed 2026-09-20) |
 | Current scope | Static frontend only |
 | Redesign | Later, component by component |
 | Warranty and backend | Entirely deferred |

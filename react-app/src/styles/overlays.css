@@ -37,7 +37,17 @@
 .replica-dialog-close:hover { background: var(--accent); border-color: var(--accent); color: #101010; }
 
 .replica-form { display: grid; gap: 16px; }
+/* Fix for the confirmed Contact overflow bug (plan 16E review): grid items
+   default to a min-content minimum width, and form controls' UA min-content
+   is wide enough that two 1fr columns force this wider than a 390px
+   viewport, pushing the whole page into horizontal scroll. min-width:0
+   lets the columns actually shrink; the breakpoint below matches the
+   field-contract spec ("below 701px it is one column"). */
 .replica-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.replica-form-grid > * { min-width: 0; }
+@media (max-width: 700px) {
+  .replica-form-grid { grid-template-columns: 1fr; }
+}
 .replica-form label { display: grid; gap: 7px; font-size: 12.5px; color: #c7c7cd; }
 .replica-form input,
 .replica-form textarea {
@@ -59,7 +69,7 @@
    sits at the input's own height instead of stretching to match the
    label+input column's taller combined height. */
 .replica-newsletter-fields { display: flex; gap: 8px; align-items: flex-end; }
-.replica-newsletter-fields label { flex: 1; }
+.replica-newsletter-fields label { flex: 1; min-width: 0; }
 .replica-form-note { font-size: 11px; color: #8b8b93; margin: 0; }
 .replica-form-feedback {
   font-size: 12.5px; color: var(--accent-light);
@@ -93,19 +103,100 @@
 .replica-button:hover { background: var(--accent-light); transform: translateY(-2px); }
 .replica-button:active { transform: translateY(0); }
 
-.replica-lightbox { background: transparent; border: 0; padding: 0; max-width: 92vw; max-height: 92vh; }
-.replica-lightbox figure { margin: 0; }
-.replica-lightbox img { max-width: 92vw; max-height: 86vh; object-fit: contain; display: block; }
-.replica-lightbox figcaption { color: var(--muted); font-size: 13px; text-align: center; margin-top: 10px; }
+/* Fix for the confirmed lightbox overflow: the old rules only capped
+   max-width/max-height on the dialog while the <img> was sized
+   independently off the viewport (max-width:92vw) with no relation to its
+   actual container, which stayed capped at .replica-dialog's 560px width.
+   The image routinely exceeded its own dialog box, producing a page-level
+   horizontal scrollbar and controls that landed relative to the viewport
+   instead of the visible panel. Now the dialog gets one explicit,
+   viewport-bounded box; the stage inside it is a flex column with
+   min-width/min-height:0 (required so a flex child's intrinsic image size
+   can't force the box to grow past its own bounds); and the image is
+   constrained to that stage with object-fit:contain -- never larger than
+   the space actually reserved for it. */
+.replica-lightbox {
+  background: #0a0a0c;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0;
+  width: min(94vw, 1320px);
+  height: min(92dvh, 860px);
+  max-width: none;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+/* <figure> is the actual DOM wrapper for both the image and the counter
+   (see Overlays.jsx) -- it becomes the flex column stage itself, rather
+   than assuming a wrapper element that doesn't exist in the markup. */
+.replica-lightbox figure {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+}
+.replica-lightbox figure img {
+  flex: 1 1 auto;
+  /* Top clearance for the close button, side clearance for prev/next --
+     the image never renders underneath any control. */
+  margin: 64px 76px 0;
+  min-width: 0;
+  min-height: 0;
+  max-width: calc(100% - 152px);
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.replica-lightbox figcaption {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  padding: 10px 0 20px;
+}
 .replica-lightbox-previous, .replica-lightbox-next {
-  position: fixed; top: 50%; transform: translateY(-50%);
-  width: 48px; height: 48px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.5); color: #fff;
+  /* Positioned against the dialog itself, not the viewport -- the dialog
+     is already a positioning context (dialog:modal's UA stylesheet sets
+     position:fixed on it), so these stay correctly anchored to the actual
+     panel at every panel size instead of pinning to the screen edge. */
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.6); color: #fff;
   display: grid; place-items: center;
 }
 .replica-lightbox-previous:hover, .replica-lightbox-next:hover { background: var(--accent); border-color: var(--accent); color: #101010; }
-.replica-lightbox-previous { left: 24px; }
-.replica-lightbox-next { right: 24px; }
+.replica-lightbox-previous { left: 12px; }
+.replica-lightbox-next { right: 12px; }
+
+@media (max-width: 700px) {
+  .replica-lightbox { width: 100vw; height: 100dvh; border-radius: 0; border: 0; }
+  .replica-lightbox figure img { margin: 56px 44px 0; max-width: calc(100% - 88px); }
+  .replica-lightbox-previous, .replica-lightbox-next { width: 38px; height: 38px; }
+  .replica-lightbox-previous { left: 6px; }
+  .replica-lightbox-next { right: 6px; }
+}
+
+@supports (padding: max(0px)) {
+  @media (max-width: 700px) {
+    .replica-lightbox figure img {
+      margin-left: max(44px, env(safe-area-inset-left));
+      margin-right: max(44px, env(safe-area-inset-right));
+    }
+    .replica-lightbox figcaption {
+      padding-bottom: max(20px, env(safe-area-inset-bottom));
+    }
+  }
+}
 
 .replica-floating-actions {
   position: fixed; right: 20px; bottom: 20px; z-index: 60;

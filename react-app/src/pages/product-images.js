@@ -2,7 +2,7 @@
 // section 16C (P01/P03 rows), resolved against docs/design/selected-assets.json.
 // "solution: null" means the plan explicitly marks that product's solution
 // section as intentionally text-led (no image assigned) -- not a gap.
-export const PRODUCT_IMAGES: Record<string, { hero: string; solution: string | null }> = {
+export const PRODUCT_IMAGES = {
   '210-paint-protection-film': {
     hero: '/assets/original/5a41b9f14f0b-Platinum-210-Paint-Protection-Film-Professional-Grade-Defense-for-Your-Vehicle.png',
     solution: '/assets/original/39e055f61004-69.webp',
