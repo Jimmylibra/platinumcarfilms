@@ -1,5 +1,7 @@
 # Platinum Car Films: desktop and mobile design specification
 
+> Updated authority: [WEBSITE-IMPLEMENTATION-PLAN.md](WEBSITE-IMPLEMENTATION-PLAN.md), sections **16C and 16D**, now specifies every route/section, exact inspected image assignments, backgrounds, desktop/mobile layouts and animation choreography. This earlier brief is supporting context; use the main plan and its section 17 prompt for implementation.
+
 For detailed imagery, backgrounds, hover/focus states, and animation guidance, also read [the complete visual handoff](CLAUDE-VISUAL-HANDOFF.md). Existing media candidates per route are indexed in `docs/design/PAGE-ASSETS.md`; inspect them before choosing final assignments.
 
 Status: implementation handoff. Existing dark homepage direction is approved. The layouts below extend it to remaining pages; they are proposed specifications, not screenshots of completed pages.

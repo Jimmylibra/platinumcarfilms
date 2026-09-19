@@ -1,0 +1,137 @@
+[
+  {
+    "route": "/",
+    "sections": 11,
+    "source": "`public/mock/index.html`, `mock.css`, `mock.js` and `content/home.json`; content index route `/`"
+  },
+  {
+    "route": "/product/",
+    "sections": 3,
+    "source": "`content/product.json`"
+  },
+  {
+    "route": "/210-paint-protection-film/",
+    "sections": 9,
+    "source": "`content/210-paint-protection-film.json`"
+  },
+  {
+    "route": "/190-micron-ppf/",
+    "sections": 9,
+    "source": "`content/190-micron-ppf.json`"
+  },
+  {
+    "route": "/headlight-paint-protection-film/",
+    "sections": 9,
+    "source": "`content/headlight-paint-protection-film.json`"
+  },
+  {
+    "route": "/matte-paint-protection-film/",
+    "sections": 9,
+    "source": "`content/matte-paint-protection-film.json`"
+  },
+  {
+    "route": "/satin-paint-protection-film/",
+    "sections": 9,
+    "source": "`content/satin-paint-protection-film.json`"
+  },
+  {
+    "route": "/gloss-black-paint-protection-film-190-microns/",
+    "sections": 9,
+    "source": "`content/gloss-black-paint-protection-film-190-microns.json`"
+  },
+  {
+    "route": "/window-tint-film-for-cars-platinum-car-films/",
+    "sections": 9,
+    "source": "`content/window-tint-film-for-cars-platinum-car-films.json`"
+  },
+  {
+    "route": "/color-ppf-for-car/",
+    "sections": 10,
+    "source": "`content/color-ppf-for-car.json`"
+  },
+  {
+    "route": "/about-us/",
+    "sections": 9,
+    "source": "`content/about-us.json`"
+  },
+  {
+    "route": "/gallery/",
+    "sections": 5,
+    "source": "`content/gallery.json`; exact 136-item register below"
+  },
+  {
+    "route": "/warranty/",
+    "sections": 10,
+    "source": "`content/warranty.json`, not the editorial wrapper in warranty-policy-review.html"
+  },
+  {
+    "route": "/contact-us/",
+    "sections": 4,
+    "source": "`content/contact-us.json`; existing five-field contract"
+  },
+  {
+    "route": "/blog/",
+    "sections": 3,
+    "source": "`content/blog.json`"
+  },
+  {
+    "route": "/blog/category/ppf/",
+    "sections": 3,
+    "source": "`content/blog__category__ppf.json`"
+  },
+  {
+    "route": "/author/autoboost018/",
+    "sections": 3,
+    "source": "`content/author__autoboost018.json`"
+  },
+  {
+    "route": "/blog/how-long-does-paint-protection-film-last/",
+    "sections": 32,
+    "source": "`content/blog__how-long-does-paint-protection-film-last.json`"
+  },
+  {
+    "route": "/shipping-policy/",
+    "sections": 10,
+    "source": "Existing `pages/policy-content/shipping-policy.html` draft plus original `content/shipping-policy.json` evidence; client approval still required"
+  },
+  {
+    "route": "/privacy-policy/",
+    "sections": 17,
+    "source": "Existing `pages/policy-content/privacy-policy.html` draft plus original `content/privacy-policy.json` evidence; client approval still required"
+  },
+  {
+    "route": "/refund-policy/",
+    "sections": 12,
+    "source": "Existing `pages/policy-content/refund-policy.html` draft plus original `content/refund-policy.json` evidence; client approval still required"
+  },
+  {
+    "route": "/terms-and-conditions/",
+    "sections": 3,
+    "source": "`content/terms-and-conditions.json`; no approved substantive terms available"
+  },
+  {
+    "route": "/?s=",
+    "sections": 4,
+    "source": "Compact local index derived from all retained content; no network service"
+  },
+  {
+    "route": "/cart/",
+    "sections": 3,
+    "source": "Static sales-contact fallback required by the plan"
+  },
+  {
+    "route": "/checkout/",
+    "sections": 3,
+    "source": "Static sales-contact fallback required by the plan"
+  },
+  {
+    "route": "/my-account/",
+    "sections": 3,
+    "source": "Static sales-contact fallback required by the plan"
+  },
+  {
+    "route": "/*",
+    "sections": 2,
+    "source": "Router fallback"
+  }
+]

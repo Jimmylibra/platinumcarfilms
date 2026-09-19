@@ -64,6 +64,22 @@
   border-radius: 8px; padding: 12px 14px; margin: 0;
 }
 
+/* Shared primary button + text-link, used across Home and every inner
+   page (Gallery, ProductDetail, etc.) -- lives here rather than in
+   Home.css so it's available regardless of which page loaded first. */
+.button {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 25px;
+  background: var(--accent); color: #101010; padding: 19px 24px;
+  font-size: 14px; font-weight: 800; font-family: inherit;
+  border: 2px solid var(--accent); cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.button:hover { background: var(--accent-light); transform: translateY(-2px); }
+.button:active { transform: translateY(0); }
+.button-outline { background: transparent; color: #fff; text-decoration: none; }
+.button-outline:hover { background: rgba(255,255,255,.07); }
+.text-link { display: inline-flex; gap: 14px; align-items: center; font-size: 14px; font-weight: 600; padding: 12px 0; color: var(--accent); text-decoration: none; }
+
 .replica-button {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   background: var(--accent); color: #101010; border: 2px solid var(--accent);
@@ -119,5 +135,6 @@
 .skip-link:focus { top: 12px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .replica-button, .replica-form input, .replica-form textarea { transition: none; }
+  .replica-button, .replica-form input, .replica-form textarea, .button { transition: none; }
+  .button:hover, .button:active { transform: none; }
 }

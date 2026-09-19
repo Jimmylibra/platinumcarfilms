@@ -39,3 +39,9 @@
 @media (max-width: 360px) {
   .gallery-grid { grid-template-columns: 1fr; }
 }
+
+.gallery-load-more {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px 90px;
+}

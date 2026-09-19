@@ -1,5 +1,7 @@
 # Platinum Car Films: complete visual implementation handoff
 
+> Updated authority: [WEBSITE-IMPLEMENTATION-PLAN.md](WEBSITE-IMPLEMENTATION-PLAN.md), sections **16C and 16D**, now specifies every route/section, exact inspected image assignments, backgrounds, desktop/mobile layouts and animation choreography. This earlier brief is supporting context; use the main plan and its section 17 prompt for implementation.
+
 ## Start here
 
 This is the entry point for implementing the remaining website. Read these complementary documents, in order:

@@ -100,6 +100,54 @@ new app -- they were already well-built and framework-agnostic.
   homepage and mobile menu); reduced-motion re-verification on the new
   pages; keyboard-only pass on the new pages beyond the homepage.
 
+## Update: plan expanded with section 16C/16D (authoritative design schedule)
+
+The plan file grew from ~786 to ~2036 lines with section 16C (exact
+route-by-route/section-by-section composition, a 49-item image register
+A01-A49, and the full 136-image gallery order) and 16D (motion
+choreography). `docs/design/GALLERY-ASSIGNMENTS.json`,
+`IMAGE-ASSIGNMENTS.md`, `SECTION-COVERAGE.json`, and `selected-assets.json`
+were added alongside it -- these are consumed directly, not re-transcribed.
+
+Given the real depth this adds (9-32 fully source-accurate sections per
+route, each requiring careful extraction from the messy WordPress AST in
+`content/*.json` -- the plan itself warns "reconcile encoding against the
+archived HTML, not guesses about numerical values"), implementing all of
+16C in one pass isn't realistic without risking exactly the kind of
+fabricated/approximate content the plan repeatedly warns against. Followed
+the plan's own prescribed sequencing instead (section 8: build the 210
+page first, verify, then decide how to replicate):
+
+- **Gallery: done to full 16C spec.** Swapped the 40-photo placeholder for
+  the complete, ordered 136-image register from `GALLERY-ASSIGNMENTS.json`
+  (exact thumbnail/full-image pairs), with 24-image batch loading ("Load
+  more") and full lightbox navigation across all 136, as specified.
+- **210 product page (`pages/Product210.tsx`): done to full 16C spec
+  (P01-P09).** Real content extracted from `content/210-paint-protection-film.json`'s
+  actual AST (problem stats, feature table, 4 audience personas, 4
+  comparison rows, 7 real FAQ Q&A pairs, 3-part closing CTA, related-product
+  links) -- nothing invented or approximated. This is the reference
+  template the plan says to verify before repeating.
+- **Fixed a real bug found in the process:** `.button`/`.text-link` styles
+  only lived in `Home.css`, so any page that doesn't import it (Gallery,
+  ProductDetail) would have rendered unstyled buttons if visited directly
+  without going through Home first. Moved them to the globally-loaded
+  `overlays.css`.
+- **The other 7 product pages, About, Warranty, Contact, Blog article, and
+  policies remain at the previous "shell" depth**, not yet upgraded to
+  their 16C section tables. Each needs the same AST-extraction treatment
+  just done for 210 -- same method, not started due to time, to avoid
+  rushing and introducing wrong figures under the same content the plan
+  explicitly warns about getting exactly right.
+- **16D (motion choreography)** not implemented beyond what was already
+  ported from the mock (FAQ accordion, material-story activation, banner
+  carousel, button hover/active). The detailed M1/M2/MF timing values in
+  16D's tables were not cross-checked against current CSS.
+
+Verified this update: 15/15 spot-checked routes still 200/zero-errors/
+zero-overflow, `tsc -b` clean, `vite build` succeeds, lint unchanged (2
+pre-existing warnings).
+
 ## Pending / next task
 
 1. Per-product content pass (8 pages) against `docs/site-audit/source/`.
