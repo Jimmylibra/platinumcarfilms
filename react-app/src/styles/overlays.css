@@ -1,0 +1,123 @@
+/* Shared dialog / form / floating-action styling for the new dark shell.
+   Reuses the interactive components already built in src/replica/
+   (Overlays.tsx, StaticForm.tsx -- proper <dialog> focus/scroll-lock
+   handling, correct field contract) but those were styled by
+   replica.css, which isn't loaded here. This ports the mock's approved
+   dialog/form visual language (react-app/public/mock/mock.css) onto the
+   same replica-* class names instead of rewriting the components. */
+
+.replica-dialog {
+  /* No "position" declared here at all: dialog:modal's UA stylesheet
+     already sets position:fixed/inset:0/margin:auto to center it
+     independent of scroll. Any author override -- even "static" -- knocks
+     it out of that fixed positioning. See the scroll-jump bug this exact
+     mistake caused in the mock (mock.css history). */
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: var(--panel);
+  color: var(--text);
+  padding: 36px;
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(88vh, 720px);
+  overflow-y: auto;
+  font-family: inherit;
+}
+.replica-dialog::backdrop { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(3px); }
+.replica-dialog h2 { font-size: 24px; margin: 0 0 8px; }
+.replica-dialog > p { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+
+.replica-dialog-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  display: grid; place-items: center;
+}
+.replica-dialog-close:hover { background: var(--accent); border-color: var(--accent); color: #101010; }
+
+.replica-form { display: grid; gap: 16px; }
+.replica-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.replica-form label { display: grid; gap: 7px; font-size: 12.5px; color: #c7c7cd; }
+.replica-form input,
+.replica-form textarea {
+  font: inherit; padding: 12px 14px;
+  background: #1c1c22; border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff; border-radius: 8px; resize: vertical;
+  transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+.replica-form input::placeholder, .replica-form textarea::placeholder { color: #75757c; }
+.replica-form input:hover, .replica-form textarea:hover { border-color: rgba(255,255,255,.25); background: #202027; }
+.replica-form input:focus-visible, .replica-form textarea:focus-visible {
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,105,27,.2);
+}
+.replica-form input:invalid:not(:placeholder-shown):not(:focus),
+.replica-form textarea:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: #e5484d; box-shadow: 0 0 0 3px rgba(229,72,77,.18);
+}
+.replica-newsletter-fields { display: flex; gap: 8px; }
+.replica-newsletter-fields label { flex: 1; }
+.replica-form-note { font-size: 11px; color: #8b8b93; margin: 0; }
+.replica-form-feedback {
+  font-size: 12.5px; color: var(--accent-light);
+  background: rgba(255,105,27,.08); border: 1px solid rgba(255,105,27,.3);
+  border-radius: 8px; padding: 12px 14px; margin: 0;
+}
+
+.replica-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--accent); color: #101010; border: 2px solid var(--accent);
+  padding: 13px 22px; font-size: 14px; font-weight: 800; font-family: inherit;
+  cursor: pointer; width: fit-content;
+  transition: background .18s ease, transform .18s ease;
+}
+.replica-button:hover { background: var(--accent-light); transform: translateY(-2px); }
+.replica-button:active { transform: translateY(0); }
+
+.replica-lightbox { background: transparent; border: 0; padding: 0; max-width: 92vw; max-height: 92vh; }
+.replica-lightbox figure { margin: 0; }
+.replica-lightbox img { max-width: 92vw; max-height: 86vh; object-fit: contain; display: block; }
+.replica-lightbox figcaption { color: var(--muted); font-size: 13px; text-align: center; margin-top: 10px; }
+.replica-lightbox-previous, .replica-lightbox-next {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.5); color: #fff;
+  display: grid; place-items: center;
+}
+.replica-lightbox-previous:hover, .replica-lightbox-next:hover { background: var(--accent); border-color: var(--accent); color: #101010; }
+.replica-lightbox-previous { left: 24px; }
+.replica-lightbox-next { right: 24px; }
+
+.replica-floating-actions {
+  position: fixed; right: 20px; bottom: 20px; z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
+  align-items: flex-end;
+}
+.replica-scroll-top, .replica-chat-toggle {
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  background: var(--panel); color: var(--text);
+  display: grid; place-items: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+.replica-scroll-top:hover, .replica-chat-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.replica-chat-toggle { background: var(--accent); color: #101010; border-color: var(--accent); }
+.replica-chat-toggle:hover { background: var(--accent-light); color: #101010; }
+.replica-chat-panel {
+  position: fixed; right: 20px; bottom: 78px; z-index: 60;
+  width: 240px; background: var(--panel); border: 1px solid rgba(255,255,255,.14);
+  border-radius: 12px; padding: 16px; box-shadow: 0 12px 32px rgba(0,0,0,.5);
+}
+.replica-chat-panel h3 { margin: 0 0 6px; font-size: 15px; }
+.replica-chat-panel p { margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+
+.skip-link {
+  position: fixed; top: -100px; left: 12px; z-index: 200;
+  background: var(--accent); color: #101010; padding: 12px 16px; font-weight: 700;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .replica-button, .replica-form input, .replica-form textarea { transition: none; }
+}

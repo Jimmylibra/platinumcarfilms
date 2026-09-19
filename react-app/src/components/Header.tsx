@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useInteractions } from '../replica/InteractionContext'
 import './Header.css'
 
 const NAV_LINKS = [
@@ -14,6 +15,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { openQuote } = useInteractions()
 
   // close the mobile menu on route change / resize back to desktop
   useEffect(() => {
@@ -31,22 +33,28 @@ export default function Header() {
           Platinum<span className="brand-accent">PPF</span>
         </NavLink>
 
-        <nav className={`site-nav ${menuOpen ? 'open' : ''}`} aria-label="Primary">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.end}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="mobile-menu-panel">
+          <nav className={`site-nav ${menuOpen ? 'open' : ''}`} aria-label="Primary">
+            {NAV_LINKS.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.end}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
 
-        <NavLink to="/contact-us" className="quote-btn" onClick={() => setMenuOpen(false)}>
-          Get a Quote
-        </NavLink>
+          <button
+            type="button"
+            className="quote-btn"
+            onClick={() => { setMenuOpen(false); openQuote() }}
+          >
+            Get a Quote
+          </button>
+        </div>
 
         <button
           type="button"

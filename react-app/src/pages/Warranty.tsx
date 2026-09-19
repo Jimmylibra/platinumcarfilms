@@ -1,10 +1,12 @@
-import PageHeader from '../components/PageHeader'
+import html from './policy-content/warranty-policy-review.html?raw'
+import PolicyPage from './PolicyPage'
 
 export default function Warranty() {
   return (
-    <>
-      <PageHeader title="Warranty" />
-      <div className="section section-shell">{/* TODO: build out Warranty content + FAQ accordion (fix the close-button bug from the original) */}</div>
-    </>
+    <PolicyPage
+      title="Warranty"
+      html={html}
+      note="Coverage and duration figures below still need client confirmation -- see the content-decision log for the specific conflicts found (transferability, and headlight-film duration vs. the general table)."
+    />
   )
 }

@@ -1,21 +1,12 @@
-import { Link } from 'react-router-dom'
 import './PageHeader.css'
 
-type PageHeaderProps = {
-  title: string
-}
-
-export default function PageHeader({ title }: PageHeaderProps) {
+export default function PageHeader({ title, intro }: { title: string; intro?: string }) {
   return (
-    <div className="page-header">
-      <div className="section-shell">
+    <section className="page-header">
+      <div className="page-header-inner">
         <h1>{title}</h1>
-        <div className="breadcrumb">
-          <Link to="/">Home</Link>
-          <span>/</span>
-          <span>{title}</span>
-        </div>
+        {intro && <p>{intro}</p>}
       </div>
-    </div>
+    </section>
   )
 }

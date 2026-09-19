@@ -1,0 +1,69 @@
+.policy-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 56px 24px 100px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.policy-note {
+  background: rgba(255, 105, 27, 0.08);
+  border: 1px solid rgba(255, 105, 27, 0.3);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 13.5px;
+  color: var(--accent-light);
+  margin: 0 0 32px;
+}
+
+.policy-page h1 { font-size: 26px; margin: 0 0 4px; }
+.policy-page .sub { color: var(--muted); font-size: 13px; margin: 0 0 20px; }
+.policy-page .meta-box { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.policy-page .disclaimer {
+  background: rgba(255, 105, 27, 0.07);
+  border: 1px solid rgba(255, 105, 27, 0.25);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 0 0 28px;
+  font-size: 13px;
+  color: #f0c9b0;
+}
+.policy-page .disclaimer strong { color: var(--accent-light); }
+.policy-page .needs-input {
+  background: rgba(255, 200, 60, 0.12);
+  border: 1px solid rgba(255, 200, 60, 0.4);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-weight: 700;
+  color: #e8c065;
+  font-size: 13px;
+}
+.policy-page h2 { font-size: 20px; margin: 32px 0 10px; color: var(--text); }
+.policy-page h3 { font-size: 16px; margin: 20px 0 8px; color: var(--text); }
+.policy-page p { margin: 10px 0; color: var(--muted); }
+.policy-page ul { margin: 10px 0; padding-left: 22px; color: var(--muted); }
+.policy-page li { margin: 6px 0; }
+.policy-page table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 13.5px; }
+.policy-page td, .policy-page th { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+.policy-page th { background: var(--panel); color: var(--text); }
+.policy-page .flag {
+  background: rgba(255, 200, 60, 0.1);
+  border: 1px solid rgba(255, 200, 60, 0.35);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+  color: #e8c065;
+}
+.policy-page .flag strong { color: #f0d27a; }
+.policy-page .item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+
+@media (max-width: 700px) {
+  .policy-page { padding: 40px 20px 70px; }
+  .policy-page table { display: block; overflow-x: auto; }
+}

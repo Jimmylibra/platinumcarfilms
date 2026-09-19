@@ -1,11 +1,16 @@
+/* Tokens match react-app/public/mock/index.html (the approved dark
+   homepage mock) exactly, per docs/WEBSITE-IMPLEMENTATION-PLAN.md section 4.
+   --bg2 is the mock's alternating-section surface, --panel its card surface. */
 :root {
-  --bg: #050505;
-  --bg2: #090909;
-  --panel: #111112;
-  --text: #f6f6f6;
-  --muted: #a8a8ad;
-  --accent: #ff6411;
-  --line: rgba(255, 255, 255, 0.12);
+  --bg: #0a0a0c;
+  --bg2: #111114;
+  --panel: #19191e;
+  --text: #f5f5f5;
+  --muted: #b8b8c0;
+  --muted2: #a8a8b2;
+  --accent: #ff691b;
+  --accent-light: #ff9b64;
+  --line: rgba(255, 255, 255, 0.14);
 }
 
 * {
@@ -23,6 +28,15 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Nunito', Arial, sans-serif;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent-light);
+  outline-offset: 4px;
 }
 
 body {

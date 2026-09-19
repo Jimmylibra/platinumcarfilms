@@ -33,6 +33,14 @@
   color: var(--accent);
 }
 
+/* On desktop this wrapper must not create its own flex item -- nav and the
+   quote button need to size/space independently as direct children of
+   .site-header-inner, same as before the wrapper existed. It only becomes
+   a real stacked box on mobile (see the 900px query). */
+.mobile-menu-panel {
+  display: contents;
+}
+
 .site-nav {
   display: flex;
   gap: 28px;
@@ -51,18 +59,29 @@
 }
 
 .quote-btn {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 999px;
-  padding: 10px 20px;
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: #101010;
+  padding: 11px 20px;
   font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  text-decoration: none;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
 }
 
 .quote-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.quote-btn:active {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-btn { transition: none; }
+  .quote-btn:hover, .quote-btn:active { transform: none; }
 }
 
 .menu-toggle {
@@ -90,22 +109,34 @@
     display: block;
   }
 
-  /* Nav links and the quote button live in one flex column together,
-     so there's no magic pixel offset to keep in sync (that kind of
-     hardcoded offset is exactly what broke the original site's mobile menu). */
-  .site-header.menu-open .site-nav,
-  .site-header.menu-open .quote-btn {
-    display: flex;
+  /* The nav list and quote button used to be independently
+     position:absolute at the same top offset, so the button visually
+     covered the first nav link ("Home") instead of stacking below it --
+     two separate absolute offsets can't reliably stay in sync without a
+     magic pixel number that breaks whenever the nav's height changes.
+     They're now wrapped in one real element (.mobile-menu-panel in
+     Header.tsx) that's the only thing position:absolute; nav and button
+     are normal-flow children inside it, so they always stack correctly
+     regardless of how tall the nav list is. */
+  .mobile-menu-panel {
+    display: none;
   }
 
-  .site-header.menu-open .site-nav {
+  .site-header.menu-open .mobile-menu-panel {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 72px;
     left: 0;
     width: 100%;
-    flex-direction: column;
     background: rgba(7, 7, 7, 0.98);
     padding: 12px 20px 20px;
+    gap: 12px;
+  }
+
+  .site-header.menu-open .site-nav {
+    display: flex;
+    flex-direction: column;
   }
 
   .site-header.menu-open .site-nav a {
@@ -114,14 +145,9 @@
   }
 
   .site-header.menu-open .quote-btn {
-    position: absolute;
-    top: calc(100% - 1px);
-    left: 20px;
-    right: 20px;
-    width: calc(100% - 40px);
-    margin-top: 12px;
+    display: flex;
     justify-content: center;
     text-align: center;
-    background: rgba(255, 100, 17, 0.08);
+    width: 100%;
   }
 }

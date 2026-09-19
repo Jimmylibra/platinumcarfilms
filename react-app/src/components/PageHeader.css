@@ -1,32 +1,29 @@
 .page-header {
-  padding: 64px 0 48px;
-  background: linear-gradient(180deg, #1a0f08 0%, var(--bg) 70%);
+  padding: 56px 24px 40px;
   border-bottom: 1px solid var(--line);
+  background: var(--bg2);
+}
+
+.page-header-inner {
+  width: min(1100px, 100%);
+  margin: 0 auto;
 }
 
 .page-header h1 {
-  margin: 0 0 12px;
-  font-size: clamp(32px, 5vw, 48px);
-  letter-spacing: -0.03em;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
-.breadcrumb {
-  display: flex;
-  gap: 8px;
-  font-size: 13px;
+.page-header p {
   color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 14px 0 0;
 }
 
-.breadcrumb a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
-  color: var(--text);
-}
-
-.breadcrumb span:last-child {
-  color: var(--text);
-  font-weight: 600;
+@media (max-width: 700px) {
+  .page-header { padding: 40px 20px 28px; }
 }

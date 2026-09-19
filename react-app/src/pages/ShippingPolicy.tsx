@@ -1,12 +1,6 @@
-import PageHeader from '../components/PageHeader'
+import html from './policy-content/shipping-policy.html?raw'
+import PolicyPage from './PolicyPage'
 
 export default function ShippingPolicy() {
-  return (
-    <>
-      <PageHeader title="Shipping Policy" />
-      {/* TODO: real shipping policy content, not placeholder text — this was
-          one of the top findings in the QA audit of the original site */}
-      <div className="section section-shell" />
-    </>
-  )
+  return <PolicyPage title="Shipping Policy" html={html} />
 }
