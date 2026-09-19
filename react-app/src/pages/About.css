@@ -12,67 +12,79 @@
 .about-page p { color: var(--text-secondary); line-height: 1.7; font-size: 17px; }
 
 /* ---------- AB01+AB02: opening ---------- */
-/* Corrected per owner review of the rendered screenshot: the steel/copper
-   diagonal wash read as a broad, unrelated blue panel and the boxed
-   product image looked like a dashboard widget. Neutral black/charcoal
-   base now; the only color is one small, localized warm-orange glow
-   sitting behind the image column, via ::before rather than a full-bleed
-   gradient across the text as well. */
+/* Second correction pass. The steel/copper wash is gone (previous fix);
+   this pass replaces the single crisp radial-gradient "glow blob" behind
+   the image with a layered, feathered mesh -- several soft, off-center,
+   elliptical, multi-stop gradients that read as controlled studio
+   lighting rather than a UI decoration -- and recomposes the grid so the
+   image is a deliberate visual anchor instead of a same-size column
+   floating opposite the text. Only near-black/charcoal/orange in the
+   palette; no blue/purple/cyan. The mesh is static -- no gradient
+   animation, ever. */
 .ab-hero {
   position: relative;
   overflow: hidden;
   padding: clamp(2.5rem, 6vw, 4rem) 0;
-  background: var(--canvas);
-}
-.ab-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse 62% 70% at 84% 50%, rgba(255, 105, 27, .16), transparent 62%);
+  background:
+    /* primary warm source, concentrated near the image, well clear of
+       the text column; ellipse + generous transparent falloff so it has
+       no visible edge */
+    radial-gradient(ellipse 58% 68% at 86% 44%, rgba(255, 105, 27, .15) 0%, rgba(255, 105, 27, .06) 42%, transparent 72%),
+    /* secondary, weaker amber echo lower on the image for depth, not a
+       second obvious source */
+    radial-gradient(ellipse 42% 48% at 76% 82%, rgba(255, 172, 122, .05) 0%, transparent 68%),
+    /* faint neutral highlight toward the text side -- dimensional
+       variation without introducing a second hue */
+    radial-gradient(ellipse 38% 46% at 26% 12%, rgba(255, 255, 255, .025) 0%, transparent 62%),
+    var(--canvas);
 }
 .ab-hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
+  /* Image gets more room than the text and the gap is tighter, so this
+     reads as "text, then a deliberately large product moment" rather
+     than two equal boxes with dead space between them. */
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: end;
 }
-.ab-breadcrumb { font-size: 13px; color: var(--text-secondary); margin: 0 0 18px; }
+.ab-breadcrumb { font-size: 13.5px; color: var(--text-secondary); margin: 0 0 18px; }
 .ab-breadcrumb a { color: var(--text-secondary); text-decoration: none; }
 .ab-breadcrumb a:hover { color: var(--brand-soft); }
 
 /* Progression: breadcrumb -> H1 -> subordinate company heading -> intro.
-   Only one heading (the H1) carries real visual weight; the company
-   heading is a quiet, muted line beneath it, not a second headline. */
-.ab-hero h1 { font-size: clamp(2.25rem, 4.4vw, 3.5rem); font-weight: 800; line-height: 1.08; margin: 0 0 10px; letter-spacing: -0.01em; color: var(--text-primary); }
-.ab-subhead { font-size: clamp(1.0625rem, 1.6vw, 1.25rem); font-weight: 600; color: var(--text-secondary); margin: 0 0 18px; }
-.ab-lead { max-width: 52ch; margin: 0; }
+   Only one heading (the H1) carries real visual weight. The company
+   heading sits between the H1 and body in both size and color -- warmer
+   and more present than muted body text, but never competing with the H1. */
+.ab-hero h1 { font-size: clamp(2.25rem, 3.6vw, 3.25rem); font-weight: 800; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.01em; color: var(--text-primary); }
+.ab-subhead { font-size: clamp(1.0625rem, 1.5vw, 1.1875rem); font-weight: 600; color: rgba(247, 245, 242, .82); margin: 0 0 18px; }
+.ab-lead { max-width: 600px; font-size: 18px; margin: 0; }
 
 .ab-stat-grid {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px 28px;
-  margin: 28px 0 0;
-  padding: 20px 0 0;
+  gap: 20px 32px;
+  margin: 32px 0 0;
+  padding: 24px 0 0;
   border-top: 1px solid var(--divider);
-  max-width: 480px;
+  max-width: 500px;
 }
 .ab-stat-grid li {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.35;
+  line-height: 1.4;
   padding-left: 12px;
   border-left: 2px solid var(--brand);
 }
 
 /* Minimal framing: no card background, no border, no padding box -- the
-   image sits directly in the layout, grounded by a soft shadow instead of
-   a contrasting panel. Proportions are the supplied image's own. */
+   full supplied image (including its own white product-photo backdrop)
+   sits directly in the layout, grounded by a soft shadow, anchored toward
+   the outer edge of its column rather than centered inside it. Natural
+   proportions preserved -- no crop, no stretch, no background removal. */
 .ab-hero-media {
   position: relative;
   z-index: 1;
@@ -80,37 +92,92 @@
 .ab-hero-media img {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 460px;
   height: auto;
-  margin: 0 auto;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, .5));
+  margin: 0 0 0 auto;
+  filter: drop-shadow(0 28px 52px rgba(0, 0, 0, .55));
+}
+
+/* Restrained on-load entrance for the hero (above the fold, so a plain
+   CSS animation on mount is correct here -- no scroll trigger needed,
+   and unlike a JS/IntersectionObserver reveal there is no failure mode
+   that could leave this hidden: the animation just runs on paint).
+   Breadcrumb, H1, company heading, intro and facts each start slightly
+   after the one before -- not five elements performing an identical
+   fade at once -- and the image gets its own, separately-timed
+   opacity+translate+scale entrance instead of reusing the text keyframe. */
+@keyframes ab-hero-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ab-media-in {
+  from { opacity: 0; transform: translateY(10px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.ab-hero-copy > * {
+  animation: ab-hero-in 620ms var(--ease-out) both;
+}
+.ab-hero-copy > *:nth-child(1) { animation-delay: 0ms; }
+.ab-hero-copy > *:nth-child(2) { animation-delay: 90ms; }
+.ab-hero-copy > *:nth-child(3) { animation-delay: 170ms; }
+.ab-hero-copy > *:nth-child(4) { animation-delay: 240ms; }
+.ab-hero-copy > *:nth-child(5) { animation-delay: 320ms; }
+.ab-hero-media img {
+  animation: ab-media-in 700ms var(--ease-out) 160ms both;
+}
+/* Explicit, page-scoped reduced-motion override -- belt and suspenders
+   alongside the global safety net in index.css. Content must never
+   depend on an animation actually completing: this removes the
+   animation entirely and forces the resting state directly, so there is
+   no delay-then-pop-in and no possibility of a stuck-hidden state. */
+@media (prefers-reduced-motion: reduce) {
+  .ab-hero-copy > *,
+  .ab-hero-media img {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ---------- AB03: approach ---------- */
-/* One coherent, left-aligned column instead of a heading/body split
-   across a wide gap -- aligned to the same .container text rail as the
-   opening above. The tonal shift into this section comes from a barely-
-   there background change (--bg2, not the blue --surface-steel), a
-   top hairline, and generous spacing -- not a large flat color block. */
+/* "Chapter two" of the same story: left-aligned to the same .container
+   rail as the opening, one coherent column (heading directly above its
+   own paragraphs, not split across a grid), a short rule + eyebrow
+   marking the transition, and a much quieter variation of the opening's
+   lighting language -- same warm hue, far lower intensity, different
+   position -- so the two sections feel related without repeating. */
 .ab-approach {
-  background: var(--bg2);
+  position: relative;
+  background:
+    radial-gradient(ellipse 46% 72% at 92% 28%, rgba(255, 105, 27, .05) 0%, transparent 66%),
+    var(--bg2);
   border-top: 1px solid var(--divider);
   padding: clamp(2.5rem, 6vw, 4rem) 0;
 }
-.ab-approach-body { max-width: 760px; }
-.ab-approach-body h2 { font-size: clamp(1.5rem, 2.6vw, 2.125rem); }
+.ab-approach-body { max-width: 820px; }
+.ab-approach-rule {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--brand);
+  margin: 0 0 16px;
+}
+.ab-approach-body .ab-eyebrow { margin: 0 0 10px; }
+.ab-approach-body h2 { font-size: clamp(1.75rem, 2.8vw, 2.375rem); max-width: 20ch; }
+.ab-approach-body p { max-width: 640px; }
 /* Callouts are quiet supporting text now, not badges: no fill, no border,
    just a small orange marker ahead of each line. */
 .ab-callouts {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-top: 20px;
-  padding-top: 16px;
+  gap: 10px 28px;
+  margin-top: 28px;
+  padding-top: 18px;
   border-top: 1px solid var(--divider);
+  max-width: 640px;
 }
 .ab-callouts span {
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--text-secondary);
 }
@@ -121,7 +188,7 @@
   height: 5px;
   border-radius: 50%;
   background: var(--brand);
-  margin-right: 8px;
+  margin-right: 9px;
   vertical-align: middle;
 }
 
@@ -189,15 +256,31 @@
 @media (max-width: 1000px) {
   .ab-hero-grid,
   .ab-quality-grid { grid-template-columns: 1fr; }
-  .ab-hero-media { order: -1; }
-  .ab-hero-media img { max-width: 260px; }
-  .ab-hero::before { inset: -10% -10% auto -10%; height: 60%; }
+  /* Natural DOM order on mobile: breadcrumb, H1, company heading, intro,
+     facts, THEN the product image -- the explicitly requested reading
+     sequence. (Previously an `order: -1` here put the image first,
+     ahead of all the text -- that was wrong and is removed.) */
+  .ab-hero-media img { max-width: 320px; margin: 32px auto 0; }
 }
 
 @media (max-width: 700px) {
   .ab-hero { padding: 32px 0; }
+  /* Simplified, single-layer mesh at mobile widths: cheaper to paint,
+     smaller/centered so it can't clip or create a stray orange patch
+     off to one side once the layout has stacked to one column, and
+     still fully contained (no horizontal overflow). */
+  .ab-hero {
+    background:
+      radial-gradient(ellipse 90% 38% at 50% 100%, rgba(255, 105, 27, .12) 0%, transparent 72%),
+      var(--canvas);
+  }
+  .ab-hero-media img { max-width: 260px; margin-top: 28px; filter: drop-shadow(0 16px 28px rgba(0, 0, 0, .5)); }
+  .ab-lead { max-width: none; font-size: 16.5px; }
+  .ab-stat-grid { max-width: none; gap: 14px 20px; }
+  /* Approach section drops its mesh entirely at mobile -- "simplify
+     substantially," not shrink the desktop treatment in place. */
+  .ab-approach { background: var(--bg2); }
   .ab-approach, .ab-supply, .ab-quality, .ab-benefits, .ab-audience, .ab-cta { padding: 40px 0; }
-  .ab-stat-grid { max-width: none; }
   .ab-supply-grid,
   .ab-benefit-rows { grid-template-columns: 1fr; }
   .ab-audience-row { grid-template-columns: 1fr; gap: 6px; }

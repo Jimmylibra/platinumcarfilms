@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useInteractions } from '../replica/InteractionContext'
+import Reveal from '../components/Reveal'
 import useBoundedParallax from '../hooks/useBoundedParallax'
 import './About.css'
 
@@ -78,11 +79,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* AB03: one coherent left-aligned column, aligned to the same text
-          rail as the opening, instead of a heading/body split across a
-          wide gap. Callouts are quiet supporting text, not badges. */}
+      {/* AB03: "chapter two" of the same opening -- one coherent
+          left-aligned column on the same text rail, a short rule + eyebrow
+          marking the transition. Scroll-triggered (Reveal), unlike the
+          above-the-fold hero which animates on load instead. */}
       <section className="ab-approach">
-        <div className="container ab-approach-body">
+        <Reveal className="container ab-approach-body">
+          <span className="ab-approach-rule" aria-hidden="true" />
+          <span className="ab-eyebrow">Our Approach</span>
           <h2>Reliability, Aesthetics, and a Professional Approach</h2>
           <div>
             <p>Our approach is attention to detail — from selecting the best raw materials to consulting and supporting clients at every stage. Whether you are a professional installer or a first-time distributor, we support your business with reliable supply and technical guidance.</p>
@@ -92,7 +96,7 @@ export default function About() {
               <span>1-Stop One-Stop Service</span>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* AB04 */}
