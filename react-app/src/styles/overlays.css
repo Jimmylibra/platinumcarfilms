@@ -55,7 +55,10 @@
 .replica-form textarea:invalid:not(:placeholder-shown):not(:focus) {
   border-color: #e5484d; box-shadow: 0 0 0 3px rgba(229,72,77,.18);
 }
-.replica-newsletter-fields { display: flex; gap: 8px; }
+/* align-items:flex-end (not the flex default of stretch) so the button
+   sits at the input's own height instead of stretching to match the
+   label+input column's taller combined height. */
+.replica-newsletter-fields { display: flex; gap: 8px; align-items: flex-end; }
 .replica-newsletter-fields label { flex: 1; }
 .replica-form-note { font-size: 11px; color: #8b8b93; margin: 0; }
 .replica-form-feedback {

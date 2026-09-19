@@ -15,9 +15,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-grid">
         <div className="footer-about">
-          <div className="brand">
-            Platinum<span className="brand-accent">PPF</span>
-          </div>
+          <img className="footer-logo" src="/assets/original/64f0dbbda455-logo.png" alt="Platinum PPF" />
           <p>
             Platinum Car Films is a Chinese PPF manufacturer offering
             self-healing paint protection film with wholesale pricing and

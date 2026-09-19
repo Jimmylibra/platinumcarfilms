@@ -30,7 +30,7 @@ export default function Header() {
     <header className={`site-header ${menuOpen ? 'menu-open' : ''}`}>
       <div className="site-header-inner">
         <NavLink to="/" className="brand" aria-label="Platinum PPF home" onClick={() => setMenuOpen(false)}>
-          Platinum<span className="brand-accent">PPF</span>
+          <img src="/assets/original/64f0dbbda455-logo.png" alt="Platinum PPF" />
         </NavLink>
 
         <div className="mobile-menu-panel">
