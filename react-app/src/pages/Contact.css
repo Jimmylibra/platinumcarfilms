@@ -7,16 +7,23 @@
   margin: 0 auto;
 }
 
-.contact-details h2 {
-  font-size: 13px;
+.contact-details > h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 24px;
+}
+
+.contact-details h3 {
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted2);
   margin: 0 0 8px;
+  font-weight: 600;
 }
 
 .contact-details > div {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .contact-details p {

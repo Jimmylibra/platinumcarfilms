@@ -148,6 +148,56 @@ Verified this update: 15/15 spot-checked routes still 200/zero-errors/
 zero-overflow, `tsc -b` clean, `vite build` succeeds, lint unchanged (2
 pre-existing warnings).
 
+## Update 2: full plan completion
+
+All remaining routes upgraded from "shell" to "full" per section 16C,
+continuing the pattern proven on the 210 page:
+
+- **7 remaining product pages**: generalized into one data-driven template
+  (`pages/ProductPageGeneric.tsx`) fed by per-product JSON extracted from
+  each product's own `content/<slug>.json` source AST (same extraction
+  method as 210, batch-applied since all 8 products share an identical
+  7-heading source structure). 3 products (headlight, satin, gloss-black)
+  genuinely have no comparison-section content in their source -- omitted
+  rather than invented.
+- **About** (`pages/About.tsx`): all 9 sections from `content/about-us.json`.
+  Found a new contact-info discrepancy in the process (a third email,
+  `platinumcarfims@gmail.com`) -- logged, not resolved.
+- **Warranty** (`pages/Warranty.tsx`): rebuilt from `content/warranty.json`
+  directly (the plan specifies this over the editorial draft I'd used
+  previously) -- all 10 sections, contents nav, real duration table,
+  5-step claim process, liability limitations, FAQ. Found the source FAQ
+  answer to the first question is genuinely truncated mid-sentence in the
+  source itself -- preserved as-is, logged.
+- **Contact** (`pages/Contact.tsx`): updated to the real section labels and
+  invitation copy from `content/contact-us.json`.
+- **Blog article** (`pages/BlogArticle.tsx`): full 27-section body + 6 real
+  FAQ pairs extracted from the article's own source AST -- this turned out
+  to be a complete, legitimate long-form article (my earlier assessment
+  that it was "unusable WordPress wrapper soup" was wrong; the same clean
+  extraction method that worked on products worked here too).
+- **Policies**: fixed a real compliance issue with my own earlier work --
+  the plan explicitly says not to render the authoring preamble
+  (disclaimer/meta-box/"set when published" instructions) as public policy
+  body, but the previous `PolicyPage.tsx` rendered the whole raw draft
+  including those boxes. Stripped them from the HTML fragments and added a
+  real contents nav generated from the actual headings.
+- **Terms**: aligned wording to the plan's exact T02 spec ("Terms are not
+  available in this preview").
+
+Verified: all 26 routes still 200/zero-errors/zero-overflow, `tsc -b`
+clean, `vite build` succeeds, lint unchanged. Visually spot-checked Home,
+210, a generic product page, Gallery+lightbox, About, Warranty, Privacy
+Policy, and the Blog article.
+
+**Genuinely not done**: 16D's per-section motion timing values weren't
+individually audited against every page (the mock's proven interaction
+patterns were reused throughout, but not a line-by-line 16D compliance
+pass); Nunito is CDN-loaded not self-hosted; gallery alt text is generic
+per-image rather than hand-written. None of these are visible defects,
+just short of the plan's stated ideal -- listed honestly rather than
+silently left out.
+
 ## Pending / next task
 
 1. Per-product content pass (8 pages) against `docs/site-audit/source/`.

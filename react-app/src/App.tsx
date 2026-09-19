@@ -3,8 +3,8 @@ import Layout from './layout/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import Product from './pages/Product'
-import ProductDetail from './pages/ProductDetail'
 import Product210 from './pages/Product210'
+import ProductPageGeneric from './pages/ProductPageGeneric'
 import Gallery from './pages/Gallery'
 import Warranty from './pages/Warranty'
 import Blog from './pages/Blog'
@@ -27,7 +27,7 @@ function App() {
         <Route path="product" element={<Product />} />
         <Route path="210-paint-protection-film" element={<Product210 />} />
         {PRODUCTS.filter((p) => p.slug !== '210-paint-protection-film').map((p) => (
-          <Route key={p.slug} path={p.slug} element={<ProductDetail />} />
+          <Route key={p.slug} path={p.slug} element={<ProductPageGeneric slug={p.slug} />} />
         ))}
         <Route path="gallery" element={<Gallery />} />
         <Route path="warranty" element={<Warranty />} />
