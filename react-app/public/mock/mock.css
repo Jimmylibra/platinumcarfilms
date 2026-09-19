@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ---------- Tokens & base ---------- */
+:root{
+  --orange:#ff691b;--orange-light:#ff9b64;
+  --ink:#0a0a0c;--bg-alt:#111114;--panel:#19191e;
+  --text:#f5f5f5;--text-muted:#b8b8c0;--text-secondary:#a8a8b2;
+  --progress:0;--split:0;
+  color-scheme:dark;
+  font-family:Manrope,Arial,sans-serif;
+  scroll-behavior:smooth;scroll-padding-top:95px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--text);overflow-x:hidden}
+::selection{background:var(--orange);color:#0a0a0c}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--orange-light);outline-offset:6px}
+img{display:block;max-width:100%}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;top:-100px;z-index:100;background:var(--orange);color:#101010;padding:15px;font-weight:700}
+.skip:focus{top:10px}
+
+/* ---------- Header ---------- */
+.header{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:26px;padding:26px 4.5%;transition:background .3s,padding .3s;border-bottom:1px solid #ffffff15}
+.header.scrolled{background:#0a0a0cf5;padding-top:16px;padding-bottom:16px}
+.logo{width:245px;height:auto;max-height:42px;object-fit:contain}
+.header nav{display:flex;gap:26px;font-size:13px}
+.header nav a{padding:10px 0}
+.header nav a:hover{color:var(--orange)}
+.quote{font-size:13px;display:flex;gap:6px;align-items:center;padding:13px 20px;background:var(--orange);color:#101010;font-weight:800;white-space:nowrap;border:2px solid var(--orange);transition:background .2s,transform .2s}
+.quote:hover{background:#ff8b50;transform:translateY(-2px)}
+.quote:active{transform:translateY(0)}
+.menu{display:none}
+
+/* ---------- Shared kicker / headings ---------- */
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#b8b8bd;margin-bottom:18px}
+.kicker:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.kicker.kicker-icon:before{display:none}
+.kicker.kicker-icon i{color:var(--orange);font-size:13px}
+.kicker.centered{justify-content:center;width:100%}
+h2{font-size:clamp(34px,4vw,58px);line-height:1.1;letter-spacing:-.035em;font-weight:600;margin:0}
+.centered-heading{text-align:center}
+.section{padding:110px 6%}
+/* A subtly-elevated alternate surface between the page background and card
+   surfaces, used to separate sections without a hard edge. Was ".light"
+   (a cream background) before the dark-theme pass; renamed since it no
+   longer describes what it does. */
+.alt{background:var(--bg-alt);color:var(--text)}
+.section-heading{margin-bottom:48px}
+.section-heading.reveal{text-align:left}
+#comparison .section-heading,#audience .section-heading{text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
+
+/* ---------- Reveal-on-scroll (shared motion system) ---------- */
+.reveal{transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.motion-enabled .reveal.pending{opacity:0;transform:translateY(32px)}
+
+/* ---------- Hero ---------- */
+.hero{min-height:900px;height:100svh;max-height:1200px;position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;padding:145px 5% 115px}
+.hero-media{position:absolute;inset:-7% 0 -7% 34%;z-index:-3;transform:translateY(calc(var(--progress)*75px)) scale(1.025);animation:car-arrival 1.8s cubic-bezier(.16,1,.3,1) both;mask-image:linear-gradient(90deg,transparent,#000 16%)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 57%}
+.scrim{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#0a0a0c 3%,#0a0a0cf2 24%,#0a0a0ca6 47%,#0a0a0c08 80%),linear-gradient(0deg,#0a0a0caa,transparent 25%)}
+.hero-copy{max-width:760px;transform:translateY(calc(var(--progress)*-35px));opacity:calc(1 - var(--progress)*.65)}
+.intro{font-size:12px;letter-spacing:.17em;text-transform:uppercase;color:#d0d0d4;margin:0 0 28px;display:flex;align-items:center;gap:9px}
+.intro .dot{width:6px;height:6px;border-radius:50%;background:var(--orange);display:inline-block}
+h1{font-size:clamp(40px,4.05vw,67px);font-weight:700;line-height:1.13;letter-spacing:-.035em;margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--orange)}
+.description{font-size:16px;line-height:1.75;max-width:560px;color:var(--text-muted);margin:28px 0 34px}
+.actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.button{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;background:var(--orange);color:#101010;padding:19px 24px;font-size:14px;font-weight:800;transition:background .2s,transform .2s;border:2px solid var(--orange)}
+.button:hover{background:#ff8b50;transform:translateY(-2px)}
+.button:active{transform:translateY(0)}
+.button-outline{background:transparent;color:#fff}
+.button-outline:hover{background:#ffffff12}
+.text-link{display:inline-flex;gap:14px;align-items:center;font-size:14px;font-weight:600;padding:12px 0}
+.text-link i,.button i{transition:transform .25s}
+.text-link:hover i,.button:hover i{transform:translate(4px,-2px)}
+.hero-copy>*{animation:entrance .85s cubic-bezier(.16,1,.3,1) both}
+.hero-copy .intro{animation-delay:0s}
+.hero-copy h1{animation-delay:.1s}
+.hero-copy .description{animation-delay:.2s}
+.hero-copy .actions{animation-delay:.3s}
+.scroll-cue{position:absolute;bottom:85px;left:5%;display:flex;gap:15px;align-items:center;text-transform:uppercase;letter-spacing:.12em;font-size:11px;z-index:5}
+.scroll-line{height:42px;width:1px;background:#ffffff40;position:relative;overflow:hidden}
+.scroll-line:after{content:'';position:absolute;inset:0;background:var(--orange);animation:scroll-line 2s ease-in-out infinite}
+.hero-caption{position:absolute;bottom:50px;right:5%;font-size:11px;letter-spacing:.14em;z-index:5}
+.hero-caption span{display:block;margin-top:8px;color:#bbb;letter-spacing:0}
+
+.float-badges{position:absolute;inset:0;z-index:4;pointer-events:none}
+.badge{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border:1px solid #ffffff20;border-radius:12px;background:#0b0b0dcc;backdrop-filter:blur(10px);font-size:12px;font-weight:600;white-space:nowrap;animation:badge-in .7s cubic-bezier(.16,1,.3,1) both,badge-float 7s ease-in-out infinite;box-shadow:0 14px 30px #0006}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.badge-1{right:9%;top:26%;animation-delay:.55s,1.2s}
+.badge-2{right:16%;top:46%;animation-delay:.7s,2.4s}
+.badge-3{right:6%;top:64%;animation-delay:.85s,0s}
+
+/* ---------- Stats strip (restored from counterData) ---------- */
+.stats{padding:34px 6%;border-bottom:1px solid #ffffff10}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:900px;margin:0 auto}
+.stat{text-align:center;padding:0 18px;border-right:1px solid #ffffff14}
+.stat:last-child{border-right:0}
+.stat-value{display:block;font-size:clamp(24px,2.6vw,34px);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1}
+.stat-label{display:block;margin-top:8px;font-size:11px;color:#9c9ca4;letter-spacing:.03em}
+
+/* ---------- Company Profile ---------- */
+.profile-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:8%;align-items:center}
+.profile-copy .lead{font-size:16px;line-height:1.7;color:var(--text-muted);max-width:520px;margin:0 0 26px}
+.supply-list{margin:0 0 22px;padding-left:20px;display:grid;gap:14px}
+.supply-list li{font-size:14px;line-height:1.7;color:#c4c4cb}
+.alt-copy{font-size:13px;line-height:1.75;color:var(--text-secondary);border-top:1px solid #ffffff14;padding-top:20px;max-width:560px}
+.profile-media img{width:100%;height:560px;object-fit:cover;border-radius:4px}
+
+/* ---------- Banner slider ---------- */
+.banners.section{padding:0;position:relative}
+/* Native-scroll carousel (not transform:translateX): a Chromium compositing
+   quirk on this build fails to paint transformed flex-track content that
+   was laid out off-screen, even though every computed geometry/visibility
+   metric reports correctly. Confirmed via diagnostic script: DOM state says
+   visible, painted pixels are blank. Scroll-snap sidesteps it entirely and
+   matches the already-working partner-flags carousel below. */
+.banner-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.banner-track::-webkit-scrollbar{display:none}
+/* Preserve embedded text and diagrams: no cover crop or image zoom. */
+.banner-slide{flex:0 0 100%;min-width:0;margin:0;aspect-ratio:1920/649;overflow:hidden;scroll-snap-align:start;background:var(--ink,#0a0a0c)}
+.banner-slide img{display:block;width:100%;height:100%;object-fit:contain}
+.banner-controls{position:relative;display:flex;align-items:center;justify-content:center;gap:22px;padding:16px 24px;z-index:2;background:var(--ink,#0a0a0c)}
+.banner-prev,.banner-next,.partner-prev,.partner-next{width:44px;height:44px;border-radius:50%;border:1px solid #ffffff40;background:#00000055;color:#fff;font-size:16px;display:grid;place-items:center}
+.banner-prev:hover,.banner-next:hover,.partner-prev:hover,.partner-next:hover{background:var(--orange);border-color:var(--orange);color:#101010}
+.partner-prev,.partner-next{background:#ffffff10;border-color:#ffffff25}
+.banner-dots{display:flex;gap:9px}
+.banner-dots button{width:9px;height:9px;border-radius:50%;border:0;background:#ffffff55;padding:0}
+.banner-dots button[aria-pressed="true"]{background:var(--orange);width:22px;border-radius:6px}
+
+/* ---------- Material / film story: full 8-feature layout ----------
+   Desktop: sticky image + title/progress on the left, scrolling cards on
+   the right. Each card activates from its own real position in the
+   IntersectionObserver (see mock.js) — not a short global progress range —
+   so the eight features don't race past before they can be read. */
+.material-copy p{color:#bdbdc5;line-height:1.8;max-width:420px}
+.material .text-link{color:var(--orange);margin-top:12px}
+
+/* Visual-depth experiment (this section only, see project notes): a barely-
+   there engineering grid plus one controlled point of warm light, standing
+   in for "technical/precision" without reaching for neon or sci-fi tropes.
+   isolation:isolate + z-index:-1 keeps it painted behind the section's own
+   content without needing to touch the markup. No overflow:hidden here --
+   the layer is sized to the section box exactly (inset:0) and .ppf-visual's
+   position:sticky depends on an ancestor that doesn't clip overflow. */
+.material{position:relative;isolation:isolate}
+.material::before{
+  content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(640px 460px at 84% 14%,rgba(255,105,27,.045),transparent 65%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.028) 0 1px,transparent 1px 64px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.028) 0 1px,transparent 1px 64px);
+}
+
+.ppf-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:6%;align-items:start;margin-top:56px}
+.ppf-visual{position:sticky;top:calc(88px + 28px)}
+.ppf-image-stack{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#0e0e11;border:1px solid #ffffff14}
+.ppf-product-image{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}
+.ppf-product-image.is-active{opacity:1}
+.ppf-product-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.92)}
+.ppf-image-tag{position:absolute;right:12px;bottom:12px;background:#000000b0;color:#e8e8ec;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid #ffffff25}
+.ppf-progress-track{height:3px;background:#ffffff20;border-radius:3px;overflow:hidden;margin-top:22px}
+.ppf-progress-bar{display:block;height:100%;width:12.5%;background:var(--orange);transition:width .35s ease}
+.ppf-active-title{font-size:24px;font-weight:700;margin:18px 0 0;color:#fff}
+
+.ppf-cards{display:grid;gap:16px}
+.ppf-card{border:1px solid #ffffff14;border-radius:14px;background:var(--panel);transition:border-color .3s,background .3s}
+.ppf-card.is-active{border-color:#ff691b55;background:#17130f}
+.ppf-card-trigger{width:100%;text-align:left;background:none;border:0;color:inherit;padding:20px 22px;display:block}
+.ppf-card-index{font-size:11px;color:#7a7a82;letter-spacing:.08em}
+.ppf-card.is-active .ppf-card-index{color:var(--orange)}
+.ppf-card-inner{display:flex;align-items:flex-start;gap:14px;margin-top:8px}
+.ppf-icon{flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:#ff691b14;border:1px solid #ff691b30;display:grid;place-items:center;color:var(--orange);font-size:15px}
+.ppf-card-text{display:flex;flex-direction:column;gap:3px}
+.ppf-card-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#7a7a82}
+.ppf-card-title{font-size:17px;font-weight:700;color:#fff;white-space:pre-line}
+.ppf-copy-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 22px 22px;margin-top:-4px}
+.ppf-copy-box{border-top:1px solid #ffffff12;padding-top:12px}
+.ppf-copy-label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin-bottom:6px}
+.ppf-copy-box p{margin:0;font-size:12.5px;line-height:1.6;color:#a6a6ae}
+
+/* ---------- Comparison table ---------- */
+.compare-wrap{overflow-x:auto;border:1px solid #ffffff14;border-radius:6px}
+.compare-table{width:100%;border-collapse:collapse;min-width:760px}
+.compare-table th,.compare-table td{padding:18px 20px;text-align:left;font-size:13.5px;line-height:1.65;border-bottom:1px solid #ffffff12;vertical-align:top}
+.compare-table thead th{background:var(--panel);color:var(--text);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.compare-table tbody td:first-child{font-weight:700;color:var(--text);white-space:nowrap}
+.compare-table tbody td:not(:first-child){color:var(--text-muted)}
+.compare-table tbody tr:nth-child(even){background:#ffffff06}
+.compare-table tbody tr:last-child td{border-bottom:0}
+
+/* ---------- Audience cards ---------- */
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.audience-grid .audience-card:nth-child(4),.audience-grid .audience-card:nth-child(5){grid-column:span 1}
+.audience-card{background:var(--panel);border:1px solid #ffffff12;border-radius:14px;padding:34px 28px;display:flex;flex-direction:column;gap:14px;transition:transform .3s,border-color .3s}
+.audience-card:hover{transform:translateY(-4px);border-color:#ff691b55}
+.audience-icon{font-size:22px;color:var(--orange);width:44px;height:44px;border-radius:11px;background:#ff691b14;border:1px solid #ff691b30;display:grid;place-items:center}
+.audience-card h3{font-size:19px;margin:0;line-height:1.35}
+.audience-card p{font-size:13.5px;line-height:1.7;color:#a6a6ae;margin:0;flex:1}
+.audience-card .text-link{color:var(--orange);padding:0;font-size:13px}
+.audience-grid .reveal:nth-child(2){transition-delay:.05s}
+.audience-grid .reveal:nth-child(3){transition-delay:.1s}
+.audience-grid .reveal:nth-child(4){transition-delay:.15s}
+.audience-grid .reveal:nth-child(5){transition-delay:.2s}
+
+/* ---------- FAQ ---------- */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.faq-intro p{color:var(--text-muted);font-size:15px;line-height:1.7;max-width:340px}
+.faq-item{border-top:1px solid #ffffff14}
+.faq-item:last-child{border-bottom:1px solid #ffffff14}
+.faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-size:16px;font-weight:600}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--orange)}
+.faq-toggle{flex:0 0 auto;font-size:20px;color:var(--orange);transition:transform .22s cubic-bezier(.22,1,.36,1)}
+.faq-item[open] .faq-toggle{transform:rotate(45deg)}
+.faq-item p{margin:0 0 24px;font-size:14px;line-height:1.75;color:var(--text-muted);max-width:640px}
+/* Animated accordion body. Native <details> hides non-summary content via
+   the browser's own "display:none when closed" UA rule, which can't be
+   transitioned -- overriding that to stay grid-rendered at all times and
+   animating grid-template-rows 0fr->1fr instead is what actually lets this
+   collapse/expand smoothly, since animating height:auto directly isn't
+   reliably interpolable. min-height:0 on the grid item is required or the
+   row can't shrink below the answer's natural content height. Closing uses
+   a shorter duration than opening (set on the base vs [open] rule, since
+   the transition in effect is whichever rule matches the state being
+   transitioned *to*) so the interaction doesn't feel symmetric/mechanical. */
+.faq-item > .faq-body{
+  display:grid;grid-template-rows:0fr;overflow:hidden;
+  transition:grid-template-rows .24s cubic-bezier(.22,1,.36,1);
+}
+.faq-item[open] > .faq-body{
+  grid-template-rows:1fr;
+  transition:grid-template-rows .32s cubic-bezier(.22,1,.36,1);
+}
+.faq-item > .faq-body > p{
+  min-height:0;overflow:hidden;margin:0;
+  opacity:0;transform:translateY(-4px);
+  transition:opacity .18s ease,transform .2s cubic-bezier(.22,1,.36,1);
+}
+.faq-item[open] > .faq-body > p{
+  margin:0 0 24px;
+  opacity:1;transform:translateY(0);
+  transition:opacity .28s ease .05s,transform .3s cubic-bezier(.22,1,.36,1) .05s;
+}
+
+/* ---------- Partners ---------- */
+.partners{position:relative}
+.partner-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.partner-track::-webkit-scrollbar{display:none}
+.partner-item{flex:0 0 auto;width:150px;height:100px;border-radius:10px;overflow:hidden;scroll-snap-align:start;border:1px solid #ffffff14}
+.partner-item img{width:100%;height:100%;object-fit:cover}
+.partner-controls{position:static;margin-top:28px;justify-content:flex-end}
+
+/* ---------- Final CTA ---------- */
+/* Visual-depth experiment (this section only): one large soft bloom of
+   warm light plus a faint diagonal sheen, meant to read like studio light
+   catching a sheet of transparent film rather than a generic UI gradient --
+   the last conversion point earns slightly more presence than the sections
+   before it. overflow:hidden contains the heavily-blurred shape (blur
+   radius extends visually past its own box) so it can never cause page
+   overflow; nothing here moves, so no reduced-motion handling is needed. */
+.contact{padding-top:130px;padding-bottom:130px;border-bottom:1px solid #ffffff25;position:relative;isolation:isolate;overflow:hidden}
+.contact::before{
+  content:'';position:absolute;pointer-events:none;z-index:-1;
+  width:620px;height:420px;right:-6%;top:-14%;
+  background:rgba(255,105,27,.075);
+  border-radius:50%;
+  filter:blur(110px);
+}
+.contact::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;
+  background:linear-gradient(120deg,transparent 38%,rgba(255,255,255,.05) 49%,transparent 60%);
+}
+.contact h2{max-width:680px}
+.contact p{color:var(--text-muted);line-height:1.7;margin:22px 0;max-width:680px}
+.contact .actions{margin-top:30px}
+.contact .subtle{margin-top:18px}
+
+/* ---------- Footer ---------- */
+.site-footer{padding:80px 6% 30px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px;padding-bottom:50px}
+.footer-about p{font-size:13px;line-height:1.75;color:#9c9ca4;max-width:340px;margin:18px 0 22px}
+.footer-social{display:flex;gap:10px}
+.footer-social .social-icon{width:34px;height:34px;border-radius:50%;border:1px solid #ffffff30;display:grid;place-items:center;font-size:13px;color:#fff;cursor:default;transition:background .2s,border-color .2s,color .2s}
+.footer-social .social-icon:hover{background:var(--orange);border-color:var(--orange);color:#101010}
+.footer-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 20px;color:#fff}
+.footer-col p{font-size:13px;line-height:1.7;color:#9c9ca4;margin:0 0 16px}
+.footer-col a{display:block;font-size:13px;color:#9c9ca4;padding:5px 0}
+.footer-col a:hover{color:var(--orange)}
+.newsletter-form{display:flex;gap:8px;margin-top:4px}
+.newsletter-form input{flex:1;min-width:0;padding:12px 14px;background:#1c1c22;border:1px solid #ffffff25;color:#fff;font-size:13px;border-radius:4px;transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease}
+.newsletter-form button{padding:12px 16px;background:var(--orange);color:#101010;border:0;font-weight:800;font-size:13px;border-radius:4px}
+.form-note{font-size:11px!important;color:#8b8b93!important;margin-top:10px!important}
+.footer-bottom{border-top:1px solid #ffffff18;padding-top:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.footer-legal{display:flex;flex-wrap:wrap;gap:20px}
+.footer-legal a{font-size:12px;color:#9c9ca4}
+.footer-legal a:hover{color:var(--orange)}
+.copyright{font-size:12px;color:#75757c;margin:0}
+.back-to-top{font-size:12px;color:#9c9ca4}
+.back-to-top:hover{color:var(--orange)}
+
+/* ---------- Quote dialog ---------- */
+/* No "position:relative" here: dialog:modal's UA stylesheet already sets
+   position:fixed/inset:0/margin:auto to center it in the viewport
+   independent of scroll offset. Overriding that with "relative" knocks the
+   dialog out of fixed positioning and back into normal document flow (it
+   lives at the end of <body>), which made Chromium recompute a scroll-
+   offset-based absolute position on open/close -- the source of the modal's
+   scroll jump. position:fixed from the UA sheet already creates a
+   containing block for .dialog-close's position:absolute, so nothing else
+   needs to change. */
+.quote-dialog{border:1px solid #ffffff20;border-radius:16px;background:var(--panel);color:#fff;padding:36px;width:min(560px,calc(100vw - 32px));max-height:min(88vh,720px);overflow-y:auto}
+.quote-dialog::backdrop{background:#000000b0;backdrop-filter:blur(3px)}
+.quote-dialog h2{font-size:24px;margin:0 0 8px}
+.quote-dialog>p{color:var(--text-muted);font-size:14px;margin:0 0 24px}
+.dialog-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid #ffffff25;background:#ffffff0d;color:#fff;font-size:15px;display:grid;place-items:center}
+.dialog-close:hover{background:var(--orange);border-color:var(--orange);color:#101010}
+#quoteForm{display:grid;gap:16px}
+#quoteForm .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#quoteForm label{display:grid;gap:7px;font-size:12.5px;color:#c7c7cd}
+#quoteForm input,#quoteForm textarea{font:inherit;padding:12px 14px;background:#1c1c22;border:1px solid #ffffff25;color:#fff;border-radius:8px;resize:vertical;transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease}
+#quoteForm input::placeholder,#quoteForm textarea::placeholder{color:#75757c}
+#quoteForm .button{width:fit-content;margin-top:4px}
+.form-note{font-size:11px;color:#8b8b93;margin:0}
+
+/* ---------- Form control states (quote dialog + newsletter) ----------
+   Shared across both forms so the newsletter input gets the same
+   interaction quality as the quote dialog fields, not a lesser copy. */
+#quoteForm input:hover,#quoteForm textarea:hover,.newsletter-form input:hover{
+  border-color:#ffffff40;background:#202027
+}
+/* Custom focus treatment instead of the site-wide 3px/6px-offset outline:
+   a tight border-color change plus a soft glow reads as a considered form
+   control rather than an accessibility ring bolted onto a browser default.
+   Still satisfies WCAG 2.4.7 (a clearly visible, high-contrast indicator);
+   :focus-visible keeps it from firing on programmatic focus. */
+#quoteForm input:focus-visible,#quoteForm textarea:focus-visible,.newsletter-form input:focus-visible{
+  outline:none;border-color:var(--orange);box-shadow:0 0 0 3px #ff691b33
+}
+/* Invalid state, scoped to avoid the classic "everything's red before the
+   user has typed anything" bug: :placeholder-shown means the field is
+   still empty, so an empty required field never gets flagged just for
+   existing -- only a value the browser has actually rejected (e.g. a
+   malformed email) does. :not(:focus) defers the red state until the user
+   leaves the field, so it doesn't fight the orange focus treatment while
+   they're still typing. Empty required fields are still caught by the
+   existing native reportValidity() bubble on submit; giving them a red
+   border too would mean tracking per-field "was submitted" state in JS,
+   which is out of scope for a visual-only pass. */
+#quoteForm input:invalid:not(:placeholder-shown):not(:focus),
+#quoteForm textarea:invalid:not(:placeholder-shown):not(:focus),
+.newsletter-form input:invalid:not(:placeholder-shown):not(:focus){
+  border-color:#e5484d;box-shadow:0 0 0 3px rgba(229,72,77,.18)
+}
+.form-feedback{font-size:12.5px;color:var(--orange-light);background:#ff691b14;border:1px solid #ff691b35;border-radius:8px;padding:12px 14px;margin:0}
+
+/* ---------- Preview tools ---------- */
+.preview-tools{position:relative;padding:20px 6%;background:#17171b;border-top:1px solid #ffffff30}
+.preview-tools summary{cursor:pointer;width:fit-content;color:#c3c3c9;font-size:12px;padding:12px 0}
+.preview-actions{display:flex;flex-wrap:wrap;gap:8px;padding:8px 0}
+.preview-tools>span{font-size:10px;letter-spacing:.08em;color:#c3c3c9;padding:0 9px}
+.preview-tools button{padding:9px 11px;background:#2a2a31;border:0;color:#fff;font-size:11px;border-radius:2px}
+.preview-tools button:hover{background:#48484f}
+
+/* ---------- Motion off / reduced motion ---------- */
+.motion-off *, .motion-off *:before,.motion-off *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.motion-off .hero-copy{opacity:1;transform:none}
+.motion-off .hero-media{transform:none}
+.motion-off .reveal{opacity:1;transform:none}
+.motion-off .badge{animation:none!important}
+.motion-off{scroll-behavior:auto}
+@keyframes entrance{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes car-arrival{from{opacity:.4;scale:1.07}to{opacity:1;scale:1}}
+@keyframes scroll-line{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@keyframes badge-in{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+@media(prefers-reduced-motion:reduce){
+  :root{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .hero-copy{opacity:1;transform:none}
+  .hero-media{transform:none}
+  .motion-enabled .reveal.pending{opacity:1;transform:none}
+  .badge{animation:none!important}
+  /* The blanket "transition:none" above already stops these from
+     animating, but the translateY itself would still apply instantly (a
+     non-animated jump is still movement). Colour feedback on hover/active
+     is fine to keep as an instant swap; the lift/press motion is what
+     needs to go. */
+  .quote:hover,.quote:active,.button:hover,.button:active{transform:none}
+}
+
+/* ---------- Responsive ---------- */
+@media(min-width:1600px){.hero-copy{max-width:850px}}
+
+@media(max-width:1000px){
+  /* Nav collapses to the hamburger here, before seven full-length labels
+     (Home / About Us / Product / Gallery / Warranty / Blog / Contact Us)
+     plus the Get a Quote button get cramped against the logo. */
+  .header{padding:19px 22px;gap:12px}
+  .header .logo{width:205px}
+  .header .quote{display:none}
+  .menu{display:grid;gap:6px;padding:12px;background:transparent;border:0}
+  .menu span{width:23px;height:1px;background:white}
+  .header nav{display:none;position:absolute;top:100%;left:0;right:0;background:#101014;padding:20px 25px;border-bottom:1px solid #ffffff30;flex-direction:column}
+  .header nav.open{display:flex}
+  .header nav a{font-size:17px;padding:14px}
+
+  .hero-copy{max-width:650px}
+  .hero-media{left:20%}
+  .hero{min-height:850px}
+  .profile-grid{grid-template-columns:1fr;gap:40px}
+  .profile-media img{height:420px}
+  .ppf-grid{grid-template-columns:1fr;gap:36px}
+  /* Below this width .ppf-visual can't stay sticky (single-column layout),
+     so it would just sit static at the top and scroll out of view before
+     the cards below it ever activate — the image-swap it exists for is
+     never seen. Each card already carries its own icon/title, so hiding it
+     loses no information and saves a large dead image on mobile. */
+  .ppf-visual{display:none}
+  .audience-grid{grid-template-columns:1fr 1fr}
+  .faq-grid{grid-template-columns:1fr;gap:30px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+
+@media(max-width:700px){
+  .hero{min-height:0;height:auto;max-height:none;align-items:flex-start;padding:126px 24px 340px}
+  .hero-media{inset:22% -35% 0 0}
+  .hero-media img{object-position:50% 65%}
+  .scrim{background:linear-gradient(180deg,#0a0a0c 5%,#0a0a0ceb 42%,#0a0a0c85 68%,#0a0a0c40 100%)}
+  h1{font-size:clamp(30px,7.7vw,43px);line-height:1.16;text-wrap:initial;letter-spacing:-.03em}
+  .intro{font-size:10px;margin-bottom:19px}
+  .description{font-size:13px;line-height:1.7;margin:22px 0}
+  .actions{gap:9px;display:grid;justify-items:start}
+  .button{font-size:13px;padding:17px 20px}
+  .text-link{font-size:13px}
+  .scroll-cue{display:none}
+  .hero-caption{display:none}
+  .float-badges{position:absolute;inset:auto 0 20px 0;display:flex;flex-direction:column;gap:10px;padding:0 24px}
+  .badge{position:static;animation:badge-in .7s cubic-bezier(.16,1,.3,1) both!important;width:fit-content}
+  .badge-2{align-self:center}
+  .badge-3{align-self:flex-end}
+
+  .section{padding:70px 24px}
+  .section-heading{margin-bottom:30px}
+  h2{font-size:32px}
+
+  .profile-grid{gap:32px}
+  .profile-media img{height:280px}
+  .alt-copy{font-size:12.5px}
+
+  .banner-slide{aspect-ratio:1920/649}
+
+  .ppf-grid{margin-top:36px;gap:28px}
+  .ppf-card-trigger{padding:16px 18px}
+  .ppf-card-title{font-size:15.5px}
+  .ppf-copy-grid{grid-template-columns:1fr;padding:0 18px 18px;gap:12px}
+
+  .stats{padding:24px 20px}
+  .stats-row{grid-template-columns:1fr 1fr;gap:20px 0;max-width:none}
+  .stat{padding:6px 8px;border-right:0}
+  .stat:nth-child(odd){border-right:1px solid #ffffff14}
+
+  .compare-table{min-width:640px}
+
+  .audience-grid{grid-template-columns:1fr;gap:18px}
+
+  .faq-item summary{font-size:15px;padding:20px 0}
+
+  .partner-item{width:120px;height:82px}
+
+  .contact{padding-top:80px;padding-bottom:80px}
+  /* At this width the desktop glow's 620px diameter is nearly as wide as
+     the viewport, turning "light in one corner" into a full-bleed tint.
+     Scaling it down keeps the same corner-light character on narrow
+     screens instead of just a smaller version of a different effect. */
+  .contact::before{width:380px;height:280px;right:-14%;top:-10%}
+
+  .footer-grid{grid-template-columns:1fr;gap:34px}
+  .newsletter-form{flex-direction:column}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+
+  /* Moved to the top on mobile instead of tuning the hero's bottom-right
+     corner around it: the float-badges stack, and later the final-CTA
+     buttons, both live in that corner at various viewport heights, so no
+     fixed pixel offset there was reliably collision-free. Below the fixed
+     header is clear at every mobile height. */
+  .preview-tools{padding:16px 24px}
+  .preview-tools>span{font-size:8px;padding:0 5px}
+  .preview-tools button{font-size:10px;padding:9px}
+
+  .quote-dialog{padding:26px 20px;border-radius:12px}
+  #quoteForm .form-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:380px){
+  .hero{padding-bottom:300px}
+  h1{font-size:clamp(27px,8vw,34px)}
+}

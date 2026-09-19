@@ -1,0 +1,127 @@
+/* Sticky on every viewport, unlike the original site where it wasn't sticky on mobile */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-header-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-accent {
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--text);
+}
+
+.quote-btn {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.quote-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 18px;
+  width: 42px;
+  height: 42px;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    height: 72px;
+  }
+
+  .site-nav,
+  .quote-btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Nav links and the quote button live in one flex column together,
+     so there's no magic pixel offset to keep in sync (that kind of
+     hardcoded offset is exactly what broke the original site's mobile menu). */
+  .site-header.menu-open .site-nav,
+  .site-header.menu-open .quote-btn {
+    display: flex;
+  }
+
+  .site-header.menu-open .site-nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(7, 7, 7, 0.98);
+    padding: 12px 20px 20px;
+  }
+
+  .site-header.menu-open .site-nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .site-header.menu-open .quote-btn {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    margin-top: 12px;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255, 100, 17, 0.08);
+  }
+}

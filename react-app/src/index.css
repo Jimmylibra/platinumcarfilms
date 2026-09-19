@@ -1,0 +1,53 @@
+:root {
+  --bg: #050505;
+  --bg2: #090909;
+  --panel: #111112;
+  --text: #f6f6f6;
+  --muted: #a8a8ad;
+  --accent: #ff6411;
+  --line: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-shell {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.accent {
+  color: var(--accent);
+}

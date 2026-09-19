@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Platinum Car Films Bug Report</title>
+<style>
+  @page { margin: 22mm 18mm; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #1a1a1a; font-size: 12.5px; line-height: 1.55; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  .sub { color: #666; font-size: 12px; margin: 0 0 26px; }
+  h2 { font-size: 16px; margin: 34px 0 4px; border-bottom: 2px solid #ff6411; padding-bottom: 6px; color: #111; }
+  h2 .count { color: #999; font-weight: normal; font-size: 12px; }
+  .item { margin: 14px 0; padding: 12px 14px; border: 1px solid #e2e2e2; border-radius: 8px; page-break-inside: avoid; }
+  .item-title { font-weight: bold; font-size: 13px; margin-bottom: 4px; }
+  .badge { display: inline-block; font-size: 9.5px; font-weight: bold; text-transform: uppercase; letter-spacing: .04em; padding: 2px 8px; border-radius: 999px; margin-right: 6px; color: #fff; }
+  .sev-high { background: #d13b2f; }
+  .sev-med { background: #d98c00; }
+  .sev-low { background: #5b7bd8; }
+  .src { background: #eee; color: #444; }
+  .desc { margin: 6px 0 0; color: #333; }
+  .meta { margin-top: 6px; font-size: 11px; color: #777; }
+  code { background: #f2f2f2; padding: 1px 5px; border-radius: 4px; font-size: 11px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 8px; font-size: 11.5px; }
+  td, th { border: 1px solid #ddd; padding: 5px 8px; text-align: left; }
+  th { background: #f5f5f5; }
+  .cover { text-align: center; padding-top: 120px; }
+  .cover h1 { font-size: 30px; }
+  .cover .url { font-size: 14px; color: #ff6411; margin-top: 10px; }
+  .cover .meta-box { margin-top: 60px; text-align: left; display: inline-block; font-size: 12px; color: #555; }
+  .pagebreak { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Bug &amp; QA Audit Report</h1>
+  <div class="url">platinumcarfilms.com</div>
+  <div class="meta-box">
+    <p><strong>Prepared for:</strong> Platinum Car Films site review</p>
+    <p><strong>Date:</strong> September 16, 2026</p>
+    <p><strong>Scope:</strong> Homepage (live production site), spot checks on About, Product, Gallery, Warranty, Blog and policy pages</p>
+    <p><strong>Method:</strong> Visual review (screenshots) plus HTML and network level inspection (page source, image weights, meta tags, link and status code checks)</p>
+  </div>
+</div>
+
+<div class="pagebreak"></div>
+
+<h1>Bug &amp; QA Audit Report</h1>
+<p class="sub">platinumcarfilms.com, findings from visual review and technical inspection</p>
+
+<h2 style="margin-top:0">Executive Summary</h2>
+<div class="item" style="border-color:#d13b2f;background:#fff6f5">
+  <p class="desc" style="margin-top:0">This audit found <strong>39 distinct issues</strong> across the live site, ranging from cosmetic polish to functionality that fails outright. Three findings stand out as the most consequential for a paid, delivered website:</p>
+  <p class="desc">1. <strong>Every lead capture form on the site is broken.</strong> The "Request a Quote" popup (the site's main call to action, repeated in nearly every section), the dedicated Contact Us page form, and the footer newsletter signup all fail with a generic mail-send error, even when filled out correctly. As delivered, the website cannot generate a single sales enquiry.</p>
+  <p class="desc">2. <strong>None of the four legal pages contain real content.</strong> Shipping Policy, Privacy Policy, Refund Policy, and Terms &amp; Conditions are all still the unedited default WooCommerce/theme placeholder text: generic instructions addressed to whoever builds the site, not an actual policy for customers. A live commercial site with none of its legal pages filled in is a real compliance and liability gap, not cosmetic.</p>
+  <p class="desc">3. <strong>Widespread signs of unfinished or placeholder work</strong> beyond the legal pages: an uncaptioned, uncategorized dump of mismatched images standing in for a product gallery; a homepage internally still titled "Home Revamp"; a "Blog" nav item pointing to a page with one post; an "Our Partner" section showing country flags instead of any actual partner; a scroll-synced feature panel that shows the wrong content; and a repeating layout bug that leaves large dead black gaps between sections on at least two different pages.</p>
+  <p class="desc" style="margin-bottom:0">4. <strong>Mobile is a second-class experience.</strong> The navigation bar is not sticky, headings are oversized and wrap awkwardly, the "Our Partner" carousel does not render at all, the scroll-synced feature section duplicates its own content instead of adapting to one column, and the floating chat/scroll-top/reCAPTCHA icons sit on top of real content including, in the footer, the business address.</p>
+</div>
+
+<h2>1. Visual Bugs Reported <span class="count">(observed directly in browser)</span></h2>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Layout</span>Floating widget icons are not properly stacked</div>
+  <p class="desc">In the bottom-right corner, the chat/WhatsApp bubble, the "scroll to top" arrow button, and the reCAPTCHA badge are bunched together with inconsistent spacing and alignment instead of a clean, evenly spaced vertical stack. It reads as three unrelated third-party widgets overlapping rather than a designed control cluster.</p>
+  <p class="meta">Likely cause: no shared container or CSS rule governing spacing between the live-chat plugin (Joinchat/WhatsApp Business Chat), the theme's back-to-top button, and Google reCAPTCHA's injected badge. Each is positioned independently with default plugin CSS.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Layout</span>Large empty black gap between the Hero section and "Company Profile"</div>
+  <p class="desc">Directly under the hero stats row (7.5 / 8.5 / 100% / 24 Hr) there is a tall block of empty black space before the "Company Profile" heading starts, with a stray rounded-corner edge visible partway down: the trailing edge of an element that has no content inside it.</p>
+  <p class="meta">Likely cause: an empty or failed-to-render section/column left over from a page-builder (WPBakery) edit, or excess top/bottom padding on a spacer element.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Layout</span>Same "no cutoff" empty gap recurs further down the page</div>
+  <p class="desc">The same problem repeats lower on the page: after the "Product Selection Assistance" bullet point, there is a large dead black area (roughly 300px or more) before the "Paint Protection Film" construction diagram image appears, with no divider, heading, or visual transition. It just looks like broken or missing content.</p>
+  <p class="meta">This confirms the gap issue is not a one-off. It is a repeating pattern, most likely the same WPBakery row/column type (an empty text or image column) reused across multiple sections of the homepage.</p>
+  <p class="desc">Also found on the <strong>About Us page</strong>: a large empty black gap (roughly 400 to 500px) sits between the "We Are a Team Passionate About Car Protection" block and the "Our Mission: Reliability, Aesthetics, and a Professional Approach" block below it, with no visual separator. Since this now shows up on two different pages built with the same page-builder template, it is a site-wide template/spacing issue, not a one-off content mistake on the homepage. Worth fixing at the theme/template level rather than page by page.</p>
+  <p class="meta">Also confirmed on the mobile <strong>Product page</strong>: a large empty gap sits between the "Home / Product" breadcrumb and the first product card, before any content loads.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-low">Content</span>Same product photo reused twice on the About Us page</div>
+  <p class="desc">The identical stacked-boxes product photo appears in both the "We Are a Team Passionate About Car Protection" section and the "Reliability, Aesthetics, and a Professional Approach" section directly below it. Reusing the exact same image twice, back to back, on one page reads as unfinished or placeholder content rather than a deliberate design choice.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Functionality</span>Sticky image slider is out of sync with the highlighted feature card</div>
+  <p class="desc">This section pairs a sticky left-hand image/progress-bar panel with a scrolling list of feature cards on the right (Polymer base, Material positioning, Adhesive layer positioning, Self-healing, and so on). The left panel is supposed to update to match whichever card is currently active as the user scrolls. Instead it is desynced: while "Polymer base" (01) and "Material positioning" (02) are the cards in view on the right, the left panel is still showing "OEM/ODM customization," a caption/image that belongs to a different step entirely.</p>
+  <p class="meta">Likely cause: the scroll-linked JS (GSAP/ScrollTrigger or similar) is tracking the wrong index, or the left panel's content list is mismatched/offset by one against the right-hand card list.</p>
+  <p class="desc">Confirmed again further down: while scrolling through card "07, Thickness options" (not yet reaching the last card), the final card "08, OEM/ODM customization" was already shown with the active highlighted border, and the left panel had already jumped to match it. The active state is snapping to the last card prematurely instead of tracking whichever card is actually centered in the viewport.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Functionality</span>FAQ accordion close button does not collapse the open item</div>
+  <p class="desc">In the FAQ section, clicking the minus icon on the currently open question ("Who is a paint protection film supplier?") does not close/collapse it back down. Once opened, that item appears stuck open. The toggle only works one direction.</p>
+  <p class="desc">Confirmed again on the <strong>Warranty page FAQ</strong>: the open item ("What does the Platinum Car Films PPF warranty cover?") also will not collapse when its minus icon is clicked. Since this is the same FAQ accordion component reused across pages, it is a site-wide component bug, not a one-off.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Content</span>Warranty FAQ answer text is cut off mid-sentence</div>
+  <p class="desc">The open answer under "What does the Platinum Car Films PPF warranty cover?" starts mid-sentence: <em>"...than 2% annually is acceptable), bubbling or cracking from material failure, and adhesive failure under normal conditions. It does not covers physical damage, improper installation, or chemical misuse."</em> The opening clause explaining what the percentage refers to (likely something about film discoloration or clarity loss) is missing before "than 2% annually is acceptable)". There is also a grammar slip: "does not covers" should be "does not cover".</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-low">Copy / grammar</span>Grammatically incorrect FAQ question</div>
+  <p class="desc">One FAQ heading reads <strong>"DO PLATINUMPPF PRODUCTS ARE TESTED?"</strong> This should be "ARE PLATINUMPPF PRODUCTS TESTED?" or "DO PLATINUMPPF PRODUCTS GET TESTED?". As written it is not correct English and stands out since every other FAQ heading nearby reads naturally.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Content</span>"Our Partner" section shows country flags, not actual partners</div>
+  <p class="desc">This section is headlined "Our Partner" (missing the "s"; should be "Our Partners") and displays a carousel of national flags (Uzbekistan, Russia, Iraq, Kuwait, Turkey, India) in circular frames. There is no company name, logo, or testimonial attached to any of them, so it is unclear whether these represent actual business partners, export markets, or something else. As shown, it does not communicate real partnerships and could come across as filler/placeholder content to a B2B buyer doing due diligence.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Functionality</span>"What We Supply" rows look like clickable buttons but do nothing</div>
+  <p class="desc">Each row in the "What We Supply" list (Paint Protection Film, Athermal &amp; Window Film, Colour TPU PPF, OEM/ODM Custom Branding, Product Selection Assistance, Direct Warehouse Shipping) has a rounded-pill border and a right-facing chevron arrow: both strong visual signals of a clickable button, link, or expandable accordion. Clicking them does nothing. No link, no expand/collapse, no navigation. This misleads users into expecting more detail (for example a dedicated product page) that never appears.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Layout</span>Inconsistent card structure in "Who We Work With"</div>
+  <p class="desc">Of the five customer-type cards (PPF Installation Studios, Importers &amp; Distributors, OEM Brand Partners, Fleet Operators, Automotive Dealerships), the first two ("PPF Installation Studios" and "Importers &amp; Distributors") each have a stray empty rectangular box sitting next to their icon: dead space that is not present on the other three cards, which just show the icon centered above the title. It looks like leftover markup from an edit (for example a removed inline label or badge) rather than an intentional layout, and it breaks the visual consistency of an otherwise uniform 5-card grid.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">UX</span>Blog/product cards are not clickable and give no hover feedback</div>
+  <p class="desc">On the blog listing grid (for example "Platinum 210 Paint Protection Film," "190 Micron PPF," "Headlight Paint Protection Film"), the card image and title are not clickable and show no hover state at all. No cursor change, no highlight, no lift/scale effect. The only way into the article is the small "READ MORE" text link at the bottom. Users naturally expect to click the large image or the headline, not hunt for a small link. This pattern loses clicks and feels unfinished compared to a normal blog/card grid.</p>
+  <p class="meta">Same pattern confirmed on the Product page on mobile: product cards ("Platinum 210 Paint Protection Film" and others) are not clickable outside the small "READ MORE" link, and the floating chat icon overlaps directly onto the card title and link at this screen width.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Content</span>Gallery page is an unorganized dump, not a real gallery</div>
+  <p class="desc">The Gallery page is a dense, uncaptioned grid mixing completely different types of images with no consistency: marketing ad-banner mockups with text overlays ("190," "TPU FILMS," "PROTECT CAR BODY"), plain product-box render photos, stock car cutouts pasted onto plain white backgrounds, and a few real installation shots, all jammed together with mismatched aspect ratios and backgrounds (some pure white, some dark studio, some transparent-looking). There are no captions, categories, or filtering, so a visitor cannot tell what they are looking at or find actual before/after installation work. This looks like every image asset in the media library was dumped into one grid rather than a curated gallery, and it undermines the "professional supplier" positioning the rest of the site is going for.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Design</span>Light pink cards break the dark theme on the Warranty page</div>
+  <p class="desc">The "What Voids the Warranty" section uses pale pink/white cards on black background: the only place on the site where light-colored UI blocks appear against the otherwise fully dark theme used everywhere else. It looks like a copy-pasted component from a different (light-mode) template rather than a deliberate design choice, and clashes with the rest of the page.</p>
+  <p class="desc">The grid is also unbalanced: 7 items split across 2 columns (4 left, 3 right), leaving the last card ("Warranty is non-Transferable") isolated by itself with visibly more empty space below it than the other column. The last card's body text is also an incomplete sentence: "to next owner of the vehicle." is missing its subject (should read something like "The warranty is non-transferable to the next owner of the vehicle.").</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Design / UX</span>"Submit a Claim or Ask a Question" block has multiple usability problems</div>
+  <p class="desc">This warranty-claim CTA block has several issues stacked together:</p>
+  <p class="desc"><strong>Not actually clickable:</strong> the WhatsApp numbers and the "Claim Form" URL are shown as plain static text, not as tap-to-call/tap-to-chat/clickable links, despite looking like they should be (each has its own labeled box). A visitor has to manually copy the number or type the URL themselves.</p>
+  <p class="desc"><strong>No real claim form:</strong> the heading promises "Submit a Claim," and there is a box literally labeled "Claim Form," but it just repeats the same plain-text URL (<code>platinumcarfilms.com/contact-us/</code>) shown in the intro paragraph, and in a completely unrelated "Claim Form" label there is no actual embedded form or dedicated claims page.</p>
+  <p class="desc"><strong>Low-contrast, low-legibility background:</strong> a heavy solid-orange gradient is laid directly over a car photo, which washes the photo out almost completely and provides no real visual value. It just reduces contrast against the white heading text without adding anything.</p>
+  <p class="desc"><strong>Two unlabeled WhatsApp numbers again:</strong> reinforces the earlier phone-number inconsistency finding. Here both numbers sit stacked under "WhatsApp" with no indication of which one to actually use, or why there are two.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Rendering</span>Blog page heading renders as "Bl1og" instead of "Blog"</div>
+  <p class="desc">The large page-title heading at the top of the Blog page displays as garbled text resembling "Bl1og" rather than a clean "Blog." The "o" glyph is rendering broken/malformed at this large size. Needs checking in an actual browser (could be a font file/weight issue with the custom heading font at large sizes).</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Layout / Content</span>Blog page is almost entirely empty</div>
+  <p class="desc">The Blog page currently has only one post ("How long does paint protection film last"), sitting alone in the top-left of what is clearly meant to be a multi-column grid, leaving a large empty black area filling the rest of the page. A "Blog" nav item linking to a page with a single post makes the business look inactive. Either publish more posts or reconsider linking to it prominently in primary navigation until there is real content.</p>
+  <p class="meta">The excerpt is also truncated mid-word: "...scratches and roc..." cuts off inside the word "road" instead of at a word boundary.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Content</span>All four legal/policy pages are unedited placeholder boilerplate, none contain a real policy</div>
+  <p class="desc">Checked all four: <strong>Shipping Policy, Privacy Policy, Refund Policy, and Terms &amp; Conditions</strong>. Every single one is still the default WooCommerce/theme placeholder template, addressed to the site owner instead of the customer. None of them contain Platinum Car Films' actual shipping costs, delivery timeframes, refund process, or terms of sale.</p>
+  <p class="desc">Shipping/Privacy/Refund pages literally contain this generator boilerplate word for word: <em>"The explanations and information provided herein are only general explanations, information and samples. You should not rely on this article as legal advice or as recommendations regarding what you should actually do. We recommend that you seek legal advice to help you understand and to assist you in the creation of your [shipping/privacy/refund] policy."</em> This is instructional text meant for whoever builds the site, accidentally published live for customers to read.</p>
+  <p class="desc">The Terms &amp; Conditions page is the same problem. It is a generic explainer of "what a Terms and Conditions page generally covers" (a bulleted list like "Who can use your website," "Payment Methods," "Indemnification," and so on) rather than Platinum Car Films' actual terms.</p>
+  <p class="meta">This is a real legal-risk issue, not just a content gap. A B2B site processing wholesale orders and warranty claims with no functioning refund policy, shipping policy, or terms of sale is exposed if a dispute happens. This should be treated as a priority fix, not cosmetic polish.</p>
+  <p class="meta">The Privacy Policy page also still contains a live "support article" link pointing out to WooCommerce's own help documentation, a leftover from the template that has nothing to do with Platinum Car Films and should not be visible to customers.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Functionality</span>Footer newsletter signup is broken</div>
+  <p class="desc">Submitting the "Subscribe For Newsletters" form in the footer fails with the error <em>"There was an error trying to send your message. Please try again later."</em> Tested with a valid email address and it still failed. The signup is not capturing any leads at all right now, which is a real lost-opportunity bug on top of being broken functionality.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Design / UX</span>"Request a Quote" popup: no required field indicators, and clashes with the site's dark theme</div>
+  <p class="desc">The quote-request modal (triggered by "Get a Quote") has several usability problems:</p>
+  <p class="desc"><strong>No indication which fields are required before you submit.</strong> None of the fields show an asterisk or any other required marker. The WhatsApp Number field only reveals it is mandatory after clicking Submit, via a red "Please fill out this field" message. The user has to fail first to find out the rules.</p>
+  <p class="desc"><strong>Fields use placeholder text as the label</strong> (for example "Testing Company," "Whatsapp Number," "Describe briefly the product you need" sit inside the input as placeholder text with no separate label above). Once a user starts typing, the placeholder disappears and they lose the reminder of what that field was for: a well-known accessibility/UX anti-pattern.</p>
+  <p class="desc"><strong>Generic, unhelpful error summary:</strong> after a failed submit, the yellow banner just says "One or more fields have an error. Please check and try again," without saying which field, forcing the user to scan the whole form manually.</p>
+  <p class="desc"><strong>Visually inconsistent with the rest of the site:</strong> this is a plain white modal with default browser-style input borders and a bare "x" close icon. It looks like an unstyled default form dropped onto an otherwise fully designed dark site, rather than a themed component.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Functionality</span>"Request a Quote" form fails to submit, the site's main CTA does not work</div>
+  <p class="desc">With every field filled in correctly (name, company, email, WhatsApp number, product description), submitting the "Request a Quote" form returns <em>"There was an error trying to send your message. Please try again later."</em> This is not a validation issue. It is the same failure the footer newsletter form has, which suggests the underlying email-sending setup (likely the site's SMTP/mail configuration or the Contact Form 7 mail handler) is broken sitewide.</p>
+  <p class="meta">This is the most severe issue found: "Get a Quote" is the primary call to action repeated across almost every section of the site (hero, products, audience cards, final CTA), and right now no quote request actually reaches the business. Recommend testing and fixing the site's outgoing mail delivery as the top priority.</p>
+  <p class="desc">Confirmed a third time on the dedicated <strong>Contact Us page</strong> ("Send Us An Email" form): same "Please fill out this field" on WhatsApp Number with no upfront required marker, and the same "One or more fields have an error" failure. Three separate forms (popup quote modal, Contact Us page, footer newsletter) all failing the same way is strong evidence of one underlying site-wide mail-sending fault, not three unrelated bugs.</p>
+  <p class="desc">Also worth noting: the Contact Us page version of this form is styled to match the dark site theme (dark inputs, proper contrast), while the exact same form in the "Request a Quote" popup modal is a plain unstyled white box (see the separate "Request a Quote" design finding above). The same form component renders two completely different ways depending on where it is placed.</p>
+</div>
+
+<h2 style="margin-top:44px">1b. Mobile Responsiveness</h2>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Mobile</span>Floating widget icons overlap real page content on small screens</div>
+  <p class="desc">On mobile, the chat bubble, scroll-to-top button, and reCAPTCHA badge sit fixed in the bottom-right corner and overlap whatever content happens to scroll underneath them. In the footer specifically, this cluster sits directly on top of the address text, making part of it unreadable and hard to tap around. The same overlap happens over feature-card text further up the page. This is more than the desktop spacing issue noted earlier: on mobile it actively blocks content.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Mobile</span>Same empty-gap bug also appears on mobile</div>
+  <p class="desc">The recurring dead black-space bug found on desktop (see the "no cutoff" findings above) also shows up on mobile: a large empty area sits above the "Become a Dealer & Join Us" banner image with no content in it, pushing that banner far down the page for no reason.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Mobile</span>Scroll-synced feature slider shows duplicate content stacked on top of itself</div>
+  <p class="desc">On desktop this section splits into a sticky image panel (left) and scrolling cards (right); see the earlier "out of sync" finding. On mobile, where that layout collapses into a single column, it now shows the same information twice in a row: a compact "Polymer base" image card with a progress bar, immediately followed by a second, larger "Polymer base" card repeating the same title and icon. The mobile layout was not adapted for a single column, it just stacks both halves of the desktop layout, so the user scrolls through duplicated content for every single feature.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Mobile</span>"Our Partner" section is effectively empty on mobile</div>
+  <p class="desc">On mobile, the "Our Partner" section shows only the heading, then a large blank black area with none of the flag carousel content visible that shows on desktop. Whatever renders the partner flags on desktop (see the earlier "Our Partner" finding) does not render at all on mobile, so mobile visitors see an empty, seemingly broken section with a heading and nothing under it.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Mobile</span>Navigation bar is not sticky on mobile</div>
+  <p class="desc">On mobile the top navigation bar (menu button and logo) scrolls away with the page instead of staying fixed at the top, unlike the desktop version which does stay sticky. This means a mobile visitor has to scroll all the way back to the top of the page just to open the menu or reach the logo/home link, which is a meaningful navigation inconvenience on a long page like this one.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Mobile</span>About Us stat cards waste a large amount of vertical space</div>
+  <p class="desc">The four stat cards on the About Us page ("10+ Years Manufacturing," "24/7 Customer Support," "OEM Custom Branding," "10+ Global Shipping") stack as four separate full-width rows on mobile, each roughly 100px tall, pushing the rest of the page far down for what is a small amount of information. These would work better as a 2x2 grid on mobile, similar to how the homepage's hero stats are handled. The floating chat widget also overlaps directly onto the "OEM Custom Branding" card here, another instance of the floating-icon overlap issue noted above.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Mobile</span>Headings do not scale down enough for narrow screens</div>
+  <p class="desc">On the About Us page, the "Reliability, Aesthetics, and a Professional Approach" heading is set at a font size that is too large for a phone-width screen: it wraps across 5 separate lines, with awkward one-or-two-word breaks, and takes up nearly half the visible screen before any body text appears. Several other large headings across the site show the same pattern on mobile. The font size scaling for headings needs a lower minimum on small screens so text wraps more naturally and does not push all the actual content this far down.</p>
+</div>
+
+<h2>2. Additional Bugs Found During Audit</h2>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Performance</span>One hero/gallery image is 6.25&nbsp;MB unoptimized</div>
+  <p class="desc"><code>wp-content/uploads/2026/05/31.jpg</code> loads at <strong>6,254,311 bytes</strong>, roughly 30 to 60 times larger than it should be for a web image. Every visitor downloads this on page load, which will noticeably slow the page, hurt Core Web Vitals (LCP), and hurt Google ranking, especially on mobile connections.</p>
+  <table>
+    <tr><th>File</th><th>Size</th></tr>
+    <tr><td>31.jpg</td><td style="color:#d13b2f;font-weight:bold">6.25 MB</td></tr>
+    <tr><td>111_7_11zon-scaled.webp</td><td>209 KB</td></tr>
+    <tr><td>H1958...B.jpg</td><td>126 KB</td></tr>
+    <tr><td>H308...Y.jpg</td><td>115 KB</td></tr>
+    <tr><td>H424...S.jpg</td><td>113 KB</td></tr>
+    <tr><td>H5f77...9.jpg</td><td>100 KB</td></tr>
+    <tr><td>logo.png</td><td>64 KB</td></tr>
+  </table>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-high">Performance</span>Roughly 120 requests on page load, with duplicated libraries doing the same job</div>
+  <p class="desc">A single homepage load triggers roughly <strong>120 network requests</strong>. A meaningful chunk of that is redundant tooling rather than actual content: <strong>3 separate web fonts</strong> being loaded, <strong>2 different slider/carousel libraries</strong> (Swiper alongside the theme's own slider handling), and <strong>2 different icon libraries</strong> (Font Awesome and Bootstrap Icons) both shipped and presumably both in use in different parts of the page. On top of that, both jQuery and jQuery Migrate are loaded alongside a modern animation library (GSAP) and RxJS. None of these are unusual individually, but together they add up to overlapping dependencies that all cost download and parse time without adding anything the user sees.</p>
+  <p class="meta">Practical impact: every one of these is extra weight and extra requests on every page load, compounding the 6.25&nbsp;MB image issue above. Consolidating to one slider library and one icon set alone would meaningfully cut load time with no visual change to the site.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Content / Branding</span>Product images use raw marketplace filenames</div>
+  <p class="desc">Several images are named like a copy-pasted Alibaba/AliExpress CDN filename rather than something descriptive, for example <code>H19581fcd740f4e148ff31758a1d450d0B.jpg</code>, <code>H308b1dfdc55a47da89f7f93949381b68Y.jpg</code>. This hurts image SEO (Google Images cannot tell what the picture is) and looks unpolished if a visitor ever inspects the page or the URL bar during image save.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Contact info</span>Two different phone numbers shown, inconsistently formatted</div>
+  <p class="desc">The homepage source contains two different phone numbers: <code>+86 181 2245 8657</code> and <code>+86 153 3807-7719</code> (the second with a stray dash the first does not have). A customer calling either number should reach the same business, but showing two numbers without labeling which is for what (sales vs. support vs. WhatsApp) is confusing, and the inconsistent formatting looks like an unfinished edit.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">SEO / Social</span>No Open Graph image set, shared links show no preview image</div>
+  <p class="desc">The homepage has <code>og:title</code>, <code>og:description</code>, <code>og:url</code>, and so on, but <strong>no <code>og:image</code></strong>. When the link is shared on Facebook, LinkedIn, WhatsApp, or iMessage, no thumbnail/preview image will show, just plain text. Confirmed by the Pinterest share button also falling back to WordPress's generic default placeholder SVG instead of a real product photo.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-low">Metadata</span>Homepage still carries its draft admin title "Home Revamp"</div>
+  <p class="desc">The page's internal WordPress title/slug was never renamed from the working title used while building it. It is exposed publicly via the REST API (<code>/wp-json/wp/v2/pages/224</code> shows <code>"title":"Home Revamp"</code>) and via <code>/home-revamp/</code>, which both resolve with a 200 status as duplicate URLs for the homepage. Not visible to a typical visitor, but sloppy for SEO (duplicate-content signal) and unprofessional if a developer, competitor, or search engine surfaces it.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-low">Metadata</span>Twitter/X card shows fake blog metadata on the homepage</div>
+  <p class="desc">The homepage's Twitter card includes <code>twitter:label1 = "Written by"</code>, <code>twitter:data1 = "autoboost018"</code>, <code>twitter:label2 = "Time to read"</code>, <code>twitter:data2 = "45 minutes"</code>. This is blog-post reading-time/author metadata being applied to the homepage by the SEO plugin's default template. A homepage does not have an author or a 45 minute read time, and this will show up if the link is shared on X/Twitter.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-low">Copy / grammar</span>Grammar error in "Company Profile" section</div>
+  <p class="desc">"We use <strong>advance</strong> technology to develop durable Paint Protection Films" should read "We use <strong>advanced</strong> technology..."</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-low">Content</span>Unclear label in the film construction diagram</div>
+  <p class="desc">In the "Paint Protection Film" cross-section graphic, one adhesive layer is labeled <strong>"RSFIL Developed Advanced Adhesive."</strong> "RSFIL" does not match any of the site's other branding (Platinum PPF, PlatinumPPF) and looks like either a typo or a leftover label from a stock/supplier diagram that was not replaced with the company's own branding.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-med">Content / Copy quality</span>Site copy reads as unedited AI-generated text in places</div>
+  <p class="desc">Several blocks of body copy across the site read like raw, unedited AI-generated text rather than copy a person reviewed and finished. Signs of this include overuse of em dashes as a substitute for commas or full stops, generic template phrasing left in place (see the legal-pages finding above), stock transition phrases that do not connect to anything specific on the page, and repeated sentence patterns across different sections that read like they came from the same generation prompt rather than being written individually. This is worth a full editing pass: read every page's copy as a customer would, and rewrite anything that sounds generic, templated, or oddly phrased into plain, specific language about what Platinum Car Films actually offers.</p>
+</div>
+
+<h2>3. Design Improvement Notes <span class="count">(not bugs, but flagged for polish)</span></h2>
+
+<div class="item">
+  <div class="item-title"><span class="badge sev-low src">Design</span>"Comparison" table needs a stronger visual design</div>
+  <p class="desc">The "Paint Protection Film Supplier vs Traditional Alternatives" table is functionally fine but visually flat: every data row uses the same dark background with only thin dividing lines, so there is little hierarchy between rows, and the bright orange gradient header band reads as a generic/default template style rather than a designed table. Suggest alternating row shading, a clearer visual distinction for the "Platinum" column (it is meant to win the comparison but currently looks the same weight as the "Traditional Alternative" column), and a less default-looking header treatment.</p>
+</div>
+
+<h2>4. Notes / Not Confirmed as Bugs</h2>
+<div class="item">
+  <p class="desc" style="margin-top:0">An automated content scan also flagged "all product images fail to load / placeholder GIFs" and a "future copyright year (2026)." Both were checked directly against the live site and are <strong>not actual issues</strong>: images load fine (they use lazy-loading which the scanner mistook for broken images), and 2026 is the current year. Flagging here only so these do not get reported to a client by mistake.</p>
+</div>
+
+</body>
+</html>

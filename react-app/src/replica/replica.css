@@ -1,0 +1,140 @@
+/* Adapt the original WoodMart styles for script-free React components.
+   Imported source styles remain under public/assets/original. */
+:root { color-scheme: dark; --replica-orange: #ff691b; --replica-bg: #0a0a0c; --replica-panel: #15151a; }
+* { box-sizing: border-box; }
+body.replica-site { margin: 0; background: var(--replica-bg); color: #aaaab3; font-family: Jost, Arial, sans-serif; font-size: 18px; }
+/* The original theme locks scrolling in two separate places, both meant to
+   be released by the theme's own preloader JS once the page is "ready":
+     1. base.min.css: body{overflow:hidden}
+     2. a page-specific inline <style> on almost every scraped page (see
+        PageStyles in ReplicaApp.tsx, which renders page.css):
+        html body{overflow:hidden;max-height:calc(100vh - var(--wd-admin-bar-h))}
+   Neither lock is ever released here since that JS isn't part of this
+   replica. #2 is the one that produced a second, inner scrollbar: body was
+   still height-capped at ~100vh even after #1 was overridden, so body
+   became its own scroll container in addition to the page's real one.
+   Override both the overflow and the height cap; leave overflow-x alone,
+   it's what stops full-bleed sections causing a horizontal scrollbar. */
+body.replica-site {
+  overflow-y: visible !important;
+  max-height: none !important;
+}
+.replica-site #root { min-height: 100vh; overflow: clip; }
+.replica-site :is(button,input,textarea) { font: inherit; }
+.replica-site :is(button,a,input,textarea,summary):focus-visible { outline: 2px solid #ff9b64; outline-offset: 4px; }
+.replica-site ::selection { background: #ff691b; color: #080808; }
+.replica-site input, .replica-site textarea { caret-color: #ff691b; }
+.replica-site h1,.replica-site h2,.replica-site h3,.replica-site h4 { color: #fff; }
+.replica-site img { max-width: 100%; }
+.replica-site .wpb_animate_when_almost_visible { opacity: 1 !important; transform: none !important; animation: none !important; }
+.replica-site .wd-page-content { background: var(--replica-bg); }
+.replica-site .wd-section-stretch { position: relative; left: 50%; width: 100vw; margin-left: -50vw; }
+.replica-site .vc_row[data-vc-full-width] { left: auto !important; width: auto !important; }
+.replica-site .main-page-wrapper { padding-top: 0; }
+.replica-site .vc_row-full-width { display: none; }
+.replica-site .wd-lazy-load { opacity: 1; }
+.replica-site .trigger-modal { cursor: pointer; }
+.replica-site .wd-gallery-item button { background: transparent; padding: 0; border: 0; width: 100%; cursor: zoom-in; display: block; }
+.replica-site .replica-gallery-item img { width: 100%; object-fit: cover; display: block; border-radius: 12px; }
+.replica-site .wd-images-gallery .wd-gallery-item img { aspect-ratio: 354 / 236; }
+.replica-site .wd-images-gallery { visibility: visible; }
+.replica-site table { max-width: 100%; }
+.replica-site :is(.custom-table-wrapper,.standardRangeTable,.wpb_text_column) { min-width: 0; }
+.replica-site .custom-table-wrapper { overflow-x: auto; }
+.replica-site .wd-footer { background: #111114; }
+.replica-site .wd-footer .vc_row { width: auto !important; left: auto !important; }
+.replica-site .wd-footer .main-footer { width: 100%; max-width: 1222px; }
+.replica-site .wd-footer a { color: #d0d0d6; }
+.replica-site .wd-footer a:hover { color: #ff691b; }
+.replica-header { position: relative; z-index: 100; width: 100%; background: #080809; border-bottom: 1px solid #ffffff12; }
+.replica-header-inner { min-height: 96px; max-width: 1222px; padding: 16px 20px; margin: auto; display: flex; gap: 28px; align-items: center; }
+.replica-logo { display: block; flex: 0 0 155px; }
+.replica-logo img { width: 155px; height: 60px; object-fit: contain; display: block; }
+.replica-navigation { display: flex; gap: 24px; align-items: center; margin-left: auto; }
+.replica-navigation a { color: #fff; font-family: Inter,Arial,sans-serif; font-size: 15px; font-weight: 400; white-space: nowrap; text-decoration: none; }
+.replica-navigation a.active,.replica-navigation a:hover { color: #ff691b; }
+.replica-site .replica-button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 25px; border: 0; border-radius: 35px; color: #fff; background: #e95309; font-size: 16px; font-weight: 600; text-decoration: none; cursor: pointer; line-height: 1.3; transition: background-color .2s; }
+.replica-site .replica-button:hover { background: #cb4200; color: #fff; }
+.replica-header-quote { flex-shrink: 0; }
+.replica-menu-toggle { display: none; color: white; border: 0; background: transparent; padding: 10px; }
+.replica-site.home .hero { padding-top: 74px !important; }
+.replica-site .hero h1 { text-wrap: balance; }
+.replica-site .replica-accordion { border-bottom: 1px solid #ffffff21; margin: 0; }
+.replica-site .replica-accordion summary { cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 12px; color: #fff; font-family: Sora,Arial,sans-serif; font-size: 17px; font-weight: 500; list-style: none; }
+.replica-accordion summary::-webkit-details-marker { display: none; }
+.replica-accordion summary svg { flex-shrink: 0; transition: transform .2s; }
+.replica-accordion[open] summary svg { transform: rotate(90deg); }
+.replica-site .replica-accordion-body { padding: 0 12px 22px; color: #b8b8c0; }
+.replica-banner-slider { position: relative; width: 100%; background: #111114; }
+.replica-banner-slider > img { width: 100%; height: auto; display: block; }
+.replica-slider-controls { position: absolute; right: 18px; bottom: 16px; display: flex; align-items: center; gap: 14px; border-radius: 30px; padding: 4px; background: #0a0a0cdb; color: #fff; }
+.replica-site .replica-slider-controls button,.replica-site .replica-media-controls button { display: grid; place-items: center; width: 36px; height: 36px; min-height: 0; padding: 0; border: 0; background: transparent; color: #fff; cursor: pointer; }
+.replica-slider-controls span { font-size: 13px; font-variant-numeric: tabular-nums; }
+.replica-media-track { overflow-x: auto; scrollbar-width: thin; scroll-snap-type: x mandatory; scrollbar-color: #ff691b #18181c; }
+.replica-media-track .wd-carousel-wrap { display: flex !important; transform: none !important; gap: 20px; }
+.replica-media-track .wd-carousel-item { flex: 0 0 calc((100% - 100px) / 6); min-width: 120px; scroll-snap-align: start; width: auto !important; }
+.replica-media-controls { display: flex; gap: 10px; justify-content: flex-end; }
+.replica-site .replica-form { color: #d5d5dc; }
+.replica-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.replica-site .replica-form label { display: block; margin: 0 0 18px; color: #d5d5dc; font-size: 14px; font-weight: 400; text-align: left; }
+.replica-site .replica-form input,.replica-site .replica-form textarea,.replica-site .replica-search input { display: block; width: 100%; border: 1px solid #ffffff40; border-radius: 4px; background: #101014; color: #fff; padding: 12px 14px; margin-top: 7px; min-height: 48px; box-shadow: none; }
+.replica-site .replica-form input::placeholder,.replica-site .replica-form textarea::placeholder { color: #a5a5af; opacity: 1; }
+.replica-site .replica-form textarea { resize: vertical; min-height: 110px; }
+.replica-site .replica-form-note { font-size: 12px; color: #b5b5bf; margin: 12px 0 0; line-height: 1.5; }
+.replica-site .replica-form-feedback { color: #ffe1cf; font-size: 14px; margin-top: 14px; }
+.replica-newsletter-fields { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; }
+.replica-newsletter-fields label { flex: 1 1 130px; margin-bottom: 0 !important; }
+.replica-site .replica-newsletter-fields .replica-button { min-height: 48px; padding: 10px 15px; border-radius: 4px; }
+.replica-site .replica-dialog { position: fixed; inset: 0; width: min(650px,calc(100% - 32px)); max-height: calc(100dvh - 40px); margin: auto; padding: 36px; border: 1px solid #ffffff30; border-radius: 14px; color: #bcbcc4; background: #15151a; overflow-y: auto; box-shadow: 0 24px 80px #0009; }
+.replica-dialog::backdrop { background: #000b; }
+.replica-dialog h2 { color: #fff; font-size: 30px; padding-right: 30px; }
+.replica-site .replica-dialog-close { position: absolute; top: 14px; right: 14px; border: 0; border-radius: 50%; background: #222228; color: #fff; padding: 8px; line-height: 1; display: grid; place-items: center; cursor: pointer; z-index: 2; }
+.replica-site .replica-lightbox { width: min(1200px,calc(100% - 24px)); background: #080809; padding: 40px 55px 15px; }
+.replica-lightbox figure { margin: 0; text-align: center; }
+.replica-lightbox figure img { width: 100%; height: min(78dvh,900px); object-fit: contain; }
+.replica-lightbox figcaption { color: #ccc; font-size: 14px; padding: 12px; font-variant-numeric: tabular-nums; }
+.replica-site .replica-lightbox-previous,.replica-site .replica-lightbox-next { position: absolute; top: 48%; display: grid; place-items: center; padding: 10px; border: 0; background: #222228; color: #fff; border-radius: 4px; cursor: pointer; }
+.replica-lightbox-previous { left: 5px; }.replica-lightbox-next { right: 5px; }
+.replica-floating-actions { position: fixed; bottom: 24px; right: 24px; display: grid; gap: 12px; z-index: 110; }
+.replica-site .replica-floating-actions button { display: grid; place-items: center; width: 52px; height: 52px; min-height: 0; border: 0; padding: 0; border-radius: 50%; color: #fff; cursor: pointer; box-shadow: 0 5px 20px #0005; }
+.replica-scroll-top { background: #25252d; }.replica-chat-toggle { background: #128c45; }
+.replica-chat-panel { position: fixed; bottom: 90px; right: 24px; z-index: 111; width: min(320px,calc(100vw - 48px)); padding: 24px; border: 1px solid #ffffff20; border-radius: 12px; background: #19191f; box-shadow: 0 12px 40px #0008; }
+.replica-chat-panel h3 { font-size: 18px; }.replica-chat-panel p { font-size: 16px; }
+.replica-skip-link { position: fixed; left: 12px; top: -100px; z-index: 200; padding: 12px 20px; background: #fff; color: #111; }
+.replica-skip-link:focus { top: 12px; }
+.replica-loading { display: grid; place-items: center; min-height: 50vh; color: #ddd; }
+.replica-utility { max-width: 1222px; padding: 80px 24px; margin: auto; min-height: 55vh; }
+.replica-utility h1 { font-size: clamp(30px,4vw,46px); line-height: 1.2; margin-bottom: 28px; }
+.replica-search { display: flex; align-items: center; max-width: 580px; margin: 0 0 25px; gap: 10px; }
+.replica-site .replica-search input { margin: 0; }.replica-search button { background: #e95309; border: 0; color: #fff; padding: 13px; display: grid; place-items: center; border-radius: 4px; }
+.replica-results { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 40px 28px; margin-top: 40px; }
+.replica-results article img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 12px; }
+.replica-results h2 { font-size: 23px; margin: 20px 0 12px; }.replica-results h2 a { color: #fff; }.replica-results article > a:last-child { color: #ff9459; }
+.replica-results p { font-size: 16px; }.replica-empty { padding-top: 90px; padding-bottom: 90px; }
+.replica-pagination { display: flex; gap: 12px; margin-top: 40px; }.replica-pagination a { padding: 8px 16px; color: #fff; border: 1px solid #ffffff30; }.replica-pagination a[aria-current] { background: #e95309; }
+@media (max-width: 1100px) {
+  .replica-header-inner { gap: 18px; }.replica-navigation { gap: 15px; }.replica-navigation a { font-size: 13px; }.replica-logo { flex-basis: 125px; }.replica-logo img { width: 125px; }
+}
+@media (max-width: 900px) {
+  .replica-header-inner { min-height: 78px; padding: 10px 20px; }.replica-logo { flex-basis: 140px; }.replica-logo img { width: 140px; height: 50px; }
+  .replica-navigation { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 16px 24px 24px; background: #101014; border-bottom: 1px solid #ffffff25; box-shadow: 0 12px 25px #0005; }
+  .replica-navigation.is-open { display: flex; flex-direction: column; align-items: stretch; gap: 0; }.replica-navigation a { padding: 13px 0; font-size: 16px; }
+  .replica-header-quote { margin-left: auto; }.replica-menu-toggle { display: grid; place-items: center; }.replica-header-quote.replica-button { padding: 10px 16px; font-size: 14px; min-height: 40px; }
+  .replica-results { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .replica-site.home .hero { padding-top: 55px !important; }.replica-media-track .wd-carousel-item { flex-basis: calc((100% - 40px)/3); }
+}
+@media (max-width: 767px) {
+  .replica-site .wd-section-stretch { padding-left: 20px !important; padding-right: 20px !important; }
+  .replica-site .hero h1 { font-size: 34px !important; line-height: 1.15 !important; }
+  .replica-site .vc_section { padding-top: 50px !important; padding-bottom: 50px !important; }
+  .replica-site .hero .vc_column_container + .vc_column_container { margin-top: 30px; }
+  .replica-site .wd-page-title { padding-top: 45px; padding-bottom: 45px; }
+  .replica-form-grid { grid-template-columns: 1fr; gap: 0; }.replica-site .replica-dialog { padding: 28px 20px; }.replica-dialog h2 { font-size: 25px; }
+  .replica-site .replica-lightbox { padding: 45px 35px 10px; }.replica-lightbox-previous { left: 0; }.replica-lightbox-next { right: 0; }
+  .replica-floating-actions { right: 16px; bottom: 16px; }.replica-site .replica-floating-actions button { width: 46px; height: 46px; }
+  .replica-utility { padding: 48px 20px; }.replica-results { grid-template-columns: 1fr; }
+  .replica-site .wd-footer .vc_col-sm-3 { margin-bottom: 25px; }.replica-site .wd-footer .ul_sep ul { display: flex; flex-wrap: wrap; gap: 4px; }
+  .replica-media-track .wd-carousel-item { flex-basis: calc((100% - 20px)/2); }.replica-site .comparison-table { min-width: 600px; }
+}
+@media (max-width: 390px) { .replica-header-inner { gap: 9px; padding-inline: 12px; }.replica-logo { flex-basis: 110px; }.replica-logo img { width: 110px; } }
+@media (prefers-reduced-motion: reduce) { .replica-site *, .replica-site *::before, .replica-site *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

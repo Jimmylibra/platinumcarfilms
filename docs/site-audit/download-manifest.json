@@ -1,0 +1,2076 @@
+{
+  "https://platinumcarfilms.com/": {
+    "file": "docs/site-audit/source/home.html",
+    "bytes": 175783
+  },
+  "https://platinumcarfilms.com/190-micron-ppf/": {
+    "file": "docs/site-audit/source/190-micron-ppf.html",
+    "bytes": 146859
+  },
+  "https://platinumcarfilms.com/210-paint-protection-film/": {
+    "file": "docs/site-audit/source/210-paint-protection-film.html",
+    "bytes": 145303
+  },
+  "https://platinumcarfilms.com/about-us/": {
+    "file": "docs/site-audit/source/about-us.html",
+    "bytes": 143516
+  },
+  "https://platinumcarfilms.com/blog/": {
+    "file": "docs/site-audit/source/blog.html",
+    "bytes": 105221
+  },
+  "https://platinumcarfilms.com/blog/how-long-does-paint-protection-film-last/": {
+    "file": "docs/site-audit/source/blog__how-long-does-paint-protection-film-last.html",
+    "bytes": 142721
+  },
+  "https://platinumcarfilms.com/cart/": {
+    "file": "docs/site-audit/source/cart.html",
+    "bytes": 103490
+  },
+  "https://platinumcarfilms.com/checkout/": {
+    "file": "docs/site-audit/source/checkout.html",
+    "bytes": 103448
+  },
+  "https://platinumcarfilms.com/color-ppf-for-car/": {
+    "file": "docs/site-audit/source/color-ppf-for-car.html",
+    "bytes": 148424
+  },
+  "https://platinumcarfilms.com/contact-us/": {
+    "file": "docs/site-audit/source/contact-us.html",
+    "bytes": 108465
+  },
+  "https://platinumcarfilms.com/gallery/": {
+    "file": "docs/site-audit/source/gallery.html",
+    "bytes": 192892
+  },
+  "https://platinumcarfilms.com/gloss-black-paint-protection-film-190-microns/": {
+    "file": "docs/site-audit/source/gloss-black-paint-protection-film-190-microns.html",
+    "bytes": 149457
+  },
+  "https://platinumcarfilms.com/headlight-paint-protection-film/": {
+    "file": "docs/site-audit/source/headlight-paint-protection-film.html",
+    "bytes": 148979
+  },
+  "https://platinumcarfilms.com/matte-paint-protection-film/": {
+    "file": "docs/site-audit/source/matte-paint-protection-film.html",
+    "bytes": 146158
+  },
+  "https://platinumcarfilms.com/my-account/": {
+    "file": "docs/site-audit/source/my-account.html",
+    "bytes": 103502
+  },
+  "https://platinumcarfilms.com/privacy-policy/": {
+    "file": "docs/site-audit/source/privacy-policy.html",
+    "bytes": 101119
+  },
+  "https://platinumcarfilms.com/product/": {
+    "file": "docs/site-audit/source/product.html",
+    "bytes": 120917
+  },
+  "https://platinumcarfilms.com/refund-policy/": {
+    "file": "docs/site-audit/source/refund-policy.html",
+    "bytes": 99612
+  },
+  "https://platinumcarfilms.com/satin-paint-protection-film/": {
+    "file": "docs/site-audit/source/satin-paint-protection-film.html",
+    "bytes": 149076
+  },
+  "https://platinumcarfilms.com/shipping-policy/": {
+    "file": "docs/site-audit/source/shipping-policy.html",
+    "bytes": 99803
+  },
+  "https://platinumcarfilms.com/terms-and-conditions/": {
+    "file": "docs/site-audit/source/terms-and-conditions.html",
+    "bytes": 100660
+  },
+  "https://platinumcarfilms.com/warranty/": {
+    "file": "docs/site-audit/source/warranty.html",
+    "bytes": 158023
+  },
+  "https://platinumcarfilms.com/window-tint-film-for-cars-platinum-car-films/": {
+    "file": "docs/site-audit/source/window-tint-film-for-cars-platinum-car-films.html",
+    "bytes": 144555
+  },
+  "https://platinumcarfilms.com/author/autoboost018/": {
+    "file": "docs/site-audit/source/author__autoboost018.html",
+    "bytes": 106530
+  },
+  "https://platinumcarfilms.com/blog/category/ppf/": {
+    "file": "docs/site-audit/source/blog__category__ppf.html",
+    "bytes": 105804
+  },
+  "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css?ver=1.11.3": {
+    "file": "react-app/public/assets/original/28af43570249-bootstrap-icons.css",
+    "bytes": 100311
+  },
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css?ver=5.3.3": {
+    "file": "react-app/public/assets/original/c56f6d4bce76-bootstrap.min.css",
+    "bytes": 232808
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/creame-whatsapp-me/public/css/joinchat.min.css?ver=6.3.2": {
+    "file": "react-app/public/assets/original/f511d89403e2-joinchat.min.css",
+    "bytes": 20935
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/hostinger-reach/frontend/dist/blocks/subscription.css?ver=1789454805": {
+    "file": "react-app/public/assets/original/eb9c142e6b12-subscription.css",
+    "bytes": 8481
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=8.7.2": {
+    "file": "react-app/public/assets/original/91627f2bae12-js_composer.min.css",
+    "bytes": 467573
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/css/v4-shims.min.css?ver=8.7.2": {
+    "file": "react-app/public/assets/original/56a1957c565e-v4-shims.min.css",
+    "bytes": 21216
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/css/js_composer_tta.min.css?ver=8.7.2": {
+    "file": "react-app/public/assets/original/532c8b23b3dc-js_composer_tta.min.css",
+    "bytes": 268289
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/css/all.min.css?ver=8.7.2": {
+    "file": "react-app/public/assets/original/0c51203e12f5-all.min.css",
+    "bytes": 74482
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/animate.css/animate.min.css?ver=8.7.2": {
+    "file": "react-app/public/assets/original/8d4dd4efd954-animate.min.css",
+    "bytes": 58139
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/style.css?ver=8.3.8%3F2026-09-16%2022%3A33%3A24": {
+    "file": "react-app/public/assets/original/d7e342fff858-style.css",
+    "bytes": 274
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/style.css?ver=8.3.8%3F2026-09-16%2022%3A34%3A44": {
+    "file": "react-app/public/assets/original/898c8ee5a8c9-style.css",
+    "bytes": 274
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/style.css?ver=8.3.8%3F2026-09-16%2022%3A34%3A45": {
+    "file": "react-app/public/assets/original/ba3cac690ecd-style.css",
+    "bytes": 274
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/style.css?ver=8.3.8%3F2026-09-16%2022%3A34%3A47": {
+    "file": "react-app/public/assets/original/11bf7aefcb15-style.css",
+    "bytes": 274
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/style.css?ver=8.3.8%3F2026-09-16%2022%3A34%3A46": {
+    "file": "react-app/public/assets/original/8a61032f4dd6-style.css",
+    "bytes": 274
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/style.css?ver=8.3.8%3F2026-09-16%2022%3A34%3A48": {
+    "file": "react-app/public/assets/original/1d3842eedfb8-style.css",
+    "bytes": 274
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/style.css?ver=8.3.8%3F2026-09-16%2022%3A35%3A43": {
+    "file": "react-app/public/assets/original/5619e340f247-style.css",
+    "bytes": 274
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/base.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/6359e2d110b9-base.min.css",
+    "bytes": 44477
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/style.css?ver=8.3.8%3F2026-09-16%2022%3A34%3A49": {
+    "file": "react-app/public/assets/original/88c9297a1d07-style.css",
+    "bytes": 274
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/blog-loop-base.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/bde4a2503c6b-blog-loop-base.min.css",
+    "bytes": 1669
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/blog-loop-design-masonry.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/21ee96750782-blog-loop-design-masonry.min.css",
+    "bytes": 894
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/blog-mod-author.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/617835fc6366-blog-mod-author.min.css",
+    "bytes": 419
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-info-box.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/e19d01b0d1d9-el-info-box.min.css",
+    "bytes": 3807
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/blog-mod-comments-button.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/648f70f342bc-blog-mod-comments-button.min.css",
+    "bytes": 736
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-gallery.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/85ce3205d0a0-el-gallery.min.css",
+    "bytes": 240
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/blog-single-predefined.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/7f9f430fd495-blog-single-predefined.min.css",
+    "bytes": 458
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-button.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/859ff6174a6f-el-button.min.css",
+    "bytes": 2752
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-section-title-style-simple-and-brd.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/3d10c7c1eed4-el-section-title-style-simple-and-brd.min.css",
+    "bytes": 1144
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-list.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/79515d0194fe-el-list.min.css",
+    "bytes": 1744
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/59684f52e914-el-section-title.min.css",
+    "bytes": 1777
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-slider-anim-distortion.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/3522677eb9de-el-slider-anim-distortion.min.css",
+    "bytes": 226
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-list-wpb-elem.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/6e7c2e7b1264-el-list-wpb-elem.min.css",
+    "bytes": 152
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-social-icons.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/ea80ed05d51d-el-social-icons.min.css",
+    "bytes": 3837
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-slider-dots-style-2.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/923da734a955-el-slider-dots-style-2.min.css",
+    "bytes": 1247
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-slider.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/fb335e727cf9-el-slider.min.css",
+    "bytes": 2535
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-social-styles.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/407e563a8f46-el-social-styles.min.css",
+    "bytes": 1664
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/b9f161670bd6-el-text-block.min.css",
+    "bytes": 301
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/footer-base.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/86c6734b4ef3-footer-base.min.css",
+    "bytes": 777
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/header-base.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/1594ee578901-header-base.min.css",
+    "bytes": 12827
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/header-el-base.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/c458a5993b9c-header-el-base.min.css",
+    "bytes": 898
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/header-el-mobile-nav-dropdown.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/796ce015f1bc-header-el-mobile-nav-dropdown.min.css",
+    "bytes": 91
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/int-wbp-el-animations.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/254965d2c16b-int-wbp-el-animations.min.css",
+    "bytes": 3029
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/int-wpcf7.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/227acd095099-int-wpcf7.min.css",
+    "bytes": 2548
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/helpers-wpb-elem.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/8a8033df219d-helpers-wpb-elem.min.css",
+    "bytes": 958
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/lib-swiper-arrows.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/7259cf97f465-lib-swiper-arrows.min.css",
+    "bytes": 2950
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/int-wpb-base-deprecated.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/ad483e6a4812-int-wpb-base-deprecated.min.css",
+    "bytes": 811
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/int-wpb-base.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/e634ae0391ab-int-wpb-base.min.css",
+    "bytes": 16522
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/lib-swiper-pagin.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/e819c1e63e8b-lib-swiper-pagin.min.css",
+    "bytes": 1443
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/lib-photoswipe.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/27de3ef56bb0-lib-photoswipe.min.css",
+    "bytes": 6885
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/mod-highlighted-text.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/dbf932c864a7-mod-highlighted-text.min.css",
+    "bytes": 478
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/lib-swiper.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/35a9bb3a2845-lib-swiper.min.css",
+    "bytes": 1711
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/mod-sticky-sidebar-opener.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/31c309a536c8-mod-sticky-sidebar-opener.min.css",
+    "bytes": 484
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/mod-tools.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/b0f76c015b8c-mod-tools.min.css",
+    "bytes": 4967
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/opt-carousel-disable.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/5ead10d2778c-opt-carousel-disable.min.css",
+    "bytes": 383
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/opt-lazy-load.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/616232412181-opt-lazy-load.min.css",
+    "bytes": 212
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/opt-off-canvas-sidebar.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/4930376fbd48-opt-off-canvas-sidebar.min.css",
+    "bytes": 648
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/opt-scrolltotop.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/64f0e428d76c-opt-scrolltotop.min.css",
+    "bytes": 773
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/page-title.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/2268112983e4-page-title.min.css",
+    "bytes": 681
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/post-types-mod-categories-style-bg.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/b80babab8245-post-types-mod-categories-style-bg.min.css",
+    "bytes": 414
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/post-types-mod-comments.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/ed43a1f0c409-post-types-mod-comments.min.css",
+    "bytes": 4712
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/post-types-mod-date-style-bg.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/8640acac65fe-post-types-mod-date-style-bg.min.css",
+    "bytes": 593
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/css/parts/post-types-mod-predefined.min.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/7b6513a4315e-post-types-mod-predefined.min.css",
+    "bytes": 657
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/xts-theme_settings_default-1781891220.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/371db7ddf0c2-xts-theme_settings_default-1781891220.css",
+    "bytes": 42048
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/08/xts-default_header-1786478067.css?ver=8.3.8": {
+    "file": "react-app/public/assets/original/d9c97f4f0c58-xts-default_header-1786478067.css",
+    "bytes": 1185
+  },
+  "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6": {
+    "file": "react-app/public/assets/original/e837c4d1eca8-bootstrap-icons.woff2",
+    "bytes": 130396
+  },
+  "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6": {
+    "file": "react-app/public/assets/original/1b495e11a3c1-bootstrap-icons.woff",
+    "bytes": 176032
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_grid/vc_grid_v1.eot#iefix-9hbgac": {
+    "file": "react-app/public/assets/original/5ef0069ea2d4-vc_grid_v1.eot",
+    "bytes": 6024
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_grid/vc_grid_v1.eot?-9hbgac": {
+    "file": "react-app/public/assets/original/7f2b076bfdef-vc_grid_v1.eot",
+    "bytes": 6024
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_grid/vc_grid_v1.svg?-9hbgac#vc_grid_v1": {
+    "file": "react-app/public/assets/original/41ca77b07101-vc_grid_v1.svg",
+    "bytes": 13215
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_grid/vc_grid_v1.ttf?-9hbgac": {
+    "file": "react-app/public/assets/original/a16b6e475987-vc_grid_v1.ttf",
+    "bytes": 5848
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_icons/fonts/vcpb-plugin-icons.eot?30guqj#iefix": {
+    "file": "react-app/public/assets/original/68387db6612e-vcpb-plugin-icons.eot",
+    "bytes": 11600
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_grid/vc_grid_v1.woff?-9hbgac": {
+    "file": "react-app/public/assets/original/c15dd8d12940-vc_grid_v1.woff",
+    "bytes": 5924
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_icons/fonts/vcpb-plugin-icons.eot?30guqj": {
+    "file": "react-app/public/assets/original/b9f75e86bfa4-vcpb-plugin-icons.eot",
+    "bytes": 11600
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_icons/fonts/vcpb-plugin-icons.svg?30guqj#vcpb-plugin-icons": {
+    "file": "react-app/public/assets/original/0e5f54ef8f02-vcpb-plugin-icons.svg",
+    "bytes": 39414
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_icons/fonts/vcpb-plugin-icons.ttf?30guqj": {
+    "file": "react-app/public/assets/original/184fdf4e7674-vcpb-plugin-icons.ttf",
+    "bytes": 11396
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/fonts/vc_icons/fonts/vcpb-plugin-icons.woff?30guqj": {
+    "file": "react-app/public/assets/original/94680dfb13ab-vcpb-plugin-icons.woff",
+    "bytes": 11472
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/flickr.png": {
+    "file": "react-app/public/assets/original/0dddcfc3475b-flickr.png",
+    "bytes": 198
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/alarm-clock.png": {
+    "file": "react-app/public/assets/original/15fec8c9b046-alarm-clock.png",
+    "bytes": 841
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/anchor.png": {
+    "file": "react-app/public/assets/original/83437fda5b54-anchor.png",
+    "bytes": 694
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/address-book.png": {
+    "file": "react-app/public/assets/original/e4e893fb926a-address-book.png",
+    "bytes": 712
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/asterisk.png": {
+    "file": "react-app/public/assets/original/89af08511a57-asterisk.png",
+    "bytes": 682
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/application-image.png": {
+    "file": "react-app/public/assets/original/5087f9f59f76-application-image.png",
+    "bytes": 544
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/arrow.png": {
+    "file": "react-app/public/assets/original/b697b95c78ee-arrow.png",
+    "bytes": 590
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/auction-hammer.png": {
+    "file": "react-app/public/assets/original/ea236e43225f-auction-hammer.png",
+    "bytes": 705
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/balloon-buzz.png": {
+    "file": "react-app/public/assets/original/26172f371fa8-balloon-buzz.png",
+    "bytes": 717
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/balloon-facebook.png": {
+    "file": "react-app/public/assets/original/331ea088a62c-balloon-facebook.png",
+    "bytes": 691
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/balloon-twitter.png": {
+    "file": "react-app/public/assets/original/c0c2faea049b-balloon-twitter.png",
+    "bytes": 700
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/balloon.png": {
+    "file": "react-app/public/assets/original/ca42e49fb581-balloon.png",
+    "bytes": 674
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/battery-full.png": {
+    "file": "react-app/public/assets/original/70b05515e8ac-battery-full.png",
+    "bytes": 648
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/binocular.png": {
+    "file": "react-app/public/assets/original/daf2bf3e8ac9-binocular.png",
+    "bytes": 621
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/blue-document-excel.png": {
+    "file": "react-app/public/assets/original/1f5ed64a0cb1-blue-document-excel.png",
+    "bytes": 688
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/blue-document-image.png": {
+    "file": "react-app/public/assets/original/4cf1e02f36c9-blue-document-image.png",
+    "bytes": 700
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/blue-document-music.png": {
+    "file": "react-app/public/assets/original/25256a2b3f33-blue-document-music.png",
+    "bytes": 647
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/blue-document-office.png": {
+    "file": "react-app/public/assets/original/4947b5ed7de1-blue-document-office.png",
+    "bytes": 763
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/blue-document-pdf.png": {
+    "file": "react-app/public/assets/original/b52d3c467852-blue-document-pdf.png",
+    "bytes": 690
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/blue-document-powerpoint.png": {
+    "file": "react-app/public/assets/original/67b937ed1dee-blue-document-powerpoint.png",
+    "bytes": 709
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/blue-document-word.png": {
+    "file": "react-app/public/assets/original/d43a9016acc1-blue-document-word.png",
+    "bytes": 691
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/bookmark.png": {
+    "file": "react-app/public/assets/original/d0fca24e791f-bookmark.png",
+    "bytes": 635
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/camcorder.png": {
+    "file": "react-app/public/assets/original/5b02fa4dc574-camcorder.png",
+    "bytes": 590
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/camera.png": {
+    "file": "react-app/public/assets/original/40c5a832bb77-camera.png",
+    "bytes": 635
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/chart-pie.png": {
+    "file": "react-app/public/assets/original/88d32f70ab0b-chart-pie.png",
+    "bytes": 1686
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/clock.png": {
+    "file": "react-app/public/assets/original/e301136eda67-clock.png",
+    "bytes": 706
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/control.png": {
+    "file": "react-app/public/assets/original/062150156a6f-control.png",
+    "bytes": 470
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/fire.png": {
+    "file": "react-app/public/assets/original/27ba17203126-fire.png",
+    "bytes": 606
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/chart.png": {
+    "file": "react-app/public/assets/original/4cad54bf986f-chart.png",
+    "bytes": 659
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/mail.png": {
+    "file": "react-app/public/assets/original/80dc7f4e86db-mail.png",
+    "bytes": 505
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/heart.png": {
+    "file": "react-app/public/assets/original/50f54ba27161-heart.png",
+    "bytes": 792
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/plus-shield.png": {
+    "file": "react-app/public/assets/original/aeb2d7530167-plus-shield.png",
+    "bytes": 756
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/toggle_close.png": {
+    "file": "react-app/public/assets/original/c0bd0deaf307-toggle_close.png",
+    "bytes": 168
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/toggle_open.png": {
+    "file": "react-app/public/assets/original/a375a4a1c192-toggle_open.png",
+    "bytes": 223
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/icons/video.png": {
+    "file": "react-app/public/assets/original/f3825ecc3b97-video.png",
+    "bytes": 657
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/images/spinner.gif": {
+    "file": "react-app/public/assets/original/c6bcb1c10854-spinner.gif",
+    "bytes": 673
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
+    "file": "react-app/public/assets/original/cecf766c2a31-fa-regular-400.woff2",
+    "bytes": 25472
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
+    "file": "react-app/public/assets/original/ccf115a5f56b-fa-brands-400.ttf",
+    "bytes": 210792
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
+    "file": "react-app/public/assets/original/c9822569c9e4-fa-regular-400.ttf",
+    "bytes": 68064
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
+    "file": "react-app/public/assets/original/0773730e247e-fa-brands-400.woff2",
+    "bytes": 118684
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
+    "file": "react-app/public/assets/original/6246c9f125e1-fa-solid-900.ttf",
+    "bytes": 426112
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "react-app/public/assets/original/38b4f6fcb0d6-fa-solid-900.woff2",
+    "bytes": 158220
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/vc/alert.png": {
+    "file": "react-app/public/assets/original/227fafe818ac-alert.png",
+    "bytes": 302
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/vc/blur.svg#blur": {
+    "file": "react-app/public/assets/original/bb77fa4b1422-blur.svg",
+    "bytes": 126
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/vc/info.png": {
+    "file": "react-app/public/assets/original/2387306f3dca-info.png",
+    "bytes": 323
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/vc/exclamation.png": {
+    "file": "react-app/public/assets/original/a0bf8968c7bd-exclamation.png",
+    "bytes": 495
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/vc/remove.png": {
+    "file": "react-app/public/assets/original/4d5dff37b00f-remove.png",
+    "bytes": 265
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/vc/tick.png": {
+    "file": "react-app/public/assets/original/98be85d13127-tick.png",
+    "bytes": 244
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/fonts/woodmart-font-1-400.woff2?v=8.3.8": {
+    "file": "react-app/public/assets/original/dd74f4945d51-woodmart-font-1-400.woff2",
+    "bytes": 12152
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/images/default-skin.svg": {
+    "file": "react-app/public/assets/original/239743416105-default-skin.svg",
+    "bytes": 1554
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/images/default-skin.png": {
+    "file": "react-app/public/assets/original/5c2a09093b4f-default-skin.png",
+    "bytes": 547
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/inc/admin/assets/images/calend-d.svg": {
+    "file": "react-app/public/assets/original/fdec80de0b68-calend-d.svg",
+    "bytes": 505
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/inc/admin/assets/images/calend-l.svg": {
+    "file": "react-app/public/assets/original/6f4577492664-calend-l.svg",
+    "bytes": 517
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/Bank-Gothic-Light-Regular.woff": {
+    "file": "react-app/public/assets/original/cf3c4a59d35e-Bank-Gothic-Light-Regular.woff",
+    "bytes": 13628
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/BankGothic-Md-BT-1.woff": {
+    "file": "react-app/public/assets/original/28c7c04d6be3-BankGothic-Md-BT-1.woff",
+    "bytes": 22340
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/bank-gothic-medium-bt-1.woff": {
+    "file": "react-app/public/assets/original/f53e503b3015-bank-gothic-medium-bt-1.woff",
+    "bytes": 22508
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf": {
+    "error": "<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>"
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2": {
+    "error": "<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>"
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/11_edited-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/f4ef9c384198-11_edited-scaled-354x236.webp",
+    "bytes": 17954
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/11_edited-scaled.webp": {
+    "file": "react-app/public/assets/original/efc650e898ee-11_edited-scaled.webp",
+    "bytes": 148204
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/12-354x236.webp": {
+    "file": "react-app/public/assets/original/c36751dafaea-12-354x236.webp",
+    "bytes": 14718
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/12.webp": {
+    "file": "react-app/public/assets/original/6d2527966110-12.webp",
+    "bytes": 60672
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/13-354x236.webp": {
+    "file": "react-app/public/assets/original/e65e9be492a4-13-354x236.webp",
+    "bytes": 17762
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/13.webp": {
+    "file": "react-app/public/assets/original/2483ea0ce1c0-13.webp",
+    "bytes": 84988
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/14.webp": {
+    "file": "react-app/public/assets/original/3ab2ae9b6a37-14.webp",
+    "bytes": 30650
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/14-354x236.webp": {
+    "file": "react-app/public/assets/original/389ad9baf381-14-354x236.webp",
+    "bytes": 9416
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/15-354x236.webp": {
+    "file": "react-app/public/assets/original/a5dc63edb405-15-354x236.webp",
+    "bytes": 9556
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/15.webp": {
+    "file": "react-app/public/assets/original/130547acb727-15.webp",
+    "bytes": 52678
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/16-354x236.webp": {
+    "file": "react-app/public/assets/original/1d8a972e9272-16-354x236.webp",
+    "bytes": 14196
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/16.webp": {
+    "file": "react-app/public/assets/original/37a8e12e2eec-16.webp",
+    "bytes": 60602
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/17-354x236.webp": {
+    "file": "react-app/public/assets/original/cdad6a48638d-17-354x236.webp",
+    "bytes": 17400
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/17.webp": {
+    "file": "react-app/public/assets/original/6a5b12b4f966-17.webp",
+    "bytes": 80352
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/18-354x236.webp": {
+    "file": "react-app/public/assets/original/2f9446ff43a3-18-354x236.webp",
+    "bytes": 22396
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/18.webp": {
+    "file": "react-app/public/assets/original/224970ef9b7e-18.webp",
+    "bytes": 135340
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/24-354x236.webp": {
+    "file": "react-app/public/assets/original/35718c4e4ded-24-354x236.webp",
+    "bytes": 8236
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/21.webp": {
+    "file": "react-app/public/assets/original/6993b7e1f1ed-21.webp",
+    "bytes": 50922
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/23-354x236.webp": {
+    "file": "react-app/public/assets/original/a52408e33606-23-354x236.webp",
+    "bytes": 10314
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/23.webp": {
+    "file": "react-app/public/assets/original/7987c432f9de-23.webp",
+    "bytes": 62090
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/21-354x236.webp": {
+    "file": "react-app/public/assets/original/4d6784c4edde-21-354x236.webp",
+    "bytes": 8334
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/24.webp": {
+    "file": "react-app/public/assets/original/cf9ff635147a-24.webp",
+    "bytes": 44880
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/25-354x236.webp": {
+    "file": "react-app/public/assets/original/af0a4c9810cd-25-354x236.webp",
+    "bytes": 9652
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/25.webp": {
+    "file": "react-app/public/assets/original/ec175d954437-25.webp",
+    "bytes": 59518
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/26-354x236.webp": {
+    "file": "react-app/public/assets/original/cda9369b0222-26-354x236.webp",
+    "bytes": 9686
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/26.webp": {
+    "file": "react-app/public/assets/original/1ddcb03c13dd-26.webp",
+    "bytes": 67122
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/27-354x236.webp": {
+    "file": "react-app/public/assets/original/8e9ca4745b03-27-354x236.webp",
+    "bytes": 12936
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/30.jpg": {
+    "file": "react-app/public/assets/original/ae61f880662f-30.jpg",
+    "bytes": 6324575
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/31-354x236.webp": {
+    "file": "react-app/public/assets/original/90e19fe14184-31-354x236.webp",
+    "bytes": 16458
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/27.webp": {
+    "file": "react-app/public/assets/original/a8d1e077b9ac-27.webp",
+    "bytes": 73858
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/31.webp": {
+    "file": "react-app/public/assets/original/b92a52a790ac-31.webp",
+    "bytes": 83480
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/35.webp": {
+    "file": "react-app/public/assets/original/7bf8aa89cd9e-35.webp",
+    "bytes": 39602
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/35-354x236.webp": {
+    "file": "react-app/public/assets/original/79c0e0b7bd90-35-354x236.webp",
+    "bytes": 7112
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/33.jpg": {
+    "file": "react-app/public/assets/original/e89154d6e130-33.jpg",
+    "bytes": 6169198
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/36-354x236.webp": {
+    "file": "react-app/public/assets/original/798b65d80373-36-354x236.webp",
+    "bytes": 12434
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/36.webp": {
+    "file": "react-app/public/assets/original/c0bc820d1058-36.webp",
+    "bytes": 66096
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/38-354x236.webp": {
+    "file": "react-app/public/assets/original/ad81fcb70654-38-354x236.webp",
+    "bytes": 11556
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/38.webp": {
+    "file": "react-app/public/assets/original/ead3b1540b35-38.webp",
+    "bytes": 55696
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/39-354x236.webp": {
+    "file": "react-app/public/assets/original/637104bcbb5f-39-354x236.webp",
+    "bytes": 7588
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/39.webp": {
+    "file": "react-app/public/assets/original/48fcd869f02f-39.webp",
+    "bytes": 34782
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/40-354x236.webp": {
+    "file": "react-app/public/assets/original/f56c7fb1f7ed-40-354x236.webp",
+    "bytes": 8592
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/40.webp": {
+    "file": "react-app/public/assets/original/0b3791043f92-40.webp",
+    "bytes": 45868
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/42-354x236.webp": {
+    "file": "react-app/public/assets/original/482e9037a574-42-354x236.webp",
+    "bytes": 8390
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/42-1024x1024.webp": {
+    "file": "react-app/public/assets/original/0569f11089cb-42-1024x1024.webp",
+    "bytes": 38984
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/41.webp": {
+    "file": "react-app/public/assets/original/d5681ed20c8b-41.webp",
+    "bytes": 60682
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/41-354x236.webp": {
+    "file": "react-app/public/assets/original/36561ed9c3e3-41-354x236.webp",
+    "bytes": 10198
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/42.webp": {
+    "file": "react-app/public/assets/original/f3ca7fa17f0e-42.webp",
+    "bytes": 47558
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/53-354x236.webp": {
+    "file": "react-app/public/assets/original/1b94a6c65a93-53-354x236.webp",
+    "bytes": 15184
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/53.webp": {
+    "file": "react-app/public/assets/original/7d79bc1c2590-53.webp",
+    "bytes": 124256
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/53.webp?id=404": {
+    "file": "react-app/public/assets/original/28808e794687-53.webp",
+    "bytes": 124256
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/61-354x236.webp": {
+    "file": "react-app/public/assets/original/c8325c72c2b6-61-354x236.webp",
+    "bytes": 15158
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/61.webp": {
+    "file": "react-app/public/assets/original/ce09c2390114-61.webp",
+    "bytes": 102162
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/62-354x236.webp": {
+    "file": "react-app/public/assets/original/cc7db121e10b-62-354x236.webp",
+    "bytes": 14132
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/64-354x236.webp": {
+    "file": "react-app/public/assets/original/fce7657f546f-64-354x236.webp",
+    "bytes": 8088
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/63-354x236.webp": {
+    "file": "react-app/public/assets/original/686d8001f678-63-354x236.webp",
+    "bytes": 13678
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/63.webp": {
+    "file": "react-app/public/assets/original/f946f78878a0-63.webp",
+    "bytes": 89520
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/62.webp": {
+    "file": "react-app/public/assets/original/4684ee0c1b38-62.webp",
+    "bytes": 85940
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/65-354x236.webp": {
+    "file": "react-app/public/assets/original/0eef84868350-65-354x236.webp",
+    "bytes": 10866
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/64.webp": {
+    "file": "react-app/public/assets/original/ce87903fd772-64.webp",
+    "bytes": 45380
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/66.webp": {
+    "file": "react-app/public/assets/original/4980a9b6e303-66.webp",
+    "bytes": 67404
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/67-354x236.webp": {
+    "file": "react-app/public/assets/original/eea12951419b-67-354x236.webp",
+    "bytes": 9042
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/66-354x236.webp": {
+    "file": "react-app/public/assets/original/5ce4ea7a87b9-66-354x236.webp",
+    "bytes": 10278
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/65.webp": {
+    "file": "react-app/public/assets/original/90e0d4d1c29d-65.webp",
+    "bytes": 72312
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/69.webp": {
+    "file": "react-app/public/assets/original/39e055f61004-69.webp",
+    "bytes": 74088
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/69-354x236.webp": {
+    "file": "react-app/public/assets/original/969b1be092b6-69-354x236.webp",
+    "bytes": 12922
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/67.webp": {
+    "file": "react-app/public/assets/original/e2d1daf65535-67.webp",
+    "bytes": 55066
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/836a5b_19d163ed04354988bd483033a1f08aaamv2.avif": {
+    "file": "react-app/public/assets/original/1b7f135927f0-836a5b_19d163ed04354988bd483033a1f08aaamv2.avif",
+    "bytes": 57832
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/836a5b_9ebd7f615db94eb8adc97b3f73f9c011mv2.png": {
+    "file": "react-app/public/assets/original/9a9e2b330e85-836a5b_9ebd7f615db94eb8adc97b3f73f9c011mv2.png",
+    "bytes": 2148788
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/836a5b_9fad5b1685ed41efb77064900dd0be05mv2.avif": {
+    "file": "react-app/public/assets/original/145aaa97a3f1-836a5b_9fad5b1685ed41efb77064900dd0be05mv2.avif",
+    "bytes": 67811
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/Platinum-210-Paint-Protection-Film-Professional-Grade-Defense-for-Your-Vehicle.png": {
+    "file": "react-app/public/assets/original/5a41b9f14f0b-Platinum-210-Paint-Protection-Film-Professional-Grade-Defense-for-Your-Vehicle.png",
+    "bytes": 241222
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU-Acid-Green-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/47cb6db1e198-TPU-Acid-Green-scaled-354x236.webp",
+    "bytes": 8604
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU-Acid-Green-scaled.webp": {
+    "file": "react-app/public/assets/original/5b04fe108a9c-TPU-Acid-Green-scaled.webp",
+    "bytes": 86632
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU-Crimson-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/46419e19dc05-TPU-Crimson-scaled-354x236.webp",
+    "bytes": 8146
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU-Crimson-scaled.webp": {
+    "file": "react-app/public/assets/original/ee2a44f3abf2-TPU-Crimson-scaled.webp",
+    "bytes": 78502
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU-Matte-Metallic-STO-Track-Glod-Green-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/4182d58093a6-TPU-Matte-Metallic-STO-Track-Glod-Green-scaled-354x236.webp",
+    "bytes": 9872
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU-Matte-Metallic-STO-Track-Glod-Green-scaled.webp": {
+    "file": "react-app/public/assets/original/1174f5e6f69b-TPU-Matte-Metallic-STO-Track-Glod-Green-scaled.webp",
+    "bytes": 107666
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU-Star-Violet-TPU2025-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/f4478d4a92e2-TPU-Star-Violet-TPU2025-scaled-354x236.webp",
+    "bytes": 8646
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU-Star-Violet-TPU2025-scaled.webp": {
+    "file": "react-app/public/assets/original/53db03507fd6-TPU-Star-Violet-TPU2025-scaled.webp",
+    "bytes": 92298
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU1008-TPUMilan-Glod-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/c6db8d094571-TPU1008-TPUMilan-Glod-scaled-354x236.webp",
+    "bytes": 9946
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU1008-TPUMilan-Glod-scaled.webp": {
+    "file": "react-app/public/assets/original/b631c1ea6443-TPU1008-TPUMilan-Glod-scaled.webp",
+    "bytes": 108404
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU5047-TPU-Matte-Magic-Flame-Dark-Blue-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/fc8e0b8c3afa-TPU5047-TPU-Matte-Magic-Flame-Dark-Blue-scaled-354x236.webp",
+    "bytes": 8640
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPU5047-TPU-Matte-Magic-Flame-Dark-Blue-scaled.webp": {
+    "file": "react-app/public/assets/original/d43e6ef732f5-TPU5047-TPU-Matte-Magic-Flame-Dark-Blue-scaled.webp",
+    "bytes": 97340
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPUAutumn-Blue-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/737a75c7c0e0-TPUAutumn-Blue-scaled-354x236.webp",
+    "bytes": 7348
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPUAutumn-Blue-scaled.webp": {
+    "file": "react-app/public/assets/original/5f947cdb1498-TPUAutumn-Blue-scaled.webp",
+    "bytes": 74886
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPUAutumn-Blue-scaled.webp?id=419": {
+    "file": "react-app/public/assets/original/edad0000edb2-TPUAutumn-Blue-scaled.webp",
+    "bytes": 74886
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPUCuban-Sand-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/5a1289e5ee66-TPUCuban-Sand-scaled-354x236.webp",
+    "bytes": 8942
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/TPUCuban-Sand-scaled.webp": {
+    "file": "react-app/public/assets/original/07f1a7b58c5c-TPUCuban-Sand-scaled.webp",
+    "bytes": 98062
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/logo.png": {
+    "file": "react-app/public/assets/original/64f0dbbda455-logo.png",
+    "bytes": 63970
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/05/Why-Platinum-Paint-Protection-Film-Is-the-Right-Solution.png": {
+    "file": "react-app/public/assets/original/dd6b75fad4b9-Why-Platinum-Paint-Protection-Film-Is-the-Right-Solution.png",
+    "bytes": 347301
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/0003-354x236.jpg": {
+    "file": "react-app/public/assets/original/dbfa39e6a6ce-0003-354x236.jpg",
+    "bytes": 40214
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/0004-354x236.jpg": {
+    "file": "react-app/public/assets/original/e4e995bb5dbd-0004-354x236.jpg",
+    "bytes": 48247
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/0004.jpg": {
+    "file": "react-app/public/assets/original/2c7df4826edd-0004.jpg",
+    "bytes": 846604
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/0003.jpg": {
+    "file": "react-app/public/assets/original/2e343dfca480-0003.jpg",
+    "bytes": 576048
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/001-354x236.jpg": {
+    "file": "react-app/public/assets/original/6a490a250a13-001-354x236.jpg",
+    "bytes": 54332
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/001.jpg": {
+    "file": "react-app/public/assets/original/359efff3a003-001.jpg",
+    "bytes": 889688
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/002.jpg": {
+    "file": "react-app/public/assets/original/b0fcf63bb2a7-002.jpg",
+    "bytes": 570556
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/002-354x236.jpg": {
+    "file": "react-app/public/assets/original/882083fa2252-002-354x236.jpg",
+    "bytes": 41320
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/0909_8_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/d8f63010a6c0-0909_8_11zon-scaled-354x236.webp",
+    "bytes": 11944
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/005.jpg": {
+    "file": "react-app/public/assets/original/c46f18ee393e-005.jpg",
+    "bytes": 704558
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/005-354x236.jpg": {
+    "file": "react-app/public/assets/original/4d973ade463e-005-354x236.jpg",
+    "bytes": 47405
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/0909_8_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/8a26866b0126-0909_8_11zon-scaled.webp",
+    "bytes": 230168
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/1-1-150x150.webp": {
+    "file": "react-app/public/assets/original/88283f02e682-1-1-150x150.webp",
+    "bytes": 4426
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/1-354x236.webp": {
+    "file": "react-app/public/assets/original/b34651dd2966-1-354x236.webp",
+    "bytes": 13202
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/1-1.webp": {
+    "file": "react-app/public/assets/original/33f53a1abb53-1-1.webp",
+    "bytes": 74868
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/11-354x236.webp": {
+    "file": "react-app/public/assets/original/18808a9b7be0-11-354x236.webp",
+    "bytes": 10338
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/10.webp": {
+    "file": "react-app/public/assets/original/2a82e2b93146-10.webp",
+    "bytes": 146442
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/10-354x236.webp": {
+    "file": "react-app/public/assets/original/c1844eaa5a85-10-354x236.webp",
+    "bytes": 15892
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/1.webp": {
+    "file": "react-app/public/assets/original/108aff8a2e1c-1.webp",
+    "bytes": 103374
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/11.webp": {
+    "file": "react-app/public/assets/original/ceccf401b2ba-11.webp",
+    "bytes": 65582
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/111_7_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/f5818f1c951e-111_7_11zon-scaled-354x236.webp",
+    "bytes": 13248
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/111_7_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/d7fa741fa075-111_7_11zon-scaled.webp",
+    "bytes": 209298
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/11_15_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/a3e3e10e4b22-11_15_11zon-scaled-354x236.webp",
+    "bytes": 8374
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/11_15_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/4ab207a571d9-11_15_11zon-scaled.webp",
+    "bytes": 136984
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/12-354x236.webp": {
+    "file": "react-app/public/assets/original/9b598a2715b4-12-354x236.webp",
+    "bytes": 29404
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/12.webp": {
+    "file": "react-app/public/assets/original/72bc7d19183a-12.webp",
+    "bytes": 295360
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/1212_9_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/e58e3b11769b-1212_9_11zon-scaled-354x236.webp",
+    "bytes": 15154
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/1212_9_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/25c54b2d8621-1212_9_11zon-scaled.webp",
+    "bytes": 257296
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/123212_10_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/8d2bece55af2-123212_10_11zon-scaled-354x236.webp",
+    "bytes": 12958
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/123212_10_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/f58d065e39b3-123212_10_11zon-scaled.webp",
+    "bytes": 208090
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/12_1_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/3579f719ebdf-12_1_11zon-scaled-354x236.webp",
+    "bytes": 8566
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/12_1_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/e9931f01c338-12_1_11zon-scaled.webp",
+    "bytes": 140496
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/13-354x236.webp": {
+    "file": "react-app/public/assets/original/2329f640e07e-13-354x236.webp",
+    "bytes": 17830
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/13.webp": {
+    "file": "react-app/public/assets/original/e6985b6b8298-13.webp",
+    "bytes": 145282
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/13_2_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/81409de90326-13_2_11zon-scaled-354x236.webp",
+    "bytes": 12096
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/13_2_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/d714684348ee-13_2_11zon-scaled.webp",
+    "bytes": 241218
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/14-354x236.webp": {
+    "file": "react-app/public/assets/original/da117ab861a8-14-354x236.webp",
+    "bytes": 24990
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/14.webp": {
+    "file": "react-app/public/assets/original/83163c9f4c8d-14.webp",
+    "bytes": 250838
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/14_3_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/5c62d60bbac1-14_3_11zon-scaled.webp",
+    "bytes": 153688
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/14_3_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/a2e2f2f7b832-14_3_11zon-scaled-354x236.webp",
+    "bytes": 9784
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/15-354x236.webp": {
+    "file": "react-app/public/assets/original/95b68bbb4781-15-354x236.webp",
+    "bytes": 17108
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/15.webp": {
+    "file": "react-app/public/assets/original/7c2564746f0d-15.webp",
+    "bytes": 146816
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/15_4_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/8a44699eec9d-15_4_11zon-scaled-354x236.webp",
+    "bytes": 11900
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/15ppf_5_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/80d561866d64-15ppf_5_11zon-scaled-354x236.webp",
+    "bytes": 13870
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/15_4_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/67b9e5e3761a-15_4_11zon-scaled.webp",
+    "bytes": 190314
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/16_6_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/750a5fc04c8f-16_6_11zon-scaled-354x236.webp",
+    "bytes": 9640
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/15ppf_5_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/f0a34a01868b-15ppf_5_11zon-scaled.webp",
+    "bytes": 393198
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/16-354x236.webp": {
+    "file": "react-app/public/assets/original/9ab913742e00-16-354x236.webp",
+    "bytes": 12654
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/16.webp": {
+    "file": "react-app/public/assets/original/84a2d0531704-16.webp",
+    "bytes": 103676
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/17-354x236.webp": {
+    "file": "react-app/public/assets/original/1fb8506d618e-17-354x236.webp",
+    "bytes": 17644
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/17.webp": {
+    "file": "react-app/public/assets/original/514fb639ad95-17.webp",
+    "bytes": 148818
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/17_7_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/381b7265e2a9-17_7_11zon-scaled-354x236.webp",
+    "bytes": 11828
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/16_6_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/0588e00a198d-16_6_11zon-scaled.webp",
+    "bytes": 185486
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/17_7_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/de91edde784e-17_7_11zon-scaled.webp",
+    "bytes": 210546
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/18-354x236.webp": {
+    "file": "react-app/public/assets/original/cc2c5d483865-18-354x236.webp",
+    "bytes": 17360
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/18.webp": {
+    "file": "react-app/public/assets/original/f8fe33a3a96e-18.webp",
+    "bytes": 113632
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/18_8_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/f03acbf410dd-18_8_11zon-scaled-354x236.webp",
+    "bytes": 12156
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/18_8_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/3e85bf7d1dd1-18_8_11zon-scaled.webp",
+    "bytes": 200716
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/19-354x236.webp": {
+    "file": "react-app/public/assets/original/f032eba90eec-19-354x236.webp",
+    "bytes": 14430
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/19.webp": {
+    "file": "react-app/public/assets/original/bb4131269070-19.webp",
+    "bytes": 94500
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/190-black-scaled.webp": {
+    "file": "react-app/public/assets/original/7a6d90535f68-190-black-scaled.webp",
+    "bytes": 163980
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/19_9_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/9aeebf4db21a-19_9_11zon-scaled-354x236.webp",
+    "bytes": 14608
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/19_9_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/6fe003b7295a-19_9_11zon-scaled.webp",
+    "bytes": 190392
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/2-1-150x150.webp": {
+    "file": "react-app/public/assets/original/da04733c2cb7-2-1-150x150.webp",
+    "bytes": 3378
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/2-354x236.webp": {
+    "file": "react-app/public/assets/original/724dbf286095-2-354x236.webp",
+    "bytes": 26660
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/2.webp": {
+    "file": "react-app/public/assets/original/6f2daedca16c-2.webp",
+    "bytes": 275026
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/2-1.webp": {
+    "file": "react-app/public/assets/original/c78d479fbabf-2-1.webp",
+    "bytes": 44702
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/20_10_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/30f57226c9ab-20_10_11zon-scaled-354x236.webp",
+    "bytes": 13760
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/20-354x236.webp": {
+    "file": "react-app/public/assets/original/fdf7ae46d536-20-354x236.webp",
+    "bytes": 12974
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/20.webp": {
+    "file": "react-app/public/assets/original/eda6ba9e3379-20.webp",
+    "bytes": 104716
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/20_10_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/6b40f698049e-20_10_11zon-scaled.webp",
+    "bytes": 237168
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/21.webp": {
+    "file": "react-app/public/assets/original/294f7f8834db-21.webp",
+    "bytes": 126164
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/22-354x236.webp": {
+    "file": "react-app/public/assets/original/1ea54c50c59b-22-354x236.webp",
+    "bytes": 15508
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/21-354x236.webp": {
+    "file": "react-app/public/assets/original/658926f29389-21-354x236.webp",
+    "bytes": 16458
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/22.webp": {
+    "file": "react-app/public/assets/original/c6252d3dbd8c-22.webp",
+    "bytes": 104620
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/21_11_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/7c10615ca8d1-21_11_11zon-scaled.webp",
+    "bytes": 167480
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/21_11_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/4734c1d123e6-21_11_11zon-scaled-354x236.webp",
+    "bytes": 12158
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/22_12_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/cef229facdd3-22_12_11zon-scaled.webp",
+    "bytes": 151186
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/22_12_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/37fc5eeebb5c-22_12_11zon-scaled-354x236.webp",
+    "bytes": 11482
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/23.webp": {
+    "file": "react-app/public/assets/original/1dc55cbebea9-23.webp",
+    "bytes": 125950
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/24-354x236.webp": {
+    "file": "react-app/public/assets/original/631e0d794848-24-354x236.webp",
+    "bytes": 18062
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/24.webp": {
+    "file": "react-app/public/assets/original/ef739695f4ad-24.webp",
+    "bytes": 148194
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/23-354x236.webp": {
+    "file": "react-app/public/assets/original/c28e7ba4ecd4-23-354x236.webp",
+    "bytes": 16368
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/24_13_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/ace6a8012699-24_13_11zon-scaled-354x236.webp",
+    "bytes": 13958
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/25_14_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/b5f40f7d94a3-25_14_11zon-scaled-354x236.webp",
+    "bytes": 15318
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/25-354x236.webp": {
+    "file": "react-app/public/assets/original/fc713c388651-25-354x236.webp",
+    "bytes": 14546
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/25.webp": {
+    "file": "react-app/public/assets/original/4a86e20ceaa1-25.webp",
+    "bytes": 116528
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/25_14_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/1b5b2315d5af-25_14_11zon-scaled.webp",
+    "bytes": 273358
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/24_13_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/46737198ad47-24_13_11zon-scaled.webp",
+    "bytes": 244864
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/26.webp": {
+    "file": "react-app/public/assets/original/a94446d18b56-26.webp",
+    "bytes": 149412
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/26-354x236.webp": {
+    "file": "react-app/public/assets/original/1a9f0dc476c7-26-354x236.webp",
+    "bytes": 15126
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/27-354x236.webp": {
+    "file": "react-app/public/assets/original/d0190efaa8ed-27-354x236.webp",
+    "bytes": 14622
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/27.webp": {
+    "file": "react-app/public/assets/original/a501b4346ef4-27.webp",
+    "bytes": 105228
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/28-354x236.webp": {
+    "file": "react-app/public/assets/original/7ceb3bab5fa8-28-354x236.webp",
+    "bytes": 16412
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/28.webp": {
+    "file": "react-app/public/assets/original/a08da0d4ce7f-28.webp",
+    "bytes": 154330
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/29-354x236.webp": {
+    "file": "react-app/public/assets/original/7a8246ce90a3-29-354x236.webp",
+    "bytes": 11882
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/29.webp": {
+    "file": "react-app/public/assets/original/4403a1a5ddaf-29.webp",
+    "bytes": 124964
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/3-1-150x150.webp": {
+    "file": "react-app/public/assets/original/19f42f57d688-3-1-150x150.webp",
+    "bytes": 4422
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/3-1.webp": {
+    "file": "react-app/public/assets/original/216418ec8398-3-1.webp",
+    "bytes": 75682
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/3-354x236.webp": {
+    "file": "react-app/public/assets/original/66d61fdf205d-3-354x236.webp",
+    "bytes": 18842
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/3.webp": {
+    "file": "react-app/public/assets/original/40acec3a44b6-3.webp",
+    "bytes": 145870
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/30-354x236.webp": {
+    "file": "react-app/public/assets/original/77399ddac7ec-30-354x236.webp",
+    "bytes": 14366
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/31-354x236.webp": {
+    "file": "react-app/public/assets/original/f0c497738ba9-31-354x236.webp",
+    "bytes": 13748
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/30.webp": {
+    "file": "react-app/public/assets/original/339cff22b663-30.webp",
+    "bytes": 107072
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/31.webp": {
+    "file": "react-app/public/assets/original/a41d95ed9abc-31.webp",
+    "bytes": 84322
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/4-1.webp": {
+    "file": "react-app/public/assets/original/5ecf17b12271-4-1.webp",
+    "bytes": 44608
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/4-354x236.webp": {
+    "file": "react-app/public/assets/original/5b24dbb7a865-4-354x236.webp",
+    "bytes": 13018
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/4-1-150x150.webp": {
+    "file": "react-app/public/assets/original/6f7abd1f0e58-4-1-150x150.webp",
+    "bytes": 4086
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/4.webp": {
+    "file": "react-app/public/assets/original/0be9c813f52d-4.webp",
+    "bytes": 78452
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/44_6_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/350edbcfcd4e-44_6_11zon-scaled.webp",
+    "bytes": 242024
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/44_6_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/d0d75f9c2f3e-44_6_11zon-scaled-354x236.webp",
+    "bytes": 14756
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/5-2-150x150.webp": {
+    "file": "react-app/public/assets/original/dd9bc4709edd-5-2-150x150.webp",
+    "bytes": 4324
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/5-1.webp": {
+    "file": "react-app/public/assets/original/57613b9932ca-5-1.webp",
+    "bytes": 97382
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/5-2.webp": {
+    "file": "react-app/public/assets/original/fa581cbc4eb9-5-2.webp",
+    "bytes": 74084
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/5-1-354x236.webp": {
+    "file": "react-app/public/assets/original/3388d4393e5e-5-1-354x236.webp",
+    "bytes": 15626
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/6-1.webp": {
+    "file": "react-app/public/assets/original/6836b9bbba61-6-1.webp",
+    "bytes": 78924
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/6-1-354x236.webp": {
+    "file": "react-app/public/assets/original/49d445b90e2d-6-1-354x236.webp",
+    "bytes": 12982
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/5-scaled.webp": {
+    "file": "react-app/public/assets/original/ed8580439fe9-5-scaled.webp",
+    "bytes": 328188
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/6.webp": {
+    "file": "react-app/public/assets/original/d7d0060fb5ef-6.webp",
+    "bytes": 160194
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/6-2-150x150.webp": {
+    "file": "react-app/public/assets/original/73f9d9000e43-6-2-150x150.webp",
+    "bytes": 3526
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/6-2.webp": {
+    "file": "react-app/public/assets/original/ba8a8fc07f96-6-2.webp",
+    "bytes": 54140
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/7-1.webp": {
+    "file": "react-app/public/assets/original/167bc57b8379-7-1.webp",
+    "bytes": 78324
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/7-354x236.webp": {
+    "file": "react-app/public/assets/original/c49c89e43faa-7-354x236.webp",
+    "bytes": 17134
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/7-1-150x150.webp": {
+    "file": "react-app/public/assets/original/2f76192c8f7c-7-1-150x150.webp",
+    "bytes": 4000
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/7.webp": {
+    "file": "react-app/public/assets/original/6e9d9e3f5494-7.webp",
+    "bytes": 98884
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/8-354x236.webp": {
+    "file": "react-app/public/assets/original/2386f0c4623b-8-354x236.webp",
+    "bytes": 15046
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/8.webp": {
+    "file": "react-app/public/assets/original/b850a3c95d57-8.webp",
+    "bytes": 110916
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/836a5b_f757a4e2a9e24341a11f9417b05e1c8bmv2-scaled.webp": {
+    "file": "react-app/public/assets/original/89b2e8aa582b-836a5b_f757a4e2a9e24341a11f9417b05e1c8bmv2-scaled.webp",
+    "bytes": 234820
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/9-354x236.webp": {
+    "file": "react-app/public/assets/original/bf4ba7bb61c0-9-354x236.webp",
+    "bytes": 15562
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/9.webp": {
+    "file": "react-app/public/assets/original/0cf4db3f72f7-9.webp",
+    "bytes": 142660
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05053_11_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/dac0cddcf248-DSC05053_11_11zon-scaled-354x236.webp",
+    "bytes": 9420
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05053_11_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/82302ff86bd7-DSC05053_11_11zon-scaled.webp",
+    "bytes": 136820
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05054_12_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/a50f6a86f7bd-DSC05054_12_11zon-scaled-354x236.webp",
+    "bytes": 11248
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05054_12_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/0292083e58ae-DSC05054_12_11zon-scaled.webp",
+    "bytes": 166674
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05055_13_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/69925cd43e8a-DSC05055_13_11zon-scaled-354x236.webp",
+    "bytes": 14132
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05056_14_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/2eb82afdd539-DSC05056_14_11zon-scaled-354x236.webp",
+    "bytes": 13606
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05056_14_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/3f3368d178f1-DSC05056_14_11zon-scaled.webp",
+    "bytes": 195280
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05055_13_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/c9d119d3b0e4-DSC05055_13_11zon-scaled.webp",
+    "bytes": 203522
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05059_17_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/4e8ba1be4ab4-DSC05059_17_11zon-scaled-354x236.webp",
+    "bytes": 11160
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05057_15_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/3aaaeb08e61d-DSC05057_15_11zon-scaled-354x236.webp",
+    "bytes": 12026
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05057_15_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/d5614ba8dd15-DSC05057_15_11zon-scaled.webp",
+    "bytes": 180338
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05060_18_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/7e408a7ed1c2-DSC05060_18_11zon-scaled-354x236.webp",
+    "bytes": 10250
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05059_17_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/eec7b7952628-DSC05059_17_11zon-scaled.webp",
+    "bytes": 167774
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05060_18_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/4b7ca9235fc7-DSC05060_18_11zon-scaled.webp",
+    "bytes": 143318
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05061_19_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/f05cec141abe-DSC05061_19_11zon-scaled-354x236.webp",
+    "bytes": 10096
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05061_19_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/555ffdb8acb9-DSC05061_19_11zon-scaled.webp",
+    "bytes": 166536
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05063_21_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/74597586ffa0-DSC05063_21_11zon-scaled-354x236.webp",
+    "bytes": 13672
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05063_21_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/4a73b817b04e-DSC05063_21_11zon-scaled.webp",
+    "bytes": 208568
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05065_2_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/09cff81fb5b8-DSC05065_2_11zon-scaled-354x236.webp",
+    "bytes": 13602
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05065_2_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/51080d34e056-DSC05065_2_11zon-scaled.webp",
+    "bytes": 207670
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05066_3_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/5f232c511c12-DSC05066_3_11zon-scaled-354x236.webp",
+    "bytes": 7904
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05066_3_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/aaa57cf6dc4d-DSC05066_3_11zon-scaled.webp",
+    "bytes": 119548
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05067_4_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/ff884bf7a3c4-DSC05067_4_11zon-scaled-354x236.webp",
+    "bytes": 9582
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC05067_4_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/6e140190861c-DSC05067_4_11zon-scaled.webp",
+    "bytes": 131908
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06240_7_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/7e3b3affe409-DSC06240_7_11zon-scaled.webp",
+    "bytes": 200242
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06240_7_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/23e41bda0173-DSC06240_7_11zon-scaled-354x236.webp",
+    "bytes": 14654
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06243_8_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/fa879ad95b80-DSC06243_8_11zon-scaled-354x236.webp",
+    "bytes": 9696
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06243_8_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/4a94ebd9b727-DSC06243_8_11zon-scaled.webp",
+    "bytes": 140672
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06252_9_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/66f5ca4c0d62-DSC06252_9_11zon-scaled-354x236.webp",
+    "bytes": 11676
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06252_9_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/ed9f372a626e-DSC06252_9_11zon-scaled.webp",
+    "bytes": 156796
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06259_2_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/d883ac3fca49-DSC06259_2_11zon-scaled-354x236.webp",
+    "bytes": 13976
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06259_2_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/4f708bead98c-DSC06259_2_11zon-scaled.webp",
+    "bytes": 190024
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06266_3_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/c4d8773a170b-DSC06266_3_11zon-scaled.webp",
+    "bytes": 211890
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06266_3_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/c089c4ccbb14-DSC06266_3_11zon-scaled-354x236.webp",
+    "bytes": 15298
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06282_5_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/57137bbfb3a3-DSC06282_5_11zon-scaled-354x236.webp",
+    "bytes": 13314
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06276_4_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/a76743eb334f-DSC06276_4_11zon-scaled-354x236.webp",
+    "bytes": 13650
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06282_5_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/9cfc5f6c8601-DSC06282_5_11zon-scaled.webp",
+    "bytes": 194072
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06285_6_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/56b1d158f843-DSC06285_6_11zon-scaled-354x236.webp",
+    "bytes": 10116
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06285_6_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/ad368424513e-DSC06285_6_11zon-scaled.webp",
+    "bytes": 147902
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06276_4_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/d996479d2db8-DSC06276_4_11zon-scaled.webp",
+    "bytes": 220968
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06288_8_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/0462ac8c769d-DSC06288_8_11zon-scaled-354x236.webp",
+    "bytes": 12372
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06288_8_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/eadaf3e85f23-DSC06288_8_11zon-scaled.webp",
+    "bytes": 141792
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06289_9_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/bb49e16a7f9b-DSC06289_9_11zon-scaled.webp",
+    "bytes": 111236
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06289_9_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/624ac68cbe88-DSC06289_9_11zon-scaled-354x236.webp",
+    "bytes": 8156
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06294_1_1_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/68cf34773347-DSC06294_1_1_11zon-scaled-354x236.webp",
+    "bytes": 10288
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06294_1_1_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/f960cdecd958-DSC06294_1_1_11zon-scaled.webp",
+    "bytes": 166788
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06295_1_2_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/8b047cf9c9df-DSC06295_1_2_11zon-scaled-354x236.webp",
+    "bytes": 3704
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06295_1_2_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/7590131843f5-DSC06295_1_2_11zon-scaled.webp",
+    "bytes": 86388
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06296_1_3_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/917994d65cf4-DSC06296_1_3_11zon-scaled-354x236.webp",
+    "bytes": 6464
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06296_1_3_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/17df03046f85-DSC06296_1_3_11zon-scaled.webp",
+    "bytes": 90590
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06299_1_6_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/7e5972d43b47-DSC06299_1_6_11zon-scaled-354x236.webp",
+    "bytes": 9776
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06298_1_5_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/dc9a470a8155-DSC06298_1_5_11zon-scaled-354x236.webp",
+    "bytes": 9728
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06299_1_6_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/fb69ba3e9a98-DSC06299_1_6_11zon-scaled.webp",
+    "bytes": 125192
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06298_1_5_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/3c71cdc62ea1-DSC06298_1_5_11zon-scaled.webp",
+    "bytes": 101304
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06301_1_7_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/788fb853db21-DSC06301_1_7_11zon-scaled-354x236.webp",
+    "bytes": 10746
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06302_1_6_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/5f692d713786-DSC06302_1_6_11zon-scaled.webp",
+    "bytes": 122634
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06301_1_7_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/c94a6397298c-DSC06301_1_7_11zon-scaled.webp",
+    "bytes": 128938
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06302_1_6_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/05d3a8913667-DSC06302_1_6_11zon-scaled-354x236.webp",
+    "bytes": 9932
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06303_1_7_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/97607c9f56fd-DSC06303_1_7_11zon-scaled-354x236.webp",
+    "bytes": 15330
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06303_1_7_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/ac43824b8729-DSC06303_1_7_11zon-scaled.webp",
+    "bytes": 246254
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06306_1_10_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/ec5f16d68fbc-DSC06306_1_10_11zon-scaled-354x236.webp",
+    "bytes": 7728
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06306_1_10_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/2cdbe3d7b511-DSC06306_1_10_11zon-scaled.webp",
+    "bytes": 99054
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06308_1_1_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/4e8726cd4717-DSC06308_1_1_11zon-scaled-354x236.webp",
+    "bytes": 11214
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06310_1_2_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/8dba01307338-DSC06310_1_2_11zon-scaled-354x236.webp",
+    "bytes": 6718
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06308_1_1_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/4fa3aa9e20a8-DSC06308_1_1_11zon-scaled.webp",
+    "bytes": 177184
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06310_1_2_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/cf3ef0f9a630-DSC06310_1_2_11zon-scaled.webp",
+    "bytes": 129002
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06312_1_3_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/1a25bc1c8ee7-DSC06312_1_3_11zon-scaled-354x236.webp",
+    "bytes": 9352
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06312_1_3_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/830caaf69605-DSC06312_1_3_11zon-scaled.webp",
+    "bytes": 130344
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06314_1_5_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/d804ca8ebaa4-DSC06314_1_5_11zon-scaled-354x236.webp",
+    "bytes": 6660
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06314_1_5_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/8c85cbd96994-DSC06314_1_5_11zon-scaled.webp",
+    "bytes": 102010
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06315_1_7_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/2dccd2d38132-DSC06315_1_7_11zon-scaled.webp",
+    "bytes": 198016
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06319_1_2_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/9a11a04a5f4b-DSC06319_1_2_11zon-scaled.webp",
+    "bytes": 192350
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06316_1_1_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/6cdd7dff02c5-DSC06316_1_1_11zon-scaled-354x236.webp",
+    "bytes": 15012
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06325_1_3_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/ce230cd352b1-DSC06325_1_3_11zon-scaled-354x236.webp",
+    "bytes": 9844
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06315_1_7_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/468581d070a4-DSC06315_1_7_11zon-scaled-354x236.webp",
+    "bytes": 14916
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06316_1_1_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/3e45e6d5c2d4-DSC06316_1_1_11zon-scaled.webp",
+    "bytes": 194934
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06319_1_2_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/78947edf87ad-DSC06319_1_2_11zon-scaled-354x236.webp",
+    "bytes": 11700
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06325_1_3_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/e7d2ad0258e5-DSC06325_1_3_11zon-scaled.webp",
+    "bytes": 149126
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06327_1_4_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/e68a35799c4d-DSC06327_1_4_11zon-scaled-354x236.webp",
+    "bytes": 14222
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06333_1_6_11zon-scaled-354x236.webp": {
+    "file": "react-app/public/assets/original/3053d18f0694-DSC06333_1_6_11zon-scaled-354x236.webp",
+    "bytes": 11752
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06327_1_4_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/a78864acca71-DSC06327_1_4_11zon-scaled.webp",
+    "bytes": 240892
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/DSC06333_1_6_11zon-scaled.webp": {
+    "file": "react-app/public/assets/original/38fef78bab9c-DSC06333_1_6_11zon-scaled.webp",
+    "bytes": 189512
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/Gemini_Generated_Image_lwl09dlwl09dlwl0.jpg": {
+    "file": "react-app/public/assets/original/a8d992e24869-Gemini_Generated_Image_lwl09dlwl09dlwl0.jpg",
+    "bytes": 329425
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/sl3.jpeg": {
+    "file": "react-app/public/assets/original/ea2e0d5fbd73-sl3.jpeg",
+    "bytes": 97752
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/Gemini_Generated_Image_qptr70qptr70qptr-1.png": {
+    "file": "react-app/public/assets/original/4f513bd6eb5f-Gemini_Generated_Image_qptr70qptr70qptr-1.png",
+    "bytes": 976668
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/gloss-black-paint-protection-film-190-microns.webp": {
+    "file": "react-app/public/assets/original/360c6bea67a7-gloss-black-paint-protection-film-190-microns.webp",
+    "bytes": 163980
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/06/sl2.jpg": {
+    "file": "react-app/public/assets/original/1243fec22243-sl2.jpg",
+    "bytes": 167729
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/become-a-ppf-dealer-platinum-ppf-banner.jpg": {
+    "file": "react-app/public/assets/original/9cc41d34386f-become-a-ppf-dealer-platinum-ppf-banner.jpg",
+    "bytes": 126433
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/color-ppf-for-car.jpg": {
+    "file": "react-app/public/assets/original/7b8b1b17731a-color-ppf-for-car.jpg",
+    "bytes": 329425
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/190-micron-ppf-paint-protection-film.webp": {
+    "file": "react-app/public/assets/original/d587895c2900-190-micron-ppf-paint-protection-film.webp",
+    "bytes": 148204
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/31-optimized.jpg": {
+    "file": "react-app/public/assets/original/782a526bace2-31-optimized.jpg",
+    "bytes": 73380
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/headlight-paint-protection-film.webp": {
+    "file": "react-app/public/assets/original/5b831e90a533-headlight-paint-protection-film.webp",
+    "bytes": 234820
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/matte-paint-protection-film.webp": {
+    "file": "react-app/public/assets/original/40149531f960-matte-paint-protection-film.webp",
+    "bytes": 160194
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/paint-protection-film-layer-structure-diagram.jpg": {
+    "file": "react-app/public/assets/original/1e247b35c931-paint-protection-film-layer-structure-diagram.jpg",
+    "bytes": 114845
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/platinum-window-tint-film-percentage-options-banner.jpg": {
+    "file": "react-app/public/assets/original/aeb3d1dd87f5-platinum-window-tint-film-percentage-options-banner.jpg",
+    "bytes": 100488
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/satin-paint-protection-film.webp": {
+    "file": "react-app/public/assets/original/1dc39d34b18c-satin-paint-protection-film.webp",
+    "bytes": 328188
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/tpu-color-ppf-stand-out-with-color-banner-1.jpg": {
+    "file": "react-app/public/assets/original/c14ff1f0672c-tpu-color-ppf-stand-out-with-color-banner-1.jpg",
+    "bytes": 112672
+  },
+  "https://platinumcarfilms.com/wp-content/uploads/2026/09/window-tint-film-for-cars-377x447.jpeg": {
+    "file": "react-app/public/assets/original/7eab7d44fcd0-window-tint-film-for-cars-377x447.jpeg",
+    "bytes": 26409
+  },
+  "https://secure.gravatar.com/avatar/30adbfacead82126cc20e720781eb7be6e6cd56c9e008b740b833e3cab561cf7?s=22&d=mm&r=g": {
+    "file": "react-app/public/assets/original/409b5b2531be-30adbfacead82126cc20e720781eb7be6e6cd56c9e008b740b833e3cab561cf7",
+    "bytes": 843
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.7": {
+    "file": "docs/site-audit/source/scripts/fa436249efe9-index.js",
+    "bytes": 13452
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.7": {
+    "file": "docs/site-audit/source/scripts/f7553781550b-index.js",
+    "bytes": 12512
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=6.1.7": {
+    "file": "docs/site-audit/source/scripts/5a6406eee6e7-index.js",
+    "bytes": 934
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/creame-whatsapp-me/public/js/joinchat.min.js?ver=6.3.2": {
+    "file": "docs/site-audit/source/scripts/611cce933dc2-joinchat.min.js",
+    "bytes": 11451
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=8.7.2": {
+    "file": "docs/site-audit/source/scripts/f8cd3223eaba-js_composer_front.min.js",
+    "bytes": 17632
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/hostinger-reach/frontend/dist/blocks/subscription-view.js?ver=1789454805": {
+    "file": "docs/site-audit/source/scripts/685ce484b09a-subscription-view.js",
+    "bytes": 6137
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vc/vc-tta-autoplay/vc-tta-autoplay.min.js?ver=8.7.2": {
+    "file": "docs/site-audit/source/scripts/62fa3b338a7e-vc-tta-autoplay.min.js",
+    "bytes": 1958
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vc/vc_accordion/vc-accordion.min.js?ver=8.7.2": {
+    "file": "docs/site-audit/source/scripts/1862b79131bb-vc-accordion.min.js",
+    "bytes": 8103
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/js_composer/assets/lib/vc/vc_waypoints/vc-waypoints.min.js?ver=8.7.2": {
+    "file": "docs/site-audit/source/scripts/644fdea4cc3b-vc-waypoints.min.js",
+    "bytes": 8679
+  },
+  "https://platinumcarfilms.com/wp-content/plugins/litespeed-cache/assets/js/webfontloader.min.js": {
+    "file": "docs/site-audit/source/scripts/17bcf204d580-webfontloader.min.js",
+    "bytes": 12098
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart-child/js/app.js?ver=1781424841": {
+    "file": "docs/site-audit/source/scripts/d169f08d4d67-app.js",
+    "bytes": 11142
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/libs/cookie.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/739f7a3f78ee-cookie.min.js",
+    "bytes": 1668
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/libs/parallax.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/0072d034065c-parallax.min.js",
+    "bytes": 641
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/libs/photoswipe-bundle.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/cdc0f5b5f631-photoswipe-bundle.min.js",
+    "bytes": 38124
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/libs/swiper.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/8ccdb3f88c30-swiper.min.js",
+    "bytes": 105014
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/libs/waypoints.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/12bb81138a21-waypoints.min.js",
+    "bytes": 8749
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/elements/slider.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/6bcdf67f5d45-slider.min.js",
+    "bytes": 3740
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/animationsOffset.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/22a3af13b28c-animationsOffset.min.js",
+    "bytes": 330
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/callPhotoSwipe.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/83281ec8f984-callPhotoSwipe.min.js",
+    "bytes": 1184
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/helpers.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/e72e05483e48-helpers.min.js",
+    "bytes": 7290
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/parallax.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/2d645e962370-parallax.min.js",
+    "bytes": 354
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/lazyLoading.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/a639a36aae1e-lazyLoading.min.js",
+    "bytes": 3870
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/hiddenSidebar.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/3fc006228c7a-hiddenSidebar.min.js",
+    "bytes": 2159
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/photoswipeImages.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/a8a85923168a-photoswipeImages.min.js",
+    "bytes": 707
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/scrollBar.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/f65d2e33dc72-scrollBar.min.js",
+    "bytes": 307
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/scrollTop.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/a8719711321e-scrollTop.min.js",
+    "bytes": 362
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/global/swiperInit.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/b494b7d93392-swiperInit.min.js",
+    "bytes": 7046
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/header/headerBuilder.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/58012ee2c08d-headerBuilder.min.js",
+    "bytes": 2606
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/menu/menuOffsets.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/d63adb6f61ce-menuOffsets.min.js",
+    "bytes": 3135
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/menu/menuOverlay.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/e8b05fbe98a0-menuOverlay.min.js",
+    "bytes": 2430
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/shaders/shaders.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/9e489c99df5c-shaders.min.js",
+    "bytes": 6230
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/menu/mobileNavigation.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/df411f12de53-mobileNavigation.min.js",
+    "bytes": 7239
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/shaders/shaderX.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/75f4584ad9eb-shaderX.min.js",
+    "bytes": 7583
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/menu/menuSetUp.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/d13be9da221e-menuSetUp.min.js",
+    "bytes": 1719
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/shaders/sliderDistortion.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/b97b59a18688-sliderDistortion.min.js",
+    "bytes": 1647
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/wc/stickySidebarBtn.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/d21bf0045c85-stickySidebarBtn.min.js",
+    "bytes": 592
+  },
+  "https://platinumcarfilms.com/wp-content/themes/woodmart/js/scripts/wc/woocommerceNotices.min.js?ver=8.3.8": {
+    "file": "docs/site-audit/source/scripts/5591f518b945-woocommerceNotices.min.js",
+    "bytes": 485
+  },
+  "https://platinumcarfilms.com/wp-includes/js/dist/hooks.min.js?ver=7496969728ca0f95732d": {
+    "file": "docs/site-audit/source/scripts/c21d20617cc6-hooks.min.js",
+    "bytes": 5050
+  },
+  "https://platinumcarfilms.com/wp-includes/js/dist/i18n.min.js?ver=781d11515ad3d91786ec": {
+    "file": "docs/site-audit/source/scripts/b863bfd3378f-i18n.min.js",
+    "bytes": 5732
+  },
+  "https://platinumcarfilms.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0": {
+    "file": "docs/site-audit/source/scripts/17cc7fd34995-wp-polyfill.min.js",
+    "bytes": 33744
+  },
+  "https://platinumcarfilms.com/wp-includes/js/imagesloaded.min.js?ver=5.0.0": {
+    "file": "docs/site-audit/source/scripts/2555ad98f776-imagesloaded.min.js",
+    "bytes": 5520
+  },
+  "https://platinumcarfilms.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1": {
+    "file": "docs/site-audit/source/scripts/43af9b449a77-jquery-migrate.min.js",
+    "bytes": 13577
+  },
+  "https://platinumcarfilms.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1": {
+    "file": "docs/site-audit/source/scripts/c55679465527-jquery.min.js",
+    "bytes": 87553
+  }
+}

@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Platinum Car Films — Website Requirements</title>
+<style>
+  @page { margin: 22mm 18mm; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #1a1a1a; font-size: 12.5px; line-height: 1.55; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  .sub { color: #666; font-size: 12px; margin: 0 0 26px; }
+  h2 { font-size: 16px; margin: 34px 0 4px; border-bottom: 2px solid #ff6411; padding-bottom: 6px; color: #111; page-break-after: avoid; page-break-before: auto; break-after: avoid-page; }
+  h2 .count { color: #999; font-weight: normal; font-size: 12px; }
+  .item { margin: 14px 0; padding: 12px 14px; border: 1px solid #e2e2e2; border-radius: 8px; page-break-inside: avoid; break-inside: avoid; }
+  /* A box holding a long table shouldn't be locked as one unbreakable
+     unit — that forces the whole table to jump to the next page if it
+     doesn't fit what's left, leaving a large blank gap. Let it split
+     by row instead, keeping each row intact. */
+  .item:has(table) { page-break-inside: auto; break-inside: auto; }
+  table { page-break-inside: auto; break-inside: auto; }
+  tr { page-break-inside: avoid; break-inside: avoid; }
+  thead { display: table-header-group; }
+  .sub { break-after: avoid-page; page-break-after: avoid; }
+  .item-title { font-weight: bold; font-size: 13px; margin-bottom: 4px; }
+  .badge { display: inline-block; font-size: 9.5px; font-weight: bold; text-transform: uppercase; letter-spacing: .04em; padding: 2px 8px; border-radius: 999px; margin-right: 6px; color: #fff; }
+  .sev-high { background: #d13b2f; }
+  .sev-med { background: #d98c00; }
+  .sev-low { background: #5b7bd8; }
+  .desc { margin: 6px 0 0; color: #333; }
+  .meta { margin-top: 6px; font-size: 11px; color: #777; }
+  code { background: #f2f2f2; padding: 1px 5px; border-radius: 4px; font-size: 11px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 8px; font-size: 11.5px; }
+  td, th { border: 1px solid #ddd; padding: 5px 8px; text-align: left; }
+  th { background: #f5f5f5; }
+  ul { margin: 8px 0; padding-left: 20px; }
+  li { margin: 4px 0; }
+  .cover { text-align: center; padding-top: 130px; }
+  .cover h1 { font-size: 28px; }
+  .cover .meta-box { margin-top: 60px; text-align: left; display: inline-block; font-size: 12px; color: #555; }
+  .pagebreak { page-break-before: always; }
+  .rid { display: inline-block; font-family: 'Courier New', monospace; font-size: 10.5px; font-weight: bold; color: #ff6411; background: #fff1ea; border: 1px solid #ffd9c2; border-radius: 5px; padding: 1px 7px; margin-right: 8px; }
+  .signoff-table td { padding: 26px 8px 8px; vertical-align: top; }
+  .signoff-line { border-bottom: 1px solid #999; height: 1px; margin-bottom: 6px; }
+  .signoff-label { font-size: 11px; color: #666; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Website Requirements</h1>
+  <div style="font-size:14px;color:#ff6411;margin-top:10px">platinumcarfilms.com</div>
+  <div class="meta-box">
+    <p><strong>Purpose:</strong> a baseline requirements document for the site, written because no requirements document currently exists for this project</p>
+    <p><strong>Date:</strong> September 18, 2026</p>
+    <p><strong>Version:</strong> 1.0 — initial baseline</p>
+    <p><strong>Scope:</strong> required pages, functional behavior, content accuracy, and technical baseline for the live site</p>
+  </div>
+</div>
+
+<div class="pagebreak"></div>
+
+<h1>Website Requirements</h1>
+<p class="sub">platinumcarfilms.com — written to give the project an agreed baseline, since none currently exists</p>
+
+<h2>1. Purpose</h2>
+<div class="item">
+  <p class="desc" style="margin-top:0">This project has been running without a written requirements document, so there has never been an agreed, specific definition of what the finished site should include or how it should behave. This document is meant to fill that gap: a plain description of the pages, functionality, and content the site needs, so future work (fixes, edits, or new features) has something concrete to build against and check completion against.</p>
+</div>
+
+<h2>2. Required pages</h2>
+<div class="item">
+  <p class="desc" style="margin-top:0">The following pages should exist, be reachable from navigation where appropriate, and load correctly:</p>
+  <table>
+    <tr><th>ID</th><th>Page</th><th>Purpose</th></tr>
+    <tr><td>PAGE-01</td><td>Home</td><td>Full homepage: hero, company introduction, product range, material story, comparison table, buyer audience sections, gallery preview, FAQs, contact CTA</td></tr>
+    <tr><td>PAGE-02</td><td>About Us</td><td>Company background, mission, range summary, contact actions</td></tr>
+    <tr><td>PAGE-03</td><td>Product (directory)</td><td>All product cards, each linking to its own detail page</td></tr>
+    <tr><td>PAGE-04</td><td>Individual product pages (8)</td><td>Product-specific description, features, comparisons, FAQs, and a path to enquire</td></tr>
+    <tr><td>PAGE-05</td><td>Gallery</td><td>Curated, captioned images of actual work/products, not an unsorted dump</td></tr>
+    <tr><td>PAGE-06</td><td>Warranty</td><td>Coverage, exclusions, duration, conditions, FAQs, and contact actions</td></tr>
+    <tr><td>PAGE-07</td><td>Contact Us</td><td>Working enquiry form, sales contact details, location</td></tr>
+    <tr><td>PAGE-08</td><td>Blog (index + articles)</td><td>Article listing and individual posts with correct metadata</td></tr>
+    <tr><td>PAGE-09</td><td>Shipping Policy</td><td>Actual shipping costs/timeframes, not placeholder text</td></tr>
+    <tr><td>PAGE-10</td><td>Privacy Policy</td><td>Actual data-handling practices, not placeholder text</td></tr>
+    <tr><td>PAGE-11</td><td>Refund Policy</td><td>Actual refund/return terms, not placeholder text</td></tr>
+    <tr><td>PAGE-12</td><td>Terms &amp; Conditions</td><td>Actual terms of sale, not placeholder text</td></tr>
+  </table>
+</div>
+
+<h2>3. Functional requirements</h2>
+
+<div class="item">
+  <div class="item-title"><span class="rid">FUN-01</span>Navigation</div>
+  <p class="desc">Header stays accessible while scrolling on both desktop and mobile. Mobile menu opens and closes reliably with no overlap or dead space.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">FUN-02</span>Forms</div>
+  <p class="desc">The quote/enquiry form, the Contact Us form, and the newsletter signup must all actually deliver their submissions, right now none of them do. Required fields are marked before submission, not only after a failed attempt. Validation errors name the specific field. One consistent design is used for the form everywhere it appears on the site.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">FUN-03</span>FAQs</div>
+  <p class="desc">Every FAQ/accordion item must open and close correctly, in both directions, on every page that has one.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">FUN-04</span>Gallery</div>
+  <p class="desc">Images are curated and captioned, with a working full-size viewer (not just a static grid), rather than every image asset in the media library dumped into one page.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">FUN-05</span>Search</div>
+  <p class="desc">Site search returns relevant matching pages/products for a valid query, and shows a clear empty state for no matches.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">FUN-06</span>WhatsApp / contact actions</div>
+  <p class="desc">The floating WhatsApp entry point, phone numbers, and email links all go to verified, correct destinations. One consistent phone number is used everywhere rather than two different ones.</p>
+</div>
+
+<h2>4. No e-commerce/WooCommerce on this site</h2>
+<div class="item">
+  <div class="item-title"><span class="rid">STRUCT-01</span><span class="badge sev-high">Structure</span>Remove the three leftover WooCommerce pages entirely</div>
+  <p class="desc">This is a B2B wholesale-enquiry site, not an online store, no product catalog, cart, or checkout should exist on it. <code>/cart/</code>, <code>/checkout/</code>, and <code>/my-account/</code> are currently live, public URLs showing raw, unstyled WooCommerce shortcode output. These should be removed outright (not redirected or left in place): no e-commerce functionality, plugin, or leftover page should remain on the site. Wholesale enquiries continue to go through the Contact Us form as normal.</p>
+</div>
+
+<h2>5. Content accuracy</h2>
+<p class="sub" style="margin-bottom:0">These are inconsistencies between pages that should be resolved to one correct, consistent answer.</p>
+
+<div class="item">
+  <div class="item-title"><span class="rid">CONTENT-01</span><span class="badge sev-high">Content</span>Warranty transferability is stated two different ways</div>
+  <p class="desc">The product FAQ sections and the Warranty page do not agree on whether the warranty can be transferred to a new owner.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">CONTENT-02</span><span class="badge sev-high">Content</span>Headlight film's coverage duration does not match the Warranty page</div>
+  <p class="desc">The Headlight Paint Protection Film product page states a different warranty duration than the general Warranty page.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">CONTENT-03</span><span class="badge sev-med">Content</span>About page lists a different email than the footer/contact page</div>
+  <p class="desc">Only one email should be correct and used consistently sitewide.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">CONTENT-04</span><span class="badge sev-med">Content</span>Gloss Black product page contains copy about a different finish</div>
+  <p class="desc">The comparison section on that page includes wording describing a satin finish, not gloss, likely copied from another product page and not fully edited.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">CONTENT-05</span><span class="badge sev-low">Content</span>Platinum 210 page's thickness terminology is worth double-checking</div>
+  <p class="desc">It doesn't clearly match the standard phrasing used elsewhere on the site.</p>
+</div>
+
+<div class="item">
+  <div class="item-title"><span class="rid">CONTENT-06</span><span class="badge sev-low">Content</span>Unverifiable claims in marketing copy</div>
+  <p class="desc">Several pages include specific statistics, certification references, and pricing/financing language with no supporting source elsewhere on the site. Worth confirming each is something the business can stand behind.</p>
+</div>
+
+<h2>6. Technical baseline</h2>
+<div class="item">
+  <div class="item-title"><span class="rid">TECH-01</span>Performance</div>
+  <p class="desc">No single image over roughly 300KB. No redundant libraries loaded twice for the same purpose (the site currently loads two slider libraries and two icon libraries).</p>
+</div>
+<div class="item">
+  <div class="item-title"><span class="rid">TECH-02</span>Mobile</div>
+  <p class="desc">All pages usable at common phone and tablet widths, with no oversized headings that wrap awkwardly and no fixed elements overlapping page content.</p>
+</div>
+<div class="item">
+  <div class="item-title"><span class="rid">TECH-03</span>SEO / metadata</div>
+  <p class="desc">Every page has an accurate title and description. Shared links show a preview image. No leftover internal/draft titles are exposed publicly.</p>
+</div>
+
+<h2>7. Assumptions &amp; out of scope</h2>
+<div class="item">
+  <div class="item-title">Assumptions</div>
+  <p class="desc">The site continues to run on its current hosting/platform unless a separate decision is made to change it. The business model stays wholesale/B2B enquiry-based, not direct-to-consumer online sales. Whoever implements these requirements has admin access to make the necessary page, plugin, and content changes.</p>
+</div>
+<div class="item">
+  <div class="item-title">Out of scope for this document</div>
+  <p class="desc">Hosting/infrastructure changes, a rebuild on a different platform or technology stack, new features not already part of the current site (booking systems, customer accounts, online payments), and marketing/SEO strategy beyond the basic metadata items listed above. Any of these can be scoped separately if needed.</p>
+</div>
+
+<h2>8. Acceptance checklist</h2>
+<div class="item">
+  <ul style="margin-top:0">
+    <li>All required pages listed in section 2 are live and load correctly</li>
+    <li>Quote, contact, and newsletter forms all successfully deliver submissions</li>
+    <li>All four legal pages contain real, specific content</li>
+    <li>FAQs open and close correctly everywhere</li>
+    <li>Gallery is curated and captioned with a working viewer</li>
+    <li>No WooCommerce/e-commerce pages or plugins remain on the site (cart, checkout, my-account removed)</li>
+    <li>All content inconsistencies in section 5 are resolved to one correct answer</li>
+    <li>Site loads reasonably fast, with no unnecessary duplicate libraries</li>
+    <li>Site is fully usable on mobile</li>
+  </ul>
+</div>
+
+<h2>9. Sign-off</h2>
+<div class="item">
+  <p class="desc" style="margin-top:0">Once the items above are agreed as the scope of work, sign-off here confirms this is the baseline both sides are working to.</p>
+  <table class="signoff-table">
+    <tr>
+      <td style="width:50%">
+        <div class="signoff-line"></div>
+        <div class="signoff-label">Client — name &amp; date</div>
+      </td>
+      <td style="width:50%">
+        <div class="signoff-line"></div>
+        <div class="signoff-label">Developer — name &amp; date</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

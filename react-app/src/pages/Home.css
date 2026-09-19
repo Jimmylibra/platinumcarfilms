@@ -1,0 +1,80 @@
+.hero {
+  padding: 80px 0 100px;
+  background: radial-gradient(
+    ellipse 72% 72% at 52% 30%,
+    rgba(255, 100, 17, 0.08),
+    transparent 62%
+  );
+}
+
+.hero-inner {
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #b8b8bd;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(34px, 4.5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hero .description {
+  max-width: 640px;
+  margin: 20px auto 0;
+  color: #c0c0c4;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cta-wrap {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.primary {
+  background: linear-gradient(135deg, #ff6411, #ff8740);
+  color: #fff;
+}
+
+.secondary {
+  border: 1px solid rgba(255, 100, 17, 0.5);
+  color: #ddd;
+}

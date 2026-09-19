@@ -1,0 +1,32 @@
+.page-header {
+  padding: 64px 0 48px;
+  background: linear-gradient(180deg, #1a0f08 0%, var(--bg) 70%);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-header h1 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.03em;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--text);
+}
+
+.breadcrumb span:last-child {
+  color: var(--text);
+  font-weight: 600;
+}
